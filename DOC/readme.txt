@@ -1,0 +1,1 @@
+readmeこのソフトはhttp://www6.plala.or.jp/lingo/contents/software/etc.htmlのソースコードをリコンパイルし、Intel化したものです。もともとGPLということなので、今後はGPL3をライセンスとして適用します。license-gpl-3.0J.htmlgpl-3.0-standalone.htmlhttp://ossipedia.ipa.go.jp/legalinfo/gpl-3.0J.htmlhttp://www.gnu.org/licenses/gpl-3.0.html

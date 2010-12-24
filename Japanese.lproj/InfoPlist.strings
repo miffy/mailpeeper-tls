@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "MailPeeper";
+CFBundleShortVersionString = "MailPeeper version 1.0.3";
+CFBundleGetInfoString = "MailPeeper version 1.0.3, Copyright 2002 by Dentom.";
+NSHumanReadableCopyright = "Copyright 2002 by Dentom.";
