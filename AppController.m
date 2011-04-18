@@ -589,6 +589,7 @@ enum {
         //subMenu化
         [newItem setSubmenu:mailHeaderMenu];
         [newItem release];
+		[mailHeaderMenu release];
     }//while
 
 }

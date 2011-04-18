@@ -153,7 +153,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		B503F863129BD1B600A54AFF /* Info-MailPeeper_____________.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-MailPeeper_____________.plist"; sourceTree = "<group>"; };
-		B503F864129BD1B600A54AFF /* MailPeeper_Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailPeeper_Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B503F864129BD1B600A54AFF /* mailpeeper-tls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mailpeeper-tls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537543B12B81B3400C6473C /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		B537543C12B81B3400C6473C /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		B537543D12B81B3400C6473C /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -341,7 +341,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B503F864129BD1B600A54AFF /* MailPeeper_Menu.app */,
+				B503F864129BD1B600A54AFF /* mailpeeper-tls.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -687,7 +687,7 @@
 			name = MailPeeper;
 			productInstallPath = "$(HOME)/Applications";
 			productName = MailPeeper;
-			productReference = B503F864129BD1B600A54AFF /* MailPeeper_Menu.app */;
+			productReference = B503F864129BD1B600A54AFF /* mailpeeper-tls.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -884,7 +884,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = MailPeeper_Menu;
+				PRODUCT_NAME = "mailpeeper-tls";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -912,7 +912,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = MailPeeper_Menu;
+				PRODUCT_NAME = "mailpeeper-tls";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -938,7 +938,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = MailPeeper_Menu;
+				PRODUCT_NAME = "mailpeeper-tls";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",

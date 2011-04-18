@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 
-CFBundleName = "MailPeeper";
-CFBundleShortVersionString = "MailPeeper version 1.0.3";
-CFBundleGetInfoString = "MailPeeper version 1.0.3, Copyright 2002 by Dentom.";
+CFBundleName = "mailpeeper-tls";
+CFBundleShortVersionString = "mailpeeper-tls version 1.0.4";
+CFBundleGetInfoString = "mailpeeper-tls version 1.0.4, Copyright 2011 by miff.";
 NSHumanReadableCopyright = "Copyright 2002 by Dentom.";
