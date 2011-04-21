@@ -5,13 +5,14 @@
 //  Created by Dentom on 2002/09/12-10/04.
 //  Copyright (c) 2002 by Dentom. All rights reserved.
 //
-//  Modifired by anne
+//  Modifired by anne, miff(modifiedじゃない？)
 
 #import "PrefController.h"
 #import "AccountItem.h"
 #import "AppController.h"
 #import "GeneralItem.h"
 #import "Misc.h"
+#include <unistd.h>
 
 #define GENERAL_DICT	@"GENERAL_DICT"			//巡回の設定の保存キー
 #define	ACCOUNT_ITEM	@"ACCOUNT_ITEM_Ver1"	//アカウント設定の保存キー
@@ -56,6 +57,7 @@ enum {
 - (void)toTopAccountProc;
 - (void)walkAccountProc:(BOOL)iStop;
 - (void)timerProc:(NSTimer *)iTimer;
+- (void)receiveWakeNotification:(NSNotification *)notification;
 @end
 
 @implementation PrefController
@@ -233,6 +235,12 @@ enum {
 
 	//巡回用タイマーの発生
 	[NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(timerProc:) userInfo:nil repeats:YES];
+	
+	//tls用のレジューム時チェック
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
+		selector: @selector(receiveWakeNotification:) 
+		name: NSWorkspaceDidWakeNotification object: NULL];
+	
 }
 
 //操作ボタンが押されたときに呼ばれる
@@ -351,6 +359,7 @@ enum {
 	aRec.mNewMailVoiceText = [mNewMailVoice_TV string];				//(新規メールを知らせる音声データ)
 	aRec.mErrorVoiceEnable = ([mErrorVoice_CB intValue] != 0);		//(エラーを音声で知らせる)
 	aRec.mErrorVoiceText = [mErrorVoice_TV string];					//(エラーを知らせる音声データ)
+	aRec.mGoAtResume = ([mGoAtResume_CB intValue] != 0);			//(レジューム時に巡回するならYES)
 	if([mGeneralItem change:&aRec]){
 		//Pref書類を更新する
 		[Misc writeDictPref:[mGeneralItem saveInf] key:GENERAL_DICT];
@@ -446,6 +455,7 @@ enum {
 	[mNewMailVoice_TV setString:[mGeneralItem newMailVoiceText]];
 	[mErrorVoice_CB setIntValue:[mGeneralItem errorVoiceEnable]];
 	[mErrorVoice_TV setString:[mGeneralItem errorVoiceText]];
+	[mGoAtResume_CB setIntValue:[mGeneralItem goAtResume]];
 }
 
 //アカウントシートを表示する前に、その中身を準備する
@@ -566,6 +576,20 @@ enum {
 		}
 	}
 }
+
+//レジューム時にメールチェックする
+- (void)receiveWakeNotification:(NSNotification *)notification 
+{
+//	sleep(3);	//きちんとネットワークがつながってから動くのでいらないかも
+	//メールチェックする
+	if([mGeneralItem goAtResume])
+	{
+		[mAppController performGoButton];
+		//カウンターをリセットする
+		mRepeatTimer = 0;		
+	}
+}
+
 
 @end
 

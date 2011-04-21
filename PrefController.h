@@ -27,11 +27,12 @@
 	IBOutlet NSTextView *mNewMailVoice_TV;	//「新規メールの音声」テキストビュー
 	IBOutlet NSButton *mErrorVoice_CB;		//「エラーで音声」チェックボックス
 	IBOutlet NSTextView *mErrorVoice_TV;	//「エラーで音声」テキストビュー
+	IBOutlet NSButton *mGoAtResume_CB;		//「スリープ復帰時に巡回開始」チェックボックス
 
 	//(アウトレット - アカウント編集シート)
 	IBOutlet NSForm *mAccountForm;				//「アカウント名」〜「ユーザー名」
 	IBOutlet NSSecureTextField *mPassword_TF;	//「パスワード」テキストフィールド
-	IBOutlet NSButton *mTls_CB;				// TLS対応
+	IBOutlet NSButton *mTls_CB;					// TLS対応
 	
 	//(アウトレット - 環境設定パネル)
     IBOutlet NSPanel *mPrefPanel; 			//環境設定パネル

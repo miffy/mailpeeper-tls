@@ -16,6 +16,8 @@
 #define ErrorVoiceEnable_Key	@"ErrorVoiceEnable"
 #define ErrorVoiceText_Key		@"ErrorVoiceText"
 
+#define GoAtResume_Key			@"GoAtResume"
+
 @implementation GeneralItem
 
 //プログラム起動時に巡回開始ならYES
@@ -58,6 +60,12 @@
 - (NSString *)errorVoiceText
 {
 	return mR.mErrorVoiceText;
+}
+
+//レジューム時の巡回開始ならYES
+- (BOOL)goAtResume
+{
+	return mR.mGoAtResume;
 }
 
 //記録対象フィールドを変更する
@@ -114,6 +122,7 @@
 		mR.mNewMailVoiceText = [aObj retain];
 	}
 	mR.mErrorVoiceEnable = [[aDict objectForKey:ErrorVoiceEnable_Key] boolValue];
+	mR.mGoAtResume = [[aDict objectForKey:GoAtResume_Key] boolValue];
 	aObj = [aDict objectForKey:ErrorVoiceText_Key];
 	if(aObj != nil){
 		[mR.mErrorVoiceText autorelease];
@@ -133,6 +142,7 @@
 	[aDict setObject:mR.mNewMailVoiceText forKey:NewMailVoiceText_Key];
 	[aDict setObject:[NSNumber numberWithBool:mR.mErrorVoiceEnable] forKey:ErrorVoiceEnable_Key];
 	[aDict setObject:mR.mErrorVoiceText forKey:ErrorVoiceText_Key];
+	[aDict setObject:[NSNumber numberWithBool:mR.mGoAtResume] forKey:GoAtResume_Key];
 	
 	return aDict;
 }

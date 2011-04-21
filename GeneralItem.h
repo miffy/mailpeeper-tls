@@ -16,6 +16,7 @@ typedef struct {
 	NSString *mNewMailVoiceText;	//新規メールを知らせる音声データ
 	BOOL mErrorVoiceEnable;			//エラーを音声で知らせるならYES
 	NSString *mErrorVoiceText;		//エラーを知らせる音声データ
+	BOOL mGoAtResume;				//レジューム時に巡回するならYES。tlsで付け加えた
 } GeneralItem_rec_t;
 
 @interface GeneralItem : NSObject /* <NSCoding> */ {	//一般設定
@@ -35,6 +36,7 @@ typedef struct {
 - (NSString *)newMailVoiceText;
 - (BOOL)errorVoiceEnable;
 - (NSString *)errorVoiceText;
+- (BOOL)goAtResume;
 
 @end
 
