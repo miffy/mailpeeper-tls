@@ -27,8 +27,15 @@
 	IBOutlet NSTextView *mNewMailVoice_TV;	//「新規メールの音声」テキストビュー
 	IBOutlet NSButton *mErrorVoice_CB;		//「エラーで音声」チェックボックス
 	IBOutlet NSTextView *mErrorVoice_TV;	//「エラーで音声」テキストビュー
+	
 	IBOutlet NSButton *mGoAtResume_CB;		//「スリープ復帰時に巡回開始」チェックボックス
-
+	IBOutlet NSButton *mNewMailSound_CB;	//「着信音」チェックボックス
+//	IBOutlet NSButton *mNewMailSound_Button;//「着信音」ファイル選択ダイアログ立ち上げボタン
+	IBOutlet NSTextField *mNewMailSound_TF;	//「着信音」テキストフィールド
+	IBOutlet NSButton *mErrorSound_CB;		//「エラー音」チェックボックス
+//	IBOutlet NSButton *mErrorSound_Button;	//「エラー音」ファイル選択ダイアログ立ち上げボタン
+	IBOutlet NSTextField *mErrorSound_TF;	//「エラー音」テキストフィールド
+	
 	//(アウトレット - アカウント編集シート)
 	IBOutlet NSForm *mAccountForm;				//「アカウント名」〜「ユーザー名」
 	IBOutlet NSSecureTextField *mPassword_TF;	//「パスワード」テキストフィールド
@@ -55,6 +62,7 @@
 //(アクション)
 - (IBAction)buttonOperation:(id)sender;
 - (IBAction)closeSheet:(id)sender;
+- (IBAction)chooseFile:(id)sender;
 
 //(ここからはアクション以外)
 - (void)updateUI;
@@ -63,7 +71,8 @@
 - (NSEnumerator *)accountItemIterator;
 - (void)speakNewMail;
 - (void)speakError;
-
+- (void)notifyNewMailBySound;
+- (void)notifyErrorBySound;
 @end
 
 // End Of File

@@ -427,6 +427,7 @@ enum {
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"appl-error"]];
 		[NSApp requestUserAttention:NSCriticalRequest];
 		[mPrefController speakError];
+		[mPrefController notifyErrorBySound];	//tls
                 //anne
                 //エラーアイコンに
                 [sbItem setImage: [NSImage imageNamed: @"mail-error"]];
@@ -439,8 +440,8 @@ enum {
                 //anneNewアイコンに
                 [sbItem setImage: [NSImage imageNamed: @"mail-new"]];
                 
-                
-		[mPrefController speakNewMail];
+		[mPrefController speakNewMail];			
+		[mPrefController notifyNewMailBySound];	//tls
 	}else{
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"NSApplicationIcon"]];
                 
@@ -527,7 +528,7 @@ enum {
         [attStr addAttribute:NSForegroundColorAttributeName value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
         [sbItem setAttributedTitle:attStr];
 
-        [ sbItem setToolTip : @"MailPeeper_Menu" ]; // ツールチップをセット
+        [ sbItem setToolTip : @"mailpeeper-tls" ]; // ツールチップをセット
         [ sbItem setHighlightMode : YES ]; // クリック時にハイライト表示
         [ sbItem setMenu : sbMenu ]; // メニューをセット
     }

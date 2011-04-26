@@ -16,7 +16,11 @@ typedef struct {
 	NSString *mNewMailVoiceText;	//新規メールを知らせる音声データ
 	BOOL mErrorVoiceEnable;			//エラーを音声で知らせるならYES
 	NSString *mErrorVoiceText;		//エラーを知らせる音声データ
-	BOOL mGoAtResume;				//レジューム時に巡回するならYES。tlsで付け加えた
+	BOOL mGoAtResume;				//レジューム時に巡回するならYES。tls
+	BOOL mNewMailSoundEnable;		//新規メールを声で知らせるならYES
+	NSString *mNewMailSoundPath;	//新規メールを知らせる音データのパス
+	BOOL mErrorSoundEnable;			//エラーを声で知らせるならYES
+	NSString *mErrorSoundPath;		//エラーを知らせる音データのパス
 } GeneralItem_rec_t;
 
 @interface GeneralItem : NSObject /* <NSCoding> */ {	//一般設定
@@ -36,7 +40,12 @@ typedef struct {
 - (NSString *)newMailVoiceText;
 - (BOOL)errorVoiceEnable;
 - (NSString *)errorVoiceText;
+// add at tls version
 - (BOOL)goAtResume;
+- (BOOL)newMailSoundEnable;
+- (NSString *)newMailSoundPath;
+- (BOOL)errorSoundEnable;
+- (NSString *)errorSoundPath;
 
 @end
 

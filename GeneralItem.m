@@ -17,6 +17,10 @@
 #define ErrorVoiceText_Key		@"ErrorVoiceText"
 
 #define GoAtResume_Key			@"GoAtResume"
+#define NewMailSoundEnable_Key	@"NewMailSoundEnable"
+#define NewMailSoundPath_Key	@"NewMailSoundPath"
+#define ErrorSoundEnable_Key	@"ErrorSoundEnable"
+#define ErrorSoundPath_Key		@"ErrorSoundPath"
 
 @implementation GeneralItem
 
@@ -68,6 +72,25 @@
 	return mR.mGoAtResume;
 }
 
+//音でお知らせ関連
+- (BOOL)newMailSoundEnable
+{
+	return mR.mNewMailSoundEnable;
+}
+- (NSString *)newMailSoundPath
+{
+	return mR.mNewMailSoundPath;
+}
+- (BOOL)errorSoundEnable
+{
+	return mR.mErrorSoundEnable;
+}
+- (NSString *)errorSoundPath
+{
+	return mR.mErrorSoundPath;
+}
+
+
 //記録対象フィールドを変更する
 //戻り値=YESなら変更した,NOなら変更できない
 - (BOOL)change:(GeneralItem_rec_t *)iData
@@ -101,6 +124,8 @@
 		mR.mRepeatMinute = 30;
 		mR.mNewMailVoiceText = [[NSString alloc] initWithString:@"You've got mail."];
 		mR.mErrorVoiceText = [[NSString alloc] initWithString:@"MailPeeper needs your attention."];
+		mR.mNewMailSoundPath = [[NSString alloc] initWithString:@"/System/Library/Sounds/Hero.aiff"];
+		mR.mErrorSoundPath = [[NSString alloc] initWithString:@"/System/Library/Sounds/Frog.aiff"];
 	}
 	return self;
 }
@@ -122,12 +147,26 @@
 		mR.mNewMailVoiceText = [aObj retain];
 	}
 	mR.mErrorVoiceEnable = [[aDict objectForKey:ErrorVoiceEnable_Key] boolValue];
-	mR.mGoAtResume = [[aDict objectForKey:GoAtResume_Key] boolValue];
 	aObj = [aDict objectForKey:ErrorVoiceText_Key];
 	if(aObj != nil){
 		[mR.mErrorVoiceText autorelease];
 		mR.mErrorVoiceText = [aObj retain];
 	}
+	
+	// add at tls
+	mR.mGoAtResume = [[aDict objectForKey:GoAtResume_Key] boolValue];
+	mR.mNewMailSoundEnable = [[aDict objectForKey:NewMailSoundEnable_Key] boolValue];
+	aObj = [aDict objectForKey:NewMailSoundPath_Key];
+	if(aObj != nil){
+		[mR.mNewMailSoundPath autorelease];
+		mR.mNewMailSoundPath = [aObj retain];
+	}
+	mR.mErrorSoundEnable = [[aDict objectForKey:ErrorSoundEnable_Key] boolValue];
+	aObj = [aDict objectForKey:ErrorSoundPath_Key];
+	if(aObj != nil){
+		[mR.mErrorSoundPath autorelease];
+		mR.mErrorSoundPath = [aObj retain];
+	}	
 }
 
 //Pref書類に記録したい情報を返す
@@ -142,7 +181,12 @@
 	[aDict setObject:mR.mNewMailVoiceText forKey:NewMailVoiceText_Key];
 	[aDict setObject:[NSNumber numberWithBool:mR.mErrorVoiceEnable] forKey:ErrorVoiceEnable_Key];
 	[aDict setObject:mR.mErrorVoiceText forKey:ErrorVoiceText_Key];
+	// add at tls
 	[aDict setObject:[NSNumber numberWithBool:mR.mGoAtResume] forKey:GoAtResume_Key];
+	[aDict setObject:[NSNumber numberWithBool:mR.mNewMailSoundEnable] forKey:NewMailSoundEnable_Key];
+	[aDict setObject:mR.mNewMailSoundPath forKey:NewMailSoundPath_Key];
+	[aDict setObject:[NSNumber numberWithBool:mR.mErrorSoundEnable] forKey:ErrorSoundEnable_Key];
+	[aDict setObject:mR.mErrorSoundPath forKey:ErrorSoundPath_Key];
 	
 	return aDict;
 }

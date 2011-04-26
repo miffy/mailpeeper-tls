@@ -36,6 +36,11 @@ enum {
 	Account_CAN_TAG			// "       - キャンセル
 };
 
+enum {
+	NewMailSound_TAG = 1,	//メールが来たときの音ファイルの設定
+	ErrorSound_TAG			//エラーが起こった時の音ファイルの設定	
+};
+
 //アカウントシートのフォームのインデックス値
 enum {
 	AccountName_Index,		//アカウント名
@@ -58,6 +63,7 @@ enum {
 - (void)walkAccountProc:(BOOL)iStop;
 - (void)timerProc:(NSTimer *)iTimer;
 - (void)receiveWakeNotification:(NSNotification *)notification;
+;
 @end
 
 @implementation PrefController
@@ -161,6 +167,7 @@ enum {
 		aAccountProcEnd = YES;
 		aCloseSheet = mAccountSheet;
 		break;
+	
 	}
 
 	//アカウント追加時にはmEditAccountをreleaseする必要がある
@@ -180,6 +187,41 @@ enum {
 		[mPrefPanel makeKeyAndOrderFront:self];
 	}
 }
+
+//シート上のボタンが押されたときに呼び出される
+- (IBAction)chooseFile:(id)sender
+{
+	NSString *path = NULL;					//音のファイルパス
+	int result;
+	NSArray *filesToOpen;
+	NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	NSArray *fileTypes = [NSSound soundUnfilteredTypes];
+	// All file types NSSound understands
+	[oPanel setAllowsMultipleSelection:NO];
+	result = [oPanel runModalForDirectory:@"/System/Library/Sounds/" file:nil types:fileTypes];
+	if (result == NSOKButton)
+	{
+        filesToOpen = [oPanel filenames];
+        path = [filesToOpen objectAtIndex:0];		
+    }else {
+		return;
+	}
+	
+	switch([sender tag]){
+	case NewMailSound_TAG:	//メールが来たときの音ファイルの設定
+		if(path != NULL){
+			[mNewMailSound_TF setStringValue:path];			
+		}
+		break;
+	
+	case ErrorSound_TAG:	//エラーが起こった時の音ファイルの設定
+		if(path != NULL){
+			[mErrorSound_TF setStringValue:path];
+		}
+		break;
+	}
+}	
+
 
 //(テーブルビューからのデリゲート)
 //テーブルビューの行数を教える
@@ -329,6 +371,29 @@ enum {
 	}
 }
 
+//新規メールがあることを音で伝える(ただし選択されているときのみ)
+- (void)notifyNewMailBySound
+{
+	if([mGeneralItem newMailSoundEnable]){
+		[mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
+		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];
+		[snd play];
+		//[snd dealloc];	//EXC_BAD_ACCESSになっちゃうのでやらない。後始末しなくて良いのかな。
+	}
+}
+
+//エラーがあることを声で伝える(ただし選択されているときのみ)
+- (void)notifyErrorBySound
+{
+	if([mGeneralItem errorSoundEnable]){
+		[mErrorSound_TF setStringValue:[mGeneralItem errorSoundPath]];
+		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] byReference:YES];
+		[snd play];
+		//[snd dealloc];	//EXC_BAD_ACCESSになっちゃうのでやらない
+	}
+}
+
+
 @end
 
 @implementation PrefController(Private)
@@ -359,7 +424,13 @@ enum {
 	aRec.mNewMailVoiceText = [mNewMailVoice_TV string];				//(新規メールを知らせる音声データ)
 	aRec.mErrorVoiceEnable = ([mErrorVoice_CB intValue] != 0);		//(エラーを音声で知らせる)
 	aRec.mErrorVoiceText = [mErrorVoice_TV string];					//(エラーを知らせる音声データ)
+	
 	aRec.mGoAtResume = ([mGoAtResume_CB intValue] != 0);			//(レジューム時に巡回するならYES)
+	aRec.mNewMailSoundEnable = ([mNewMailSound_CB intValue] != 0);	//(着信音で知らせる)
+	aRec.mNewMailSoundPath = [mNewMailSound_TF stringValue];		//(着信を知らせる音データ)
+	aRec.mErrorSoundEnable = ([mErrorSound_CB intValue] != 0);		//(エラー声で知らせる)
+	aRec.mErrorSoundPath = [mErrorSound_TF stringValue];			//(エラーを知らせる音データ)
+	
 	if([mGeneralItem change:&aRec]){
 		//Pref書類を更新する
 		[Misc writeDictPref:[mGeneralItem saveInf] key:GENERAL_DICT];
@@ -455,7 +526,12 @@ enum {
 	[mNewMailVoice_TV setString:[mGeneralItem newMailVoiceText]];
 	[mErrorVoice_CB setIntValue:[mGeneralItem errorVoiceEnable]];
 	[mErrorVoice_TV setString:[mGeneralItem errorVoiceText]];
+	
 	[mGoAtResume_CB setIntValue:[mGeneralItem goAtResume]];
+	[mNewMailSound_CB setIntValue:[mGeneralItem newMailSoundEnable]];
+	[mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
+	[mErrorSound_CB setIntValue:[mGeneralItem errorSoundEnable]];
+	[mErrorSound_TF setStringValue:[mGeneralItem errorSoundPath]];
 }
 
 //アカウントシートを表示する前に、その中身を準備する
@@ -580,7 +656,7 @@ enum {
 //レジューム時にメールチェックする
 - (void)receiveWakeNotification:(NSNotification *)notification 
 {
-//	sleep(3);	//きちんとネットワークがつながってから動くのでいらないかも
+	sleep(3);	//ネットワークがつながってから動く対策（本当はマシな確認をすべき）
 	//メールチェックする
 	if([mGeneralItem goAtResume])
 	{
