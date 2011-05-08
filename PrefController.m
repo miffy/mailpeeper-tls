@@ -656,7 +656,7 @@ enum {
 //レジューム時にメールチェックする
 - (void)receiveWakeNotification:(NSNotification *)notification 
 {
-	sleep(3);	//ネットワークがつながってから動く対策（本当はマシな確認をすべき）
+	sleep(10);	//ネットワークがつながってから動く対策（本当はマシな確認をすべき）
 	//メールチェックする
 	if([mGeneralItem goAtResume])
 	{

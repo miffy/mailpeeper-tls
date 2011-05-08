@@ -2,28 +2,44 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BuildMachineOSBuild</key>
+	<string>10J3250</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>MailPeeper_Menu</string>
+	<string>mailpeeper-tls</string>
 	<key>CFBundleGetInfoString</key>
 	<string>MailPeeper (C)2002 by Dentom. , MailPeeper_Menu (C)2003 by Anne, mailpeeper-tls (C)2010 by miff</string>
 	<key>CFBundleIconFile</key>
 	<string>appl-icon</string>
 	<key>CFBundleIdentifier</key>
-	<string>jp.miff.MailPeeper_Menu</string>
+	<string>jp.miff.mailpeeper-tls</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>MailPeeper_Menu Ver.1.0.3</string>
+	<string>mailpeeper-tls Ver.1.0.4</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>Ver.1.0.3</string>
+	<string>Ver.1.0.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.3</string>
+	<string>1.0.4</string>
+	<key>DTCompiler</key>
+	<string></string>
+	<key>DTPlatformBuild</key>
+	<string>10M2518</string>
+	<key>DTPlatformVersion</key>
+	<string>PG</string>
+	<key>DTSDKBuild</key>
+	<string>10J3250</string>
+	<key>DTSDKName</key>
+	<string></string>
+	<key>DTXcode</key>
+	<string>0400</string>
+	<key>DTXcodeBuild</key>
+	<string>10M2518</string>
 	<key>LSUIElement</key>
 	<string>1</string>
 	<key>NSMainNibFile</key>
