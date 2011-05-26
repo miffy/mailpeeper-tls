@@ -273,7 +273,7 @@
 		F59B46FC033B626401A80102 /* newaccpane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newaccpane.png; sourceTree = "<group>"; };
 		F59B46FD033B626401A80102 /* prefwindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prefwindow.png; sourceTree = "<group>"; };
 		F5A48F38033085C901A80102 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		F5A48F39033085E401A80102 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F5A48F39033085E401A80102 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F5A48F3A0330888101A80102 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		F5A48F3B0330888101A80102 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		F5A7BED8034D5A690137FB37 /* appl-walking.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "appl-walking.tiff"; sourceTree = "<group>"; };

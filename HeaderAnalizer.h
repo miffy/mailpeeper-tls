@@ -18,6 +18,7 @@
 - (void)pushEnd;
 - (NSString *)pop:(NSString *)iKey decodeJis:(BOOL)iDecodeJis;
 
+
 @end
 
 // End Of File
