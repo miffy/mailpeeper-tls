@@ -112,9 +112,9 @@ static void decodeBase64(char *iTextTop);
 			// デコードした文字列をaLineが持つ、文字列ポインタのaDpに入れる
 			NSString* rtn = [self decodeExceptISO_2022_JP:aDp key:aLine];
 			// 見つかったときは、デコードした文字列を返して終わり
-			if (rtn != nil){
+			if (rtn != nil)
 				return rtn;
-			}
+			
 			//BASE64デコード
 			decodeBase64(aDp);
 			//サイズ調整
@@ -142,48 +142,67 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 
 
 // BはBASE64(RFC 3548)。QはQuoted-Printable(RFC 1521)
-//"Quoted-Printable" content-transfer-encoding defined in .
 // =?utf-8?Q? と =?Shift_JIS?B? のほぼ二択だが、分けて実装。あとで分けて実装するの面倒なんで。
+// strDataで変換する文字列と、
 - (NSString*)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line
-{
-	char encodeType = '\0';		// MIMEエンコーディング形式
-	char characterCode = '\0';	// 文字コード 'U'がUTF-8で、'S'がShiftJIS
-	
+{	
 	char *aFind;				// ヘッダを見つけた位置
-	char *aSrc = strData;		// 元となる文字列（の位置）
-	char *aDst = strData;		// 入れ込み用ポインタ
+	char *aSrc;					// 読み取り元となる文字列の位置
+	char *aDst;					// 入れ込み用ポインタ
+	int prefix, suffix;			// エンコーディングされてない、前後の文字数
+	NSMutableString* buff = nil;//
+	int lineLength = [line length];
 	
-	while (1) 
+	while (1)
 	{
+		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-P'B'
+		char charaCode;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS
 		int length;				// デコードする文字列の長さ
-		char* startPosition;	// 始めの位置
+		char* startPosition;	// デコード始めの位置
+		
+		aDst = aSrc = strData;
 //		if (aFind = strstr_touppered(aSrc, UTF8_HEAD) == NULL)
 		if(!(aFind = strstr_touppered(aSrc, UTF8_HEAD)))
 		{
 			if(!(aFind = strstr_touppered(aSrc, SJIS_HEAD)))
-			{
-				return nil;				// どっちも見つからなくなったら終わり
-			}else{
-				characterCode = 'S';	// ShiftJIS
-			}
+				return buff;
+			else
+				charaCode = 'S';	// ShiftJIS
 		}else{
-			characterCode = 'U';		// UTF-8
+			charaCode = 'U';		// UTF-8
 		}
 		
-		// QかBか
-		if (characterCode == 'U') {
-			aSrc += strlen(UTF8_HEAD);
-		}else {
-			aSrc += strlen(SJIS_HEAD);
+		// 
+		if(buff == nil){
+			buff = [NSMutableString string];
+		}/*else {
+			return buff;			//　確認のため書いただけ。
+		}*/
+		
+		// 見つけた地点までの情報をコピーする（エンコーディングされているもの以外はみなASCIIコードと考える）
+		// UTF-8(RFC 2279)は、ASCIIコードは同じコードで1バイトで、それ以外を2～6バイトの可変長
+		// ShiftJISは、エスケープシーケンスなしで1バイト文字と2バイト文字を共存させ、ASCII文字はそのまま
+		while(aSrc < aFind){
+			*aDst++ = *aSrc++;
 		}
+		prefix = aSrc - strData;		// ヘッダとかの長さは入れない。エンコードされてない素のASCII文字のみ。
+
+		if (charaCode == 'S') {
+			aSrc += strlen(SJIS_HEAD);			
+		}else if (charaCode == 'U') {
+			aSrc += strlen(UTF8_HEAD);			
+		}
+		
 		encodeType = *aSrc;				// QかBが入るはず。
+		if (!(encodeType == 'Q' || encodeType == 'B'))
+			return nil;					// 知らないエンコーディングならお帰り頂く
 		
 		// QでもBでも、"?="までなので、デコードしたい文字列と長さを得る
 		aSrc += 2;
 		startPosition = aSrc;			// 始めの位置を設定(B?かQ?以降)
 		length = 0;
+		// "?="で終わり
 		while (*aSrc) {
-			// "?="で終わり
 			if (*aSrc++ == '?') 
 			{
 				if (*aSrc == '=')
@@ -198,24 +217,47 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		for(i=0; i<length; i++){
 			tmp[i] = *startPosition++;
 		}
-		tmp[length] = '\0';	//ヌル文字で止めないとダメ。
+		tmp[length] = '\0';				//ヌル文字で止めないとダメ。
 		
 		// エンコード形式ごとにデコード
-		int decodedLength;
 		if (encodeType == 'B') {
-			decodedLength = [self decode_Base64:tmp src_size:length dst:aDst dst_size:strlen(aDst)];
+			[self decode_Base64:tmp src_size:length dst:aDst dst_size:strlen(aDst)];
 		}else if (encodeType == 'Q') {
-			decodedLength = [self decode_QuotedPrintable:aDst size:length conv:tmp];
+			[self decode_QuotedPrintable:aDst size:length conv:tmp];
 		}
 		// 
-		[line setLength:decodedLength];
-		// 文字コードの変換
-		if (characterCode == 'U')
+		aSrc++;							// そのままだと、後ろの"?="の'='の位置なので進める。
+		length = prefix + strlen(aDst);
+		[line setLength: length];
+		
+		if (charaCode == 'U')
+		{
+			// UTF-8用
+			[buff appendString:[[[NSString alloc] initWithData:line 
+				encoding:NSUTF8StringEncoding] autorelease]];
+		}
+		else if(charaCode == 'S')
+		{
+			// Shift_JIS用
+			[buff appendString:[[[NSString alloc] initWithData:line 
+				encoding:NSShiftJISStringEncoding] autorelease]];		
+		}else{
+			// ないときはnilを返す。普通は来ないですが。
+			return nil;		
+		}
+		// がっつり元ネタを改変。
+		aDst = strData;
+		for (i=0; i < lineLength - length; i++) {
+			*aDst++ = *aSrc++;
+		}
+				
+#if 0		// 文字コードの変換
+		if (charaCode == 'U')
 		{
 			// UTF-8用
 			return [[[NSString alloc] initWithData:line encoding:NSUTF8StringEncoding] autorelease];
 		}
-		else if(characterCode == 'S')
+		else if(charaCode == 'S')
 		{
 			// Shift_JIS用
 			return [[[NSString alloc] initWithData:line encoding:NSShiftJISStringEncoding] autorelease];		
@@ -223,6 +265,7 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 			// ないときはnilを返す。普通は来ないですが。
 			return nil;		
 		}
+#endif
 	}
 }
 			 
