@@ -822,10 +822,11 @@ enum {
 }
 
 //ヘッダー表示ウィンドウを表示する
+// deprecatedなselectedRowEnumeratorをselectedRowIndexesで置換
 - (void)dispHeaderWin
 {
-	NSEnumerator *aItr = [mTableView selectedRowEnumerator];	//TODO: selectedRowIndexesで置換すべき
-//	NSEnumerator *aItr = [mTableView selectedRowIndexes];
+#if 0
+	NSEnumerator *aItr = [mTableView selectedRowEnumerator];		//TODO: selectedRowIndexesで置換すべき
 	NSNumber *aNum;
 
 	//選択しているテーブルビューを元に処理
@@ -833,6 +834,24 @@ enum {
 		PeepedItem *aPeepItem = [mPeepedItemArray objectAtIndex:[aNum intValue]];
 		[self dispHeaderWinSub:aPeepItem];
 	}
+#else
+	
+	NSIndexSet *is = [mTableView selectedRowIndexes];
+	NSUInteger aNum, idx;
+	PeepedItem *aPeepItem;
+	
+	//選択しているテーブルビューを元に処理
+	if ((idx = [is firstIndex]) != NSNotFound){
+		aPeepItem = [mPeepedItemArray objectAtIndex:idx];
+		[self dispHeaderWinSub:aPeepItem];
+		// 始めのインデックス以降
+		while((aNum = [is indexGreaterThanIndex:idx]) != NSNotFound){
+			aPeepItem = [mPeepedItemArray objectAtIndex:aNum];
+			[self dispHeaderWinSub:aPeepItem];
+			idx = aNum;
+		}
+	}
+#endif
 }
 
 //削除ボタンが押されたときの処理
@@ -855,7 +874,7 @@ enum {
 	//削除すべきメール情報を配列にためこむ
 	aRemoveItemArray = [NSMutableArray array];
 	aItr = [mTableView selectedRowEnumerator];	//TODO: selectedRowIndexesで置換すべき
-//	aItr = [mTableView selectedRowIndexes];
+//	aItr = [mTableView selectedRowIndexes];		// 削除については自分が使わないので触らないかも。
 	while((aNum = [aItr nextObject]) != nil){
 		PeepedItem *aPeepItem = [mPeepedItemArray objectAtIndex:[aNum intValue]];
 		[aRemoveItemArray addObject:aPeepItem];

@@ -503,8 +503,8 @@ enum {
 		[mAccountItemArray addObject:mEditAccount];
 		//UIも影響を受けるので更新する
 		[mTableView reloadData]; //テーブルビューの表示更新
-		[mTableView selectRow:([mTableView numberOfRows] - 1) byExtendingSelection:NO]; //テーブルビューの選択を追加したコラムにする	//TODO:selectColumnIndexes:byExtendingSelection:で置換すべき
-//		[mTableView selectColumnIndexes:([mTableView numberOfRows] - 1) byExtendingSelection:NO]; //テーブルビューの選択を追加したコラムにする
+//		[mTableView selectRow:([mTableView numberOfRows] - 1) byExtendingSelection:NO]; //テーブルビューの選択を追加したコラムにする	//TODO:selectColumnIndexes:byExtendingSelection:で置換すべき
+		[mTableView selectColumnIndexes:([mTableView selectedColumnIndexes]) byExtendingSelection:NO]; //テーブルビューの選択を追加したコラムにする
 
 		
 		[self updateUI];

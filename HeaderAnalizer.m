@@ -133,7 +133,7 @@ static void decodeBase64(char *iTextTop);
 
 
 
-// ------ tls add from here ------
+// ------------ tls add from here ------------
 #include <string.h>
 
 // "=?utf-8?"と"=?Shift_JIS?"でいいと思うけど、大文字にしてから検索する
@@ -143,41 +143,38 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 
 // BはBASE64(RFC 3548)。QはQuoted-Printable(RFC 1521)
 // =?utf-8?Q? と =?Shift_JIS?B? のほぼ二択だが、分けて実装。あとで分けて実装するの面倒なんで。
-// strDataで変換する文字列と、
+// strDataで変換する文字列と、返す文字列を両方扱うので、デコードした文字列は、読み終わったところに書き込み
 - (NSString*)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line
 {	
 	char *aFind;				// ヘッダを見つけた位置
 	char *aSrc;					// 読み取り元となる文字列の位置
 	char *aDst;					// 入れ込み用ポインタ
-	int prefix, suffix;			// エンコーディングされてない、前後の文字数
-	NSMutableString* buff = nil;//
-	int lineLength = [line length];
+	int prefix;					// エンコーディングされてない、前後の文字数
+	NSMutableString* buff = nil;	// 
+	int lineLength = [line length];	// 
 	
 	while (1)
 	{
-		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-P'B'
+		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-P'B'がBase64
 		char charaCode;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS
 		int length;				// デコードする文字列の長さ
 		char* startPosition;	// デコード始めの位置
 		
 		aDst = aSrc = strData;
-//		if (aFind = strstr_touppered(aSrc, UTF8_HEAD) == NULL)
 		if(!(aFind = strstr_touppered(aSrc, UTF8_HEAD)))
 		{
 			if(!(aFind = strstr_touppered(aSrc, SJIS_HEAD)))
 				return buff;
 			else
-				charaCode = 'S';	// ShiftJIS
+				charaCode = 'S';// ShiftJIS
 		}else{
-			charaCode = 'U';		// UTF-8
+			charaCode = 'U';	// UTF-8
 		}
 		
-		// 
+		// ここでやっとreturn用のバッファを作る
 		if(buff == nil){
 			buff = [NSMutableString string];
-		}/*else {
-			return buff;			//　確認のため書いただけ。
-		}*/
+		}
 		
 		// 見つけた地点までの情報をコピーする（エンコーディングされているもの以外はみなASCIIコードと考える）
 		// UTF-8(RFC 2279)は、ASCIIコードは同じコードで1バイトで、それ以外を2～6バイトの可変長
@@ -198,7 +195,7 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 			return nil;					// 知らないエンコーディングならお帰り頂く
 		
 		// QでもBでも、"?="までなので、デコードしたい文字列と長さを得る
-		aSrc += 2;
+		aSrc += 2;						// Q?やB?より先に移動
 		startPosition = aSrc;			// 始めの位置を設定(B?かQ?以降)
 		length = 0;
 		// "?="で終わり
@@ -208,14 +205,14 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 				if (*aSrc == '=')
 					break;
 			}else{
-				length++;
+				length++;				// デコードする文字列の長さ
 			}
 		}
-		// 別途、エンコードすべき文字列をコピーする
+		// デコードすべき文字列を別途コピーして作成
 		char tmp[strlen(aDst)];
 		int i;
 		for(i=0; i<length; i++){
-			tmp[i] = *startPosition++;
+			tmp[i] = *startPosition++;	
 		}
 		tmp[length] = '\0';				//ヌル文字で止めないとダメ。
 		
@@ -231,36 +228,33 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		[line setLength: length];
 		
 		if (charaCode == 'U')
-		{
-			// UTF-8用
+		{	// UTF-8用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSUTF8StringEncoding] autorelease]];
 		}
 		else if(charaCode == 'S')
-		{
-			// Shift_JIS用
+		{	// Shift_JIS用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSShiftJISStringEncoding] autorelease]];		
 		}else{
 			// ないときはnilを返す。普通は来ないですが。
 			return nil;		
 		}
-		// がっつり元ネタを改変。
+		// がっつり元ネタを前の方にズラして改変。
 		aDst = strData;
-		for (i=0; i < lineLength - length; i++) {
+		for (i=0; i < lineLength - length; i++)
+		{
 			*aDst++ = *aSrc++;
 		}
 				
 #if 0		// 文字コードの変換
 		if (charaCode == 'U')
-		{
-			// UTF-8用
+		{	// UTF-8用
 			return [[[NSString alloc] initWithData:line encoding:NSUTF8StringEncoding] autorelease];
 		}
-		else if(charaCode == 'S')
-		{
+		else if(charaCode == 'S'){
 			// Shift_JIS用
-			return [[[NSString alloc] initWithData:line encoding:NSShiftJISStringEncoding] autorelease];		
+			return [[[NSString alloc] initWithData:line encoding:NSShiftJISStringEncoding] autorelease];
 		}else{
 			// ないときはnilを返す。普通は来ないですが。
 			return nil;		
@@ -315,14 +309,15 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		int i,j;
 		if(calclength > dstlen || srclen % 4 != 0) return 0;
 		
+		// 本来なら(int)のキャストはいらないけど、warningを止めるために入れた
 		j=0;
 		for(i=0; i+3<srclen; i+=4){
-			if((Base64num[src[i+0]]|Base64num[src[i+1]]|Base64num[src[i+2]]|Base64num[src[i+3]]) > 0x3F){
+			if((Base64num[(int)src[i+0]]|Base64num[(int)src[i+1]]|Base64num[(int)src[i+2]]|Base64num[(int)src[i+3]]) > 0x3F){
 				return -1;
 			}
-			dst[j++] = Base64num[src[i+0]]<<2 | Base64num[src[i+1]] >> 4;
-			dst[j++] = Base64num[src[i+1]]<<4 | Base64num[src[i+2]] >> 2;
-			dst[j++] = Base64num[src[i+2]]<<6 | Base64num[src[i+3]];
+			dst[j++] = Base64num[(int)src[i+0]]<<2 | Base64num[(int)src[i+1]] >> 4;
+			dst[j++] = Base64num[(int)src[i+1]]<<4 | Base64num[(int)src[i+2]] >> 2;
+			dst[j++] = Base64num[(int)src[i+2]]<<6 | Base64num[(int)src[i+3]];
 		}
 		
 		if(j<dstlen) dst[j] = '\0';
