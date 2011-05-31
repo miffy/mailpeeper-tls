@@ -153,7 +153,7 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 	while (1)
 	{
 		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-P'B'がBase64
-		char charaCode;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS
+		char charset;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS
 		int length;				// デコードする文字列の長さ
 		char* startPosition;	// デコード始めの位置
 		
@@ -163,15 +163,14 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 			if(!(aFind = strstr_touppered(aSrc, SJIS_HEAD)))
 				return buff;
 			else
-				charaCode = 'S';// ShiftJIS
+				charset = 'S';	// ShiftJIS
 		}else{
-			charaCode = 'U';	// UTF-8
+			charset = 'U';		// UTF-8
 		}
 		
 		// ここでやっとreturn用のバッファを作る
-		if(buff == nil){
+		if(buff == nil)
 			buff = [NSMutableString string];
-		}
 		
 		// 見つけた地点までの情報をコピーする（エンコーディングされているもの以外はみなASCIIコードと考える）
 		// UTF-8(RFC 2279)は、ASCIIコードは同じコードで1バイトで、それ以外を2～6バイトの可変長
@@ -181,13 +180,14 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		}
 		prefix = aSrc - strData;		// ヘッダとかの長さは入れない。エンコードされてない素のASCII文字のみ。
 
-		if (charaCode == 'S') {
+		if (charset == 'S') {
 			aSrc += strlen(SJIS_HEAD);			
-		}else if (charaCode == 'U') {
+		}else if (charset == 'U') {
 			aSrc += strlen(UTF8_HEAD);			
 		}
 		
 		encodeType = *aSrc;				// QかBが入るはず。
+		encodeType = toupper(encodeType);	// 大抵、大文字だけど、小文字も対応。RFC2047 2.
 		if (!(encodeType == 'Q' || encodeType == 'B'))
 			return nil;					// 知らないエンコーディングならお帰り頂く
 		
@@ -224,12 +224,12 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		length = prefix + strlen(aDst);
 		[line setLength: length];
 		
-		if (charaCode == 'U')
+		if (charset == 'U')
 		{	// UTF-8用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSUTF8StringEncoding] autorelease]];
 		}
-		else if(charaCode == 'S')
+		else if(charset == 'S')
 		{	// Shift_JIS用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSShiftJISStringEncoding] autorelease]];		
@@ -258,6 +258,8 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 			sscanf(++s,"%02X",(unsigned int*)t);
 			s++;
 		} else {
+			if(*s == '_')
+				*t = ' ';	// ヘッダではアンダーバーを半角スペースにデコードする(=20の場合あり)
 			*t = *s;
 		}
 	}
