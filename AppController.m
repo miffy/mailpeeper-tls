@@ -825,17 +825,6 @@ enum {
 // deprecatedなselectedRowEnumeratorをselectedRowIndexesで置換
 - (void)dispHeaderWin
 {
-#if 0
-	NSEnumerator *aItr = [mTableView selectedRowEnumerator];		//TODO: selectedRowIndexesで置換すべき
-	NSNumber *aNum;
-
-	//選択しているテーブルビューを元に処理
-	while((aNum = [aItr nextObject]) != nil){
-		PeepedItem *aPeepItem = [mPeepedItemArray objectAtIndex:[aNum intValue]];
-		[self dispHeaderWinSub:aPeepItem];
-	}
-#else
-	
 	NSIndexSet *is = [mTableView selectedRowIndexes];
 	NSUInteger aNum, idx;
 	PeepedItem *aPeepItem;
@@ -851,7 +840,6 @@ enum {
 			idx = aNum;
 		}
 	}
-#endif
 }
 
 //削除ボタンが押されたときの処理

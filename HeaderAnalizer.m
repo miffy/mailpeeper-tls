@@ -15,7 +15,6 @@ static void decodeBase64(char *iTextTop);
 - (NSString *)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line;
 - (int)decode_QuotedPrintable:(char *)t size:(int)t_size conv:(char*)s;
 - (int)decode_Base64:(const char*)src src_size:(int)srclen dst:(char*)dst dst_size:(int)dstlen;
-
 @end
 
 
@@ -85,7 +84,6 @@ static void decodeBase64(char *iTextTop);
 				if(*aSep2 != '\r'){
 					NSString *aKey; //(aTopPから(aSep1-1)までがkey)
 					NSMutableData *aValue; //(aSep2から(aSepE-1)までがvalue)
-//					aKey = [NSString stringWithCString:aTopP length:(aSep1 - aTopP)];	//TODO:stringWithCString:encoding:で置換
 					*(aTopP + (aSep1 - aTopP)) = '\0';	// 長さで指定できないから文字列を分断。
 					aKey = [NSString stringWithCString:aTopP encoding:NSASCIIStringEncoding];
 					aValue = [NSMutableData dataWithBytes:aSep2 length:(aSepE - aSep2)];
@@ -122,7 +120,6 @@ static void decodeBase64(char *iTextTop);
 			//ISO-2022-JPデコード
 			return [[[NSString alloc] initWithData:aLine encoding:NSISO2022JPStringEncoding] autorelease];
 		}else{ //しない場合
-//			return [NSString stringWithCString:[aLine bytes] length:[aLine length]];	//TODO:stringWithCString:encoding:で置換
 			return [NSString stringWithCString:[aLine bytes] encoding:NSASCIIStringEncoding];
 		}
 	}
@@ -246,26 +243,13 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		{
 			*aDst++ = *aSrc++;
 		}
-				
-#if 0		// 文字コードの変換
-		if (charaCode == 'U')
-		{	// UTF-8用
-			return [[[NSString alloc] initWithData:line encoding:NSUTF8StringEncoding] autorelease];
-		}
-		else if(charaCode == 'S'){
-			// Shift_JIS用
-			return [[[NSString alloc] initWithData:line encoding:NSShiftJISStringEncoding] autorelease];
-		}else{
-			// ないときはnilを返す。普通は来ないですが。
-			return nil;		
-		}
-#endif
 	}
 }
 			 
 #include <stdio.h>
 
 // QuotedPrintable パクって持ってきた
+// http://f4.aaa.livedoor.jp/~pointc/202/No.5092.html
 - (int)decode_QuotedPrintable:(char *)t size:(int)t_size conv:(char*)s
 {
 	char *end = &t[t_size-1];
@@ -346,6 +330,8 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 	buff[i] = '\0';
 #endif
 }
+
+// ------------ tls adding end ------------
 
 @end
 

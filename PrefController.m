@@ -502,10 +502,10 @@ enum {
 	if(mAppendAcc){
 		[mAccountItemArray addObject:mEditAccount];
 		//UIも影響を受けるので更新する
-		[mTableView reloadData]; //テーブルビューの表示更新
-//		[mTableView selectRow:([mTableView numberOfRows] - 1) byExtendingSelection:NO]; //テーブルビューの選択を追加したコラムにする	//TODO:selectColumnIndexes:byExtendingSelection:で置換すべき
-		[mTableView selectColumnIndexes:([mTableView selectedColumnIndexes]) byExtendingSelection:NO]; //テーブルビューの選択を追加したコラムにする
-
+		//テーブルビューの表示更新
+		[mTableView reloadData];
+		//テーブルビューの選択を追加したコラムにする
+		[mTableView selectColumnIndexes:([mTableView selectedColumnIndexes]) byExtendingSelection:NO];
 		
 		[self updateUI];
 	}
@@ -618,7 +618,6 @@ enum {
 		[Misc writeDataPref:mAccountItemArray key:ACCOUNT_ITEM];
 		//表示を更新する
 		[mTableView reloadData]; //テーブルビューの表示更新
-//		[mTableView selectRow:0 byExtendingSelection:NO]; //テーブルビューの選択を先頭にする　//TODO:selectColumnIndexes:byExtendingSelection:で置換
 		[mTableView selectColumnIndexes:0 byExtendingSelection:NO];	//テーブルビューの選択を先頭にする
 		[self updateUI];
 	}
