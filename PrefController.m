@@ -13,6 +13,7 @@
 #import "GeneralItem.h"
 #import "Misc.h"
 #include <unistd.h>
+//#import "Growl.h"
 
 #define GENERAL_DICT	@"GENERAL_DICT"			//巡回の設定の保存キー
 #define	ACCOUNT_ITEM	@"ACCOUNT_ITEM_Ver1"	//アカウント設定の保存キー
@@ -66,7 +67,7 @@ enum {
 ;
 @end
 
-@implementation PrefController
+@implementation PrefController	
 
 //初期化メソッド
 - (id)init
@@ -393,6 +394,60 @@ enum {
 	}
 }
 
+//新規メールがあることをGrowlのウインドウで伝える(ただし選択されているときのみ)
+- (void)notifyNewMailByGrowl
+{
+#if 0
+	if([mGeneralItem newMailGrowlEnable])
+	{
+//		NSBundle *myBundle = [NSBundle bundleForClass:[MyMainClass class]];
+		NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
+		NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent: @"Growl.framework"];
+		NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
+		if (growlBundle && [growlBundle load])
+		{ // Register ourselves as a Growl delegate 
+			[GrowlApplicationBridge setGrowlDelegate:self];
+		} else {
+			NSLog(@"Could not load Growl.framework");
+		}
+		NSDictionary *regDict = [self registrationDictionaryFromDelegate];
+//		NSDictionary * regDict = [GrowlApplicationBridge registrationDictionaryFromBundle: growlBundle];
+		[GrowlApplicationBridge registerWithDictionary:regDict];
+		
+		
+		[GrowlApplicationBridge notifyWithTitle: @"Test Notification"
+									description: @"Test Notification"
+							   notificationName: @"This is a test AppleScript notification."
+									   iconData: nil
+									   priority: 0
+									   isSticky: NO
+								   clickContext: nil
+									 identifier: @"Growl AppleScript Sample"];
+	}
+
+	
+	NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
+	NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
+	NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
+	
+	if (growlBundle && [growlBundle load]) {
+		// Register ourselves as a Growl delegate
+		[GrowlApplicationBridge setGrowlDelegate:self];
+		
+		[GrowlApplicationBridge notifyWithTitle:@"Alert"
+									description:@"Hello!"
+							   notificationName:@"Example Notification"
+									   iconData:nil
+									   priority:0
+									   isSticky:NO
+								   clickContext:[NSDate date]];
+	}
+	else {
+		NSLog(@"ERROR: Could not load Growl.framework");
+	}
+#endif
+}
+
 
 @end
 
@@ -430,6 +485,7 @@ enum {
 	aRec.mNewMailSoundPath = [mNewMailSound_TF stringValue];		//(着信を知らせる音データ)
 	aRec.mErrorSoundEnable = ([mErrorSound_CB intValue] != 0);		//(エラー声で知らせる)
 	aRec.mErrorSoundPath = [mErrorSound_TF stringValue];			//(エラーを知らせる音データ)
+	aRec.mNewMailGrowlEnable = ([mNewMailGrowl_CB intValue] != 0);	//(着信音で知らせる)
 	
 	if([mGeneralItem change:&aRec]){
 		//Pref書類を更新する
@@ -532,6 +588,7 @@ enum {
 	[mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
 	[mErrorSound_CB setIntValue:[mGeneralItem errorSoundEnable]];
 	[mErrorSound_TF setStringValue:[mGeneralItem errorSoundPath]];
+	[mNewMailGrowl_CB setIntValue:[mGeneralItem newMailGrowlEnable]];
 }
 
 //アカウントシートを表示する前に、その中身を準備する

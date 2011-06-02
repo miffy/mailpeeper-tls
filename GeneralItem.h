@@ -21,6 +21,7 @@ typedef struct {
 	NSString *mNewMailSoundPath;	//新規メールを知らせる音データのパス
 	BOOL mErrorSoundEnable;			//エラーを声で知らせるならYES
 	NSString *mErrorSoundPath;		//エラーを知らせる音データのパス
+	BOOL mNewMailGrowlEnable;		// Growlで新規メールを通知
 } GeneralItem_rec_t;
 
 @interface GeneralItem : NSObject /* <NSCoding> */ {	//一般設定
@@ -46,6 +47,7 @@ typedef struct {
 - (NSString *)newMailSoundPath;
 - (BOOL)errorSoundEnable;
 - (NSString *)errorSoundPath;
+- (BOOL)newMailGrowlEnable;
 
 @end
 

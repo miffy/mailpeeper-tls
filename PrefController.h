@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+//#import "GrowlApplicationBridge.h"
 
 @class GeneralItem;
 @class AccountItem;
@@ -35,6 +36,7 @@
 	IBOutlet NSButton *mErrorSound_CB;		//「エラー音」チェックボックス
 //	IBOutlet NSButton *mErrorSound_Button;	//「エラー音」ファイル選択ダイアログ立ち上げボタン
 	IBOutlet NSTextField *mErrorSound_TF;	//「エラー音」テキストフィールド
+	IBOutlet NSButton *mNewMailGrowl_CB;	//「Growlで通知」チェックボックス
 	
 	//(アウトレット - アカウント編集シート)
 	IBOutlet NSForm *mAccountForm;				//「アカウント名」〜「ユーザー名」
@@ -73,6 +75,7 @@
 - (void)speakError;
 - (void)notifyNewMailBySound;
 - (void)notifyErrorBySound;
+- (void)notifyNewMailByGrowl;
 @end
 
 // End Of File

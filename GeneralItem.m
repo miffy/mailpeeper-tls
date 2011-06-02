@@ -21,6 +21,7 @@
 #define NewMailSoundPath_Key	@"NewMailSoundPath"
 #define ErrorSoundEnable_Key	@"ErrorSoundEnable"
 #define ErrorSoundPath_Key		@"ErrorSoundPath"
+#define NewMailGrowlEnable_Key	@"NewMailGrowlEnable"
 
 @implementation GeneralItem
 
@@ -88,6 +89,12 @@
 - (NSString *)errorSoundPath
 {
 	return mR.mErrorSoundPath;
+}
+
+// Growlでお知らせが有効ならYES
+- (BOOL)newMailGrowlEnable
+{
+	return mR.mNewMailGrowlEnable;
 }
 
 
@@ -167,6 +174,7 @@
 		[mR.mErrorSoundPath autorelease];
 		mR.mErrorSoundPath = [aObj retain];
 	}	
+	mR.mNewMailGrowlEnable = [[aDict objectForKey:NewMailGrowlEnable_Key] boolValue];
 }
 
 //Pref書類に記録したい情報を返す
@@ -187,6 +195,7 @@
 	[aDict setObject:mR.mNewMailSoundPath forKey:NewMailSoundPath_Key];
 	[aDict setObject:[NSNumber numberWithBool:mR.mErrorSoundEnable] forKey:ErrorSoundEnable_Key];
 	[aDict setObject:mR.mErrorSoundPath forKey:ErrorSoundPath_Key];
+	[aDict setObject:[NSNumber numberWithBool:mR.mNewMailGrowlEnable] forKey:NewMailGrowlEnable_Key];
 	
 	return aDict;
 }
