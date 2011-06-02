@@ -143,12 +143,26 @@
 		B58950D5139650B5004E056C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B478741396435000829F1E /* Growl.framework */; };
 		B58950D6139650B5004E056C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		B58950D7139650B5004E056C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
+		B58950DE13965BEE004E056C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5B478741396435000829F1E /* Growl.framework */; };
 		B589CF9912AE47520067618A /* TlsTCPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B589CF9812AE47520067618A /* TlsTCPClient.m */; };
 		B589CF9B12AE47A40067618A /* TlsTCPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B589CF9A12AE47A40067618A /* TlsTCPClient.h */; };
 		B5A9714712C3868500A05133 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714412C3868500A05133 /* libcrypto.dylib */; };
 		B5A9714812C3868500A05133 /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714512C3868500A05133 /* libssl.dylib */; };
 		B5A9714912C3868500A05133 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714612C3868500A05133 /* libz.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B58950DB13965B37004E056C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B58950DE13965BEE004E056C /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -687,6 +701,7 @@
 				B503F84A129BD1B600A54AFF /* Sources */,
 				B503F85B129BD1B600A54AFF /* Frameworks */,
 				B550AA9F12B7A5C200857CC8 /* ShellScript */,
+				B58950DB13965B37004E056C /* CopyFiles */,
 			);
 			buildRules = (
 			);
