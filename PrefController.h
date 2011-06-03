@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-//#import "GrowlApplicationBridge.h"
+#import <Growl/Growl.h>
 
 @class GeneralItem;
 @class AccountItem;
 @class AppController;
 
-@interface PrefController : NSObject
+@interface PrefController : NSObject<GrowlApplicationBridgeDelegate>
 {
 	//(アウトレット)
 	IBOutlet NSWindow *mGeneralSheet;		//巡回の設定シート

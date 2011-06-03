@@ -149,6 +149,10 @@
 		B5A9714712C3868500A05133 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714412C3868500A05133 /* libcrypto.dylib */; };
 		B5A9714812C3868500A05133 /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714512C3868500A05133 /* libssl.dylib */; };
 		B5A9714912C3868500A05133 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714612C3868500A05133 /* libz.dylib */; };
+		B5E90E1013990DC400FFA619 /* Growl.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E90E0C13990DC400FFA619 /* Growl.h */; };
+		B5E90E1113990DC400FFA619 /* GrowlApplicationBridge-Carbon.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E90E0D13990DC400FFA619 /* GrowlApplicationBridge-Carbon.h */; };
+		B5E90E1213990DC400FFA619 /* GrowlApplicationBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E90E0E13990DC400FFA619 /* GrowlApplicationBridge.h */; };
+		B5E90E1313990DC400FFA619 /* GrowlDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E90E0F13990DC400FFA619 /* GrowlDefines.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -251,6 +255,10 @@
 		B5A9714512C3868500A05133 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libssl.dylib; sourceTree = "<group>"; };
 		B5A9714612C3868500A05133 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.dylib; sourceTree = "<group>"; };
 		B5B478741396435000829F1E /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = growl/Growl.framework; sourceTree = "<group>"; };
+		B5E90E0C13990DC400FFA619 /* Growl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growl.h; sourceTree = "<group>"; };
+		B5E90E0D13990DC400FFA619 /* GrowlApplicationBridge-Carbon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GrowlApplicationBridge-Carbon.h"; sourceTree = "<group>"; };
+		B5E90E0E13990DC400FFA619 /* GrowlApplicationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlApplicationBridge.h; sourceTree = "<group>"; };
+		B5E90E0F13990DC400FFA619 /* GrowlDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlDefines.h; sourceTree = "<group>"; };
 		D6360B420402A355009CA739 /* AddressBookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookController.h; sourceTree = "<group>"; };
 		D6360B430402A355009CA739 /* AddressBookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookController.m; sourceTree = "<group>"; };
 		D6360B4E0402A629009CA739 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
@@ -385,6 +393,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B5E90E0B13990D9600FFA619 /* growl */,
 				B537543A12B81B3400C6473C /* openssl */,
 				D6CBB56804ADDA650025594E /* mailpeeper-Menu_Prefix.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -497,6 +506,17 @@
 			path = openssl;
 			sourceTree = "<group>";
 		};
+		B5E90E0B13990D9600FFA619 /* growl */ = {
+			isa = PBXGroup;
+			children = (
+				B5E90E0C13990DC400FFA619 /* Growl.h */,
+				B5E90E0D13990DC400FFA619 /* GrowlApplicationBridge-Carbon.h */,
+				B5E90E0E13990DC400FFA619 /* GrowlApplicationBridge.h */,
+				B5E90E0F13990DC400FFA619 /* GrowlDefines.h */,
+			);
+			name = growl;
+			sourceTree = "<group>";
+		};
 		D6615AB203B6D7FC00E1D998 /* appleScript */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +616,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E90E1013990DC400FFA619 /* Growl.h in Headers */,
+				B5E90E1113990DC400FFA619 /* GrowlApplicationBridge-Carbon.h in Headers */,
+				B5E90E1213990DC400FFA619 /* GrowlApplicationBridge.h in Headers */,
+				B5E90E1313990DC400FFA619 /* GrowlDefines.h in Headers */,
 				B503F820129BD1B600A54AFF /* AppController.h in Headers */,
 				B503F821129BD1B600A54AFF /* Misc.h in Headers */,
 				B503F822129BD1B600A54AFF /* PrefController.h in Headers */,

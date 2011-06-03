@@ -13,7 +13,8 @@
 #import "GeneralItem.h"
 #import "Misc.h"
 #include <unistd.h>
-//#import "Growl.h"
+#import <Growl/Growl.h>
+#import <Growl/GrowlDefines.h>
 
 #define GENERAL_DICT	@"GENERAL_DICT"			//巡回の設定の保存キー
 #define	ACCOUNT_ITEM	@"ACCOUNT_ITEM_Ver1"	//アカウント設定の保存キー
@@ -284,6 +285,12 @@ enum {
 		selector: @selector(receiveWakeNotification:) 
 		name: NSWorkspaceDidWakeNotification object: NULL];
 	
+	// for growl
+//	[GrowlApplicationBridge setGrowlDelegate:self];
+	NSDictionary *note = [self registrationDictionaryForGrowl];
+	[GrowlApplicationBridge registerWithDictionary:note];
+	[GrowlApplicationBridge registerWithDictionary:note];	// 何故か二回叩かないとGrowlに登録されない。
+	
 }
 
 //操作ボタンが押されたときに呼ばれる
@@ -410,41 +417,49 @@ enum {
 		} else {
 			NSLog(@"Could not load Growl.framework");
 		}
-		NSDictionary *regDict = [self registrationDictionaryFromDelegate];
+//		NSDictionary *regDict = [self registrationDictionaryFromDelegate];
 //		NSDictionary * regDict = [GrowlApplicationBridge registrationDictionaryFromBundle: growlBundle];
-		[GrowlApplicationBridge registerWithDictionary:regDict];
+//		[GrowlApplicationBridge registerWithDictionary:regDict];
 		
+	// if (growlBundle && [growlBundle load]) {
+	// Register ourselves as a Growl delegate
+	//		[GrowlApplicationBridge setGrowlDelegate:self];
 		
-		[GrowlApplicationBridge notifyWithTitle: @"Test Notification"
-									description: @"Test Notification"
-							   notificationName: @"This is a test AppleScript notification."
-									   iconData: nil
-									   priority: 0
-									   isSticky: NO
-								   clickContext: nil
-									 identifier: @"Growl AppleScript Sample"];
-	}
+//	}
+//	else {
+//		NSLog(@"ERROR: Could not load Growl.framework");
+//	}
+#else
+		NSDictionary *note = [self registrationDictionaryForGrowl];
+		NSLog(@"Working with %@",note);
+//		[GrowlApplicationBridge registerWithDictionary:note];
+//		[GrowlApplicationBridge registerWithDictionary:note];
+//		[GrowlApplicationBridge reregisterGrowlNotifications];
+//		[GrowlApplicationBridge notifyWithDictionary:note];
+		[GrowlApplicationBridge notifyWithTitle: @"たいとる"////GROWL_NOTIFICATION_TITLE//Test Notification"
+									description: @"ですくりぷしょん"//GROWL_NOTIFICATION_DESCRIPTION
+							   notificationName: @"通知"//GROWL_NOTIFICATION_NAME//This is a test notification."
+									   iconData: nil//GROWL_NOTIFICATION_ICON//
+									   priority: 0//GROWL_NOTIFICATION_PRIORITY//0
+									   isSticky: 0//GROWL_NOTIFICATION_STICKY//NO
+								   clickContext: @"くりっくこんてきすと"//GROWL_NOTIFICATION_CLICK_CONTEXT//nil
+									 identifier: @""//GROWL_NOTIFICATION_IDENTIFIER];
+		 ];
 
-	
-	NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
-	NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
-	NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
-	
-	if (growlBundle && [growlBundle load]) {
-		// Register ourselves as a Growl delegate
-		[GrowlApplicationBridge setGrowlDelegate:self];
-		
-		[GrowlApplicationBridge notifyWithTitle:@"Alert"
-									description:@"Hello!"
-							   notificationName:@"Example Notification"
-									   iconData:nil
-									   priority:0
-									   isSticky:NO
-								   clickContext:[NSDate date]];
-	}
-	else {
-		NSLog(@"ERROR: Could not load Growl.framework");
-	}
+
+/*		[GrowlApplicationBridge notifyWithTitle:[note objectForKey:GROWL_NOTIFICATION_TITLE]
+									description:[note objectForKey:GROWL_NOTIFICATION_DESCRIPTION]
+							   notificationName:[note objectForKey:GROWL_NOTIFICATION_NAME]
+									   iconData:[note objectForKey:GROWL_NOTIFICATION_ICON]
+									   priority:[[note objectForKey:GROWL_NOTIFICATION_PRIORITY] intValue]
+									   isSticky:[[note objectForKey:GROWL_NOTIFICATION_STICKY] boolValue]
+								   clickContext:(([note objectForKey:GROWL_NOTIFICATION_CLICK_CONTEXT] && [[note objectForKey:GROWL_NOTIFICATION_CLICK_CONTEXT] length])
+												 ? [note objectForKey:GROWL_NOTIFICATION_CLICK_CONTEXT]
+												 : nil)
+									 identifier:([[note objectForKey:GROWL_NOTIFICATION_IDENTIFIER] length] ?
+												 [note objectForKey:GROWL_NOTIFICATION_IDENTIFIER] :
+												 nil)];	
+*/		
 #endif
 }
 
@@ -722,6 +737,52 @@ enum {
 	}
 }
 
+	
+#define CLICK_RECEIVED_NOTIFICATION_NAME @"BeepHammer Click Received"
+#define CLICK_TIMED_OUT_NOTIFICATION_NAME @"BeepHammer Click Timed Out"
+	
+NSMutableArray			*notifications = nil;			// The Array of notifications
+
+	//Return the registration dictionary
+- (NSDictionary *)registrationDictionaryForGrowl {
+	
+	NSMutableArray *defNotesArray = [NSMutableArray array];
+	NSMutableArray *allNotesArray = [NSMutableArray array];
+	NSNumber *isDefaultNum;
+//	NSUInteger numNotifications = [notifications count];
+//	NSUInteger i;
+	
+	//Build an array of all notifications we want to use
+/*	for (i = 0U; i < numNotifications; ++i) {
+		NSDictionary *def = [notifications objectAtIndex:i];
+		[allNotesArray addObject:[def objectForKey:GROWL_NOTIFICATION_NAME]];
+		
+		isDefaultNum = [def objectForKey:GROWL_NOTIFICATION_DEFAULT];
+		if (isDefaultNum && [isDefaultNum boolValue])
+			[defNotesArray addObject:[NSNumber numberWithUnsignedInteger:i]];
+	}
+*/
+	NSDictionary *def = [notifications objectAtIndex:1];
+//	[allNotesArray addObject:[def objectForKey:GROWL_NOTIFICATION_NAME]];
+	
+	isDefaultNum = [def objectForKey:GROWL_NOTIFICATIONS_DEFAULT];
+	if (isDefaultNum && [isDefaultNum boolValue])
+		[defNotesArray addObject:[NSNumber numberWithUnsignedInteger:0]];
+
+	[allNotesArray addObject:CLICK_RECEIVED_NOTIFICATION_NAME];
+	[allNotesArray addObject:CLICK_TIMED_OUT_NOTIFICATION_NAME];
+	
+	//Set these notifications both for ALL (all possibilites) and DEFAULT (the ones enabled by default)
+	NSDictionary *regDict = [NSDictionary dictionaryWithObjectsAndKeys:
+							 allNotesArray, GROWL_NOTIFICATIONS_ALL,
+							 defNotesArray, GROWL_NOTIFICATIONS_DEFAULT,
+							 nil];
+	
+	NSLog(@"Registering with %@",regDict);
+	return regDict;
+}
+	
+	
 
 @end
 
