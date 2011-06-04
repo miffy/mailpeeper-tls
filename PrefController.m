@@ -436,9 +436,9 @@ enum {
 //		[GrowlApplicationBridge registerWithDictionary:note];
 //		[GrowlApplicationBridge reregisterGrowlNotifications];
 //		[GrowlApplicationBridge notifyWithDictionary:note];
-		[GrowlApplicationBridge notifyWithTitle: @"たいとる"////GROWL_NOTIFICATION_TITLE//Test Notification"
+		[GrowlApplicationBridge notifyWithTitle: @"title"////GROWL_NOTIFICATION_TITLE//Test Notification"
 									description: @"ですくりぷしょん"//GROWL_NOTIFICATION_DESCRIPTION
-							   notificationName: @"通知"//GROWL_NOTIFICATION_NAME//This is a test notification."
+							   notificationName: @""//GROWL_NOTIFICATION_NAME//This is a test notification."
 									   iconData: nil//GROWL_NOTIFICATION_ICON//
 									   priority: 0//GROWL_NOTIFICATION_PRIORITY//0
 									   isSticky: 0//GROWL_NOTIFICATION_STICKY//NO
@@ -746,6 +746,7 @@ NSMutableArray			*notifications = nil;			// The Array of notifications
 	//Return the registration dictionary
 - (NSDictionary *)registrationDictionaryForGrowl {
 	
+#if 0
 	NSMutableArray *defNotesArray = [NSMutableArray array];
 	NSMutableArray *allNotesArray = [NSMutableArray array];
 	NSNumber *isDefaultNum;
@@ -768,12 +769,21 @@ NSMutableArray			*notifications = nil;			// The Array of notifications
 	isDefaultNum = [def objectForKey:GROWL_NOTIFICATIONS_DEFAULT];
 	if (isDefaultNum && [isDefaultNum boolValue])
 		[defNotesArray addObject:[NSNumber numberWithUnsignedInteger:0]];
-
+#endif
+	NSMutableArray *defNotesArray = [NSMutableArray array];
+	NSMutableArray *allNotesArray = [NSMutableArray array];
+	NSMutableArray *applicationArray = [NSMutableArray array];
+	
+	[allNotesArray addObject:@"title"];	
 	[allNotesArray addObject:CLICK_RECEIVED_NOTIFICATION_NAME];
 	[allNotesArray addObject:CLICK_TIMED_OUT_NOTIFICATION_NAME];
+	[defNotesArray addObject:@""];	
+	[applicationArray addObject:@"mailpeeper-tls"];
 	
 	//Set these notifications both for ALL (all possibilites) and DEFAULT (the ones enabled by default)
 	NSDictionary *regDict = [NSDictionary dictionaryWithObjectsAndKeys:
+//							 applicationArray, GROWL_APP_NAME,
+							 @"mailpeeper-tls", GROWL_APP_NAME,
 							 allNotesArray, GROWL_NOTIFICATIONS_ALL,
 							 defNotesArray, GROWL_NOTIFICATIONS_DEFAULT,
 							 nil];
