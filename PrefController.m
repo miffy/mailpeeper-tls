@@ -65,7 +65,6 @@ enum {
 - (void)walkAccountProc:(BOOL)iStop;
 - (void)timerProc:(NSTimer *)iTimer;
 - (void)receiveWakeNotification:(NSNotification *)notification;
-;
 @end
 
 @implementation PrefController	
@@ -430,22 +429,28 @@ enum {
 //		NSLog(@"ERROR: Could not load Growl.framework");
 //	}
 #else
-		NSDictionary *note = [self registrationDictionaryForGrowl];
-		NSLog(@"Working with %@",note);
+		NSBundle *myBundle = [NSBundle bundleForClass:[PrefController class]];
+		NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
+		NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
+		
+		if (growlBundle && [growlBundle load]) 
+		{
+			NSDictionary *note = [self registrationDictionaryForGrowl];
+			NSLog(@"Working with %@",note);
 //		[GrowlApplicationBridge registerWithDictionary:note];
 //		[GrowlApplicationBridge registerWithDictionary:note];
 //		[GrowlApplicationBridge reregisterGrowlNotifications];
 //		[GrowlApplicationBridge notifyWithDictionary:note];
 		[GrowlApplicationBridge notifyWithTitle: @"title"////GROWL_NOTIFICATION_TITLE//Test Notification"
 									description: @"ですくりぷしょん"//GROWL_NOTIFICATION_DESCRIPTION
-							   notificationName: @""//GROWL_NOTIFICATION_NAME//This is a test notification."
+							   notificationName: @"mailpeeper"//GROWL_NOTIFICATION_NAME//This is a test notification."
 									   iconData: nil//GROWL_NOTIFICATION_ICON//
 									   priority: 0//GROWL_NOTIFICATION_PRIORITY//0
 									   isSticky: 0//GROWL_NOTIFICATION_STICKY//NO
-								   clickContext: @"くりっくこんてきすと"//GROWL_NOTIFICATION_CLICK_CONTEXT//nil
-									 identifier: @""//GROWL_NOTIFICATION_IDENTIFIER];
+								   clickContext: [NSDate date]//GROWL_NOTIFICATION_CLICK_CONTEXT//nil
+									 identifier: @"mailpeeper"//GROWL_NOTIFICATION_IDENTIFIER];
 		 ];
-
+		}
 
 /*		[GrowlApplicationBridge notifyWithTitle:[note objectForKey:GROWL_NOTIFICATION_TITLE]
 									description:[note objectForKey:GROWL_NOTIFICATION_DESCRIPTION]
@@ -740,11 +745,13 @@ enum {
 	
 #define CLICK_RECEIVED_NOTIFICATION_NAME @"BeepHammer Click Received"
 #define CLICK_TIMED_OUT_NOTIFICATION_NAME @"BeepHammer Click Timed Out"
+#define APPLICATION_NAME @"mailpeeper"
 	
 NSMutableArray			*notifications = nil;			// The Array of notifications
 
 	//Return the registration dictionary
-- (NSDictionary *)registrationDictionaryForGrowl {
+- (NSDictionary *)registrationDictionaryForGrowl
+{
 	
 #if 0
 	NSMutableArray *defNotesArray = [NSMutableArray array];
@@ -774,10 +781,10 @@ NSMutableArray			*notifications = nil;			// The Array of notifications
 	NSMutableArray *allNotesArray = [NSMutableArray array];
 	NSMutableArray *applicationArray = [NSMutableArray array];
 	
-	[allNotesArray addObject:@"title"];	
+	[allNotesArray addObject:APPLICATION_NAME];	
 	[allNotesArray addObject:CLICK_RECEIVED_NOTIFICATION_NAME];
 	[allNotesArray addObject:CLICK_TIMED_OUT_NOTIFICATION_NAME];
-	[defNotesArray addObject:@""];	
+	[defNotesArray addObject:APPLICATION_NAME];	
 	[applicationArray addObject:@"mailpeeper-tls"];
 	
 	//Set these notifications both for ALL (all possibilites) and DEFAULT (the ones enabled by default)
