@@ -13,8 +13,6 @@
 #import "GeneralItem.h"
 #import "Misc.h"
 #include <unistd.h>
-#import <Growl/Growl.h>
-#import <Growl/GrowlDefines.h>
 
 #define GENERAL_DICT	@"GENERAL_DICT"			//巡回の設定の保存キー
 #define	ACCOUNT_ITEM	@"ACCOUNT_ITEM_Ver1"	//アカウント設定の保存キー
@@ -385,7 +383,7 @@ enum {
 		[mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
 		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];
 		[snd play];
-		//[snd dealloc];	//EXC_BAD_ACCESSになっちゃうのでやらない。後始末しなくて良いのかな。
+		[snd release];	// 明示して開放すべきモノ？
 	}
 }
 
@@ -394,78 +392,55 @@ enum {
 {
 	if([mGeneralItem errorSoundEnable]){
 		[mErrorSound_TF setStringValue:[mGeneralItem errorSoundPath]];
-		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] byReference:YES];
+		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] 
+							byReference:YES];
 		[snd play];
-		//[snd dealloc];	//EXC_BAD_ACCESSになっちゃうのでやらない
+		[snd release];	// deallocだとEXC_BAD_ACCESSになっちゃう
 	}
 }
 
 //新規メールがあることをGrowlのウインドウで伝える(ただし選択されているときのみ)
 - (void)notifyNewMailByGrowl
 {
-#if 0
 	if([mGeneralItem newMailGrowlEnable])
 	{
-//		NSBundle *myBundle = [NSBundle bundleForClass:[MyMainClass class]];
-		NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
-		NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent: @"Growl.framework"];
-		NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
-		if (growlBundle && [growlBundle load])
-		{ // Register ourselves as a Growl delegate 
-			[GrowlApplicationBridge setGrowlDelegate:self];
-		} else {
-			NSLog(@"Could not load Growl.framework");
-		}
 //		NSDictionary *regDict = [self registrationDictionaryFromDelegate];
 //		NSDictionary * regDict = [GrowlApplicationBridge registrationDictionaryFromBundle: growlBundle];
 //		[GrowlApplicationBridge registerWithDictionary:regDict];
 		
-	// if (growlBundle && [growlBundle load]) {
-	// Register ourselves as a Growl delegate
-	//		[GrowlApplicationBridge setGrowlDelegate:self];
-		
-//	}
-//	else {
-//		NSLog(@"ERROR: Could not load Growl.framework");
-//	}
-#else
 		NSBundle *myBundle = [NSBundle bundleForClass:[PrefController class]];
-		NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
+		NSString *growlPath = [[myBundle privateFrameworksPath] 
+							   stringByAppendingPathComponent:@"Growl.framework"];
 		NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
 		
 		if (growlBundle && [growlBundle load]) 
 		{
-			NSDictionary *note = [self registrationDictionaryForGrowl];
-			NSLog(@"Working with %@",note);
-//		[GrowlApplicationBridge registerWithDictionary:note];
+//			NSDictionary *note = [self registrationDictionaryForGrowl];
+//			NSLog(@"Working with %@",note);
 //		[GrowlApplicationBridge registerWithDictionary:note];
 //		[GrowlApplicationBridge reregisterGrowlNotifications];
 //		[GrowlApplicationBridge notifyWithDictionary:note];
-		[GrowlApplicationBridge notifyWithTitle: @"title"////GROWL_NOTIFICATION_TITLE//Test Notification"
-									description: @"ですくりぷしょん"//GROWL_NOTIFICATION_DESCRIPTION
-							   notificationName: @"mailpeeper"//GROWL_NOTIFICATION_NAME//This is a test notification."
-									   iconData: nil//GROWL_NOTIFICATION_ICON//
-									   priority: 0//GROWL_NOTIFICATION_PRIORITY//0
-									   isSticky: 0//GROWL_NOTIFICATION_STICKY//NO
-								   clickContext: [NSDate date]//GROWL_NOTIFICATION_CLICK_CONTEXT//nil
-									 identifier: @"mailpeeper"//GROWL_NOTIFICATION_IDENTIFIER];
-		 ];
-		}
 
-/*		[GrowlApplicationBridge notifyWithTitle:[note objectForKey:GROWL_NOTIFICATION_TITLE]
-									description:[note objectForKey:GROWL_NOTIFICATION_DESCRIPTION]
-							   notificationName:[note objectForKey:GROWL_NOTIFICATION_NAME]
-									   iconData:[note objectForKey:GROWL_NOTIFICATION_ICON]
-									   priority:[[note objectForKey:GROWL_NOTIFICATION_PRIORITY] intValue]
-									   isSticky:[[note objectForKey:GROWL_NOTIFICATION_STICKY] boolValue]
-								   clickContext:(([note objectForKey:GROWL_NOTIFICATION_CLICK_CONTEXT] && [[note objectForKey:GROWL_NOTIFICATION_CLICK_CONTEXT] length])
-												 ? [note objectForKey:GROWL_NOTIFICATION_CLICK_CONTEXT]
-												 : nil)
-									 identifier:([[note objectForKey:GROWL_NOTIFICATION_IDENTIFIER] length] ?
-												 [note objectForKey:GROWL_NOTIFICATION_IDENTIFIER] :
-												 nil)];	
-*/		
-#endif
+			// Register ourselves as a Growl delegate
+			[GrowlApplicationBridge setGrowlDelegate:self];		// ここがネックだったみたい。
+			
+			[GrowlApplicationBridge notifyWithTitle: @"title"			//GROWL_NOTIFICATION_TITLE
+										description: @"ですくりぷしょん"	//GROWL_NOTIFICATION_DESCRIPTION
+								   notificationName: @"mailpeeper"		//登録した名前と合わせる
+										   iconData: nil				//GROWL_NOTIFICATION_ICON
+										   priority: 0					//GROWL_NOTIFICATION_PRIORITY
+										   isSticky: NO					//GROWL_NOTIFICATION_STICKY
+									   clickContext: [NSDate date]	//GROWL_NOTIFICATION_CLICK_CONTEXT//nil
+										 identifier: GROWL_NOTIFICATION_IDENTIFIER
+			];
+		}else{
+			NSLog(@"ERROR: Could not load Growl.framework");
+		}
+		
+		[myBundle release];
+		[growlPath release];
+		[growlBundle release];
+	}
 }
 
 
@@ -743,53 +718,21 @@ enum {
 }
 
 	
-#define CLICK_RECEIVED_NOTIFICATION_NAME @"BeepHammer Click Received"
-#define CLICK_TIMED_OUT_NOTIFICATION_NAME @"BeepHammer Click Timed Out"
 #define APPLICATION_NAME @"mailpeeper"
 	
-NSMutableArray			*notifications = nil;			// The Array of notifications
-
 	//Return the registration dictionary
 - (NSDictionary *)registrationDictionaryForGrowl
 {
-	
-#if 0
-	NSMutableArray *defNotesArray = [NSMutableArray array];
-	NSMutableArray *allNotesArray = [NSMutableArray array];
-	NSNumber *isDefaultNum;
-//	NSUInteger numNotifications = [notifications count];
-//	NSUInteger i;
-	
-	//Build an array of all notifications we want to use
-/*	for (i = 0U; i < numNotifications; ++i) {
-		NSDictionary *def = [notifications objectAtIndex:i];
-		[allNotesArray addObject:[def objectForKey:GROWL_NOTIFICATION_NAME]];
-		
-		isDefaultNum = [def objectForKey:GROWL_NOTIFICATION_DEFAULT];
-		if (isDefaultNum && [isDefaultNum boolValue])
-			[defNotesArray addObject:[NSNumber numberWithUnsignedInteger:i]];
-	}
-*/
-	NSDictionary *def = [notifications objectAtIndex:1];
-//	[allNotesArray addObject:[def objectForKey:GROWL_NOTIFICATION_NAME]];
-	
-	isDefaultNum = [def objectForKey:GROWL_NOTIFICATIONS_DEFAULT];
-	if (isDefaultNum && [isDefaultNum boolValue])
-		[defNotesArray addObject:[NSNumber numberWithUnsignedInteger:0]];
-#endif
 	NSMutableArray *defNotesArray = [NSMutableArray array];
 	NSMutableArray *allNotesArray = [NSMutableArray array];
 	NSMutableArray *applicationArray = [NSMutableArray array];
 	
-	[allNotesArray addObject:APPLICATION_NAME];	
-	[allNotesArray addObject:CLICK_RECEIVED_NOTIFICATION_NAME];
-	[allNotesArray addObject:CLICK_TIMED_OUT_NOTIFICATION_NAME];
+	[allNotesArray addObject:APPLICATION_NAME];
 	[defNotesArray addObject:APPLICATION_NAME];	
 	[applicationArray addObject:@"mailpeeper-tls"];
 	
 	//Set these notifications both for ALL (all possibilites) and DEFAULT (the ones enabled by default)
 	NSDictionary *regDict = [NSDictionary dictionaryWithObjectsAndKeys:
-//							 applicationArray, GROWL_APP_NAME,
 							 @"mailpeeper-tls", GROWL_APP_NAME,
 							 allNotesArray, GROWL_NOTIFICATIONS_ALL,
 							 defNotesArray, GROWL_NOTIFICATIONS_DEFAULT,
