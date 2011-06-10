@@ -404,10 +404,6 @@ enum {
 {
 	if([mGeneralItem newMailGrowlEnable])
 	{
-//		NSDictionary *regDict = [self registrationDictionaryFromDelegate];
-//		NSDictionary * regDict = [GrowlApplicationBridge registrationDictionaryFromBundle: growlBundle];
-//		[GrowlApplicationBridge registerWithDictionary:regDict];
-		
 		NSBundle *myBundle = [NSBundle bundleForClass:[PrefController class]];
 		NSString *growlPath = [[myBundle privateFrameworksPath] 
 							   stringByAppendingPathComponent:@"Growl.framework"];
@@ -415,12 +411,6 @@ enum {
 		
 		if (growlBundle && [growlBundle load]) 
 		{
-//			NSDictionary *note = [self registrationDictionaryForGrowl];
-//			NSLog(@"Working with %@",note);
-//		[GrowlApplicationBridge registerWithDictionary:note];
-//		[GrowlApplicationBridge reregisterGrowlNotifications];
-//		[GrowlApplicationBridge notifyWithDictionary:note];
-
 			// Register ourselves as a Growl delegate
 			[GrowlApplicationBridge setGrowlDelegate:self];		// ここがネックだったみたい。
 			NSUInteger mailNum = [mPeepedItemArray count];
