@@ -75,7 +75,7 @@
 - (void)speakError;
 - (void)notifyNewMailBySound;
 - (void)notifyErrorBySound;
-- (void)notifyNewMailByGrowl;
+- (void)notifyNewMailByGrowl:(NSMutableArray *)mPeepedItemArray;
 @end
 
 // End Of File

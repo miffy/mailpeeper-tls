@@ -442,7 +442,7 @@ enum {
                 
 		[mPrefController speakNewMail];			
 		[mPrefController notifyNewMailBySound];	//tls
-		[mPrefController notifyNewMailByGrowl];	//tls
+		[mPrefController notifyNewMailByGrowl: mPeepedItemArray];	//tls
 	}else{
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"NSApplicationIcon"]];
                 

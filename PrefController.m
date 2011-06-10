@@ -12,6 +12,7 @@
 #import "AppController.h"
 #import "GeneralItem.h"
 #import "Misc.h"
+#import "PeepedItem.h"
 #include <unistd.h>
 
 #define GENERAL_DICT	@"GENERAL_DICT"			//巡回の設定の保存キー
@@ -286,8 +287,7 @@ enum {
 //	[GrowlApplicationBridge setGrowlDelegate:self];
 	NSDictionary *note = [self registrationDictionaryForGrowl];
 	[GrowlApplicationBridge registerWithDictionary:note];
-	[GrowlApplicationBridge registerWithDictionary:note];	// 何故か二回叩かないとGrowlに登録されない。
-	
+	[GrowlApplicationBridge registerWithDictionary:note];	// 何故か二回叩かないとGrowlに登録されない。	
 }
 
 //操作ボタンが押されたときに呼ばれる
@@ -400,7 +400,7 @@ enum {
 }
 
 //新規メールがあることをGrowlのウインドウで伝える(ただし選択されているときのみ)
-- (void)notifyNewMailByGrowl
+- (void)notifyNewMailByGrowl : (NSMutableArray *)mPeepedItemArray
 {
 	if([mGeneralItem newMailGrowlEnable])
 	{
@@ -423,16 +423,23 @@ enum {
 
 			// Register ourselves as a Growl delegate
 			[GrowlApplicationBridge setGrowlDelegate:self];		// ここがネックだったみたい。
+			NSUInteger mailNum = [mPeepedItemArray count];
+			int cnt;
+			for(cnt=0; cnt < mailNum; cnt++)
+			{
+				PeepedItem* pi = [mPeepedItemArray objectAtIndex:cnt];
+				[GrowlApplicationBridge notifyWithTitle: [pi from]			//長いと適度な所で文字列は切れる
+											description: [pi subject]		//文字列の最後まで出るみたい
+									   notificationName: @"mailpeeper"		//登録した名前と合わせる
+											   iconData: nil				//GROWL_NOTIFICATION_ICON
+											   priority: 0					//GROWL_NOTIFICATION_PRIORITY
+											   isSticky: NO					//GROWL_NOTIFICATION_STICKY
+										   clickContext: [NSDate date]		//GROWL_NOTIFICATION_CLICK_CONTEXT
+											 identifier: nil				//				 
+				];
+				
+			} 
 			
-			[GrowlApplicationBridge notifyWithTitle: @"title"			//GROWL_NOTIFICATION_TITLE
-										description: @"ですくりぷしょん"	//GROWL_NOTIFICATION_DESCRIPTION
-								   notificationName: @"mailpeeper"		//登録した名前と合わせる
-										   iconData: nil				//GROWL_NOTIFICATION_ICON
-										   priority: 0					//GROWL_NOTIFICATION_PRIORITY
-										   isSticky: NO					//GROWL_NOTIFICATION_STICKY
-									   clickContext: [NSDate date]	//GROWL_NOTIFICATION_CLICK_CONTEXT//nil
-										 identifier: GROWL_NOTIFICATION_IDENTIFIER
-			];
 		}else{
 			NSLog(@"ERROR: Could not load Growl.framework");
 		}
