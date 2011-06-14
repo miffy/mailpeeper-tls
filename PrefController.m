@@ -17,6 +17,9 @@
 
 #define GENERAL_DICT	@"GENERAL_DICT"			//巡回の設定の保存キー
 #define	ACCOUNT_ITEM	@"ACCOUNT_ITEM_Ver1"	//アカウント設定の保存キー
+#define NOTIFY_NAME		@"recieved mail(s)"
+
+
 
 //操作ボタンのタグ
 enum {
@@ -64,6 +67,7 @@ enum {
 - (void)walkAccountProc:(BOOL)iStop;
 - (void)timerProc:(NSTimer *)iTimer;
 - (void)receiveWakeNotification:(NSNotification *)notification;
+- (void)growlNotificationWasClicked:(id)clickContext;
 @end
 
 @implementation PrefController	
@@ -284,7 +288,6 @@ enum {
 		name: NSWorkspaceDidWakeNotification object: NULL];
 	
 	// for growl
-//	[GrowlApplicationBridge setGrowlDelegate:self];
 	NSDictionary *note = [self registrationDictionaryForGrowl];
 	[GrowlApplicationBridge registerWithDictionary:note];
 	[GrowlApplicationBridge registerWithDictionary:note];	// 何故か二回叩かないとGrowlに登録されない。	
@@ -404,42 +407,34 @@ enum {
 {
 	if([mGeneralItem newMailGrowlEnable])
 	{
-		NSBundle *myBundle = [NSBundle bundleForClass:[PrefController class]];
-		NSString *growlPath = [[myBundle privateFrameworksPath] 
-							   stringByAppendingPathComponent:@"Growl.framework"];
-		NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
-		
-		if (growlBundle && [growlBundle load]) 
+		// Register ourselves as a Growl delegate
+		[GrowlApplicationBridge setGrowlDelegate:self];		// ここがネックだったみたい。
+		NSUInteger mailNum = [mPeepedItemArray count];
+		int cnt;
+		for(cnt=0; cnt < mailNum; cnt++)
 		{
-			// Register ourselves as a Growl delegate
-			[GrowlApplicationBridge setGrowlDelegate:self];		// ここがネックだったみたい。
-			NSUInteger mailNum = [mPeepedItemArray count];
-			int cnt;
-			for(cnt=0; cnt < mailNum; cnt++)
-			{
-				PeepedItem* pi = [mPeepedItemArray objectAtIndex:cnt];
-				[GrowlApplicationBridge notifyWithTitle: [pi from]			//長いと適度な所で文字列は切れる
-											description: [pi subject]		//文字列の最後まで出るみたい
-									   notificationName: @"mailpeeper"		//登録した名前と合わせる
-											   iconData: nil				//GROWL_NOTIFICATION_ICON
-											   priority: 0					//GROWL_NOTIFICATION_PRIORITY
-											   isSticky: NO					//GROWL_NOTIFICATION_STICKY
-										   clickContext: [NSDate date]		//GROWL_NOTIFICATION_CLICK_CONTEXT
-											 identifier: nil				//				 
-				];
-				
-			} 
-			
-		}else{
-			NSLog(@"ERROR: Could not load Growl.framework");
+			PeepedItem* pi = [mPeepedItemArray objectAtIndex:cnt];
+			[GrowlApplicationBridge notifyWithTitle: [pi from]			//長いと適度な所で文字列は切れる
+										description: [pi subject]		//文字列の最後まで出るみたい
+								   notificationName: NOTIFY_NAME		//登録した名前と合わせる
+										   iconData: nil				//GROWL_NOTIFICATION_ICON
+										   priority: 0					//GROWL_NOTIFICATION_PRIORITY
+										   isSticky: NO					//YESだとクリックされるまでウィジェットが消えない
+									   clickContext: [NSDate date]		//nilだとgrowlNotificationWasClicked:が動かない
+										 identifier: nil				//				 
+			];				
 		}
-		
-		[myBundle release];
-		[growlPath release];
-		[growlBundle release];
 	}
 }
 
+// ウィジェットクリックでメーラーが立ち上がる。
+- (void) growlNotificationWasClicked:(id)clickContext
+{
+	NSLog(@"growlNotificationWasClicked called %@",clickContext);
+	// 入れるかどうか迷う所。WindowsのShellExecute()的な動作？
+//	[[NSWorkspace sharedWorkspace] openFile:@"/Applications/network/Thunderbird.app/"];
+	
+}
 
 @end
 
@@ -715,18 +710,14 @@ enum {
 }
 
 	
-#define APPLICATION_NAME @"mailpeeper"
-	
 	//Return the registration dictionary
 - (NSDictionary *)registrationDictionaryForGrowl
 {
 	NSMutableArray *defNotesArray = [NSMutableArray array];
 	NSMutableArray *allNotesArray = [NSMutableArray array];
-	NSMutableArray *applicationArray = [NSMutableArray array];
 	
-	[allNotesArray addObject:APPLICATION_NAME];
-	[defNotesArray addObject:APPLICATION_NAME];	
-	[applicationArray addObject:@"mailpeeper-tls"];
+	[allNotesArray addObject:NOTIFY_NAME];
+	[defNotesArray addObject:NOTIFY_NAME];	
 	
 	//Set these notifications both for ALL (all possibilites) and DEFAULT (the ones enabled by default)
 	NSDictionary *regDict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -738,7 +729,8 @@ enum {
 	NSLog(@"Registering with %@",regDict);
 	return regDict;
 }
-	
+
+
 	
 
 @end

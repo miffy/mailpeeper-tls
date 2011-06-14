@@ -76,6 +76,7 @@
 - (void)notifyNewMailBySound;
 - (void)notifyErrorBySound;
 - (void)notifyNewMailByGrowl:(NSMutableArray *)mPeepedItemArray;
+- (void)growlNotificationWasClicked:(id)clickContext;
 @end
 
 // End Of File
