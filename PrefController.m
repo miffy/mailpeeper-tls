@@ -67,7 +67,7 @@ enum {
 - (void)walkAccountProc:(BOOL)iStop;
 - (void)timerProc:(NSTimer *)iTimer;
 - (void)receiveWakeNotification:(NSNotification *)notification;
-- (void)growlNotificationWasClicked:(id)clickContext;
+//- (void)growlNotificationWasClicked:(id)clickContext;
 @end
 
 @implementation PrefController	
