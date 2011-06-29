@@ -134,8 +134,9 @@ static void decodeBase64(char *iTextTop);
 #include <string.h>
 
 // "=?utf-8?"と"=?Shift_JIS?"でいいと思うけど、大文字にしてから検索する
-const char* UTF8_HEAD = "=?UTF-8?";
-const char* SJIS_HEAD = "=?SHIFT_JIS?";
+static const char* UTF8_HEAD = "=?UTF-8?";
+static const char* SJIS_HEAD = "=?SHIFT_JIS?";
+static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせがあった（amazonからの）ので、改めて実装。
 
 
 // BはBASE64(RFC 3548)。QはQuoted-Printable(RFC 1521)
@@ -158,15 +159,20 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		char* startPosition;	// デコード始めの位置
 		
 		aDst = aSrc = strData;
-		if(!(aFind = strstr_touppered(aSrc, UTF8_HEAD)))
+		if(aFind = strstr_touppered(aSrc, UTF8_HEAD))
 		{
-			if(!(aFind = strstr_touppered(aSrc, SJIS_HEAD)))
-				return buff;
-			else
-				charset = 'S';	// ShiftJIS
-		}else{
 			charset = 'U';		// UTF-8
-		}
+		}else
+		if(aFind = strstr_touppered(aSrc, SJIS_HEAD))
+		{
+			charset = 'S';		// ShiftJIS			
+		}else 
+		if(aFind = strstr_touppered(aSrc, ISO2022_HEAD))
+		{
+			charset = 'I';		// ISO-2022-JP
+		}else{
+			return buff;		// 見つからなかった。	
+		}		
 		
 		// ここでやっとreturn用のバッファを作る
 		if(buff == nil)
@@ -184,6 +190,8 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 			aSrc += strlen(SJIS_HEAD);			
 		}else if (charset == 'U') {
 			aSrc += strlen(UTF8_HEAD);			
+		}else if (charset == 'I') {
+			aSrc += strlen(ISO2022_HEAD);			
 		}
 		
 		encodeType = *aSrc;				// QかBが入るはず。
@@ -233,10 +241,17 @@ const char* SJIS_HEAD = "=?SHIFT_JIS?";
 		{	// Shift_JIS用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSShiftJISStringEncoding] autorelease]];		
-		}else{
-			// ないときはnilを返す。普通は来ないですが。
-			return nil;		
 		}
+		else if(charset == 'I')
+		{
+			// ISO-20220JP用
+			[buff appendString:[[[NSString alloc] initWithData:line 
+				encoding:NSISO2022JPStringEncoding] autorelease]];		
+		}else {
+			// ないときはnilを返す。普通は来ないですが。
+			return nil;
+		}
+
 		// がっつり元ネタを前の方にズラして改変。
 		aDst = strData;
 		for (i=0; i < lineLength - length; i++)
