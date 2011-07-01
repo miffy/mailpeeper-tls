@@ -273,12 +273,12 @@ enum {
 		[mAccountItemArray autorelease];
 		mAccountItemArray = [aObj retain];
 	}
-
+	
 	//起動時に実行の判断
 	if([mGeneralItem goAtStart]){
 		[mAppController performGoButton];
 	}
-
+	
 	//巡回用タイマーの発生
 	[NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(timerProc:) userInfo:nil repeats:YES];
 	
@@ -384,9 +384,10 @@ enum {
 {
 	if([mGeneralItem newMailSoundEnable]){
 		[mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
-		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];
+		NSSound *snd = [[[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] 
+							byReference:YES] autorelease];
 		[snd play];
-		[snd release];	// 明示して開放すべきモノ？
+//		[snd release];	// 明示して開放すべきモノ？
 	}
 }
 
@@ -395,10 +396,10 @@ enum {
 {
 	if([mGeneralItem errorSoundEnable]){
 		[mErrorSound_TF setStringValue:[mGeneralItem errorSoundPath]];
-		NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] 
-							byReference:YES];
+		NSSound *snd = [[[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] 
+							byReference:YES] autorelease];
 		[snd play];
-		[snd release];	// deallocだとEXC_BAD_ACCESSになっちゃう
+//		[snd release];	// deallocだとEXC_BAD_ACCESSになっちゃう
 	}
 }
 
@@ -414,6 +415,9 @@ enum {
 		for(cnt=0; cnt < mailNum; cnt++)
 		{
 			PeepedItem* pi = [mPeepedItemArray objectAtIndex:cnt];
+			// 前回の状態が残っているので、保管しなくていいものは表示しない（はじめはメモリまで解放しようとしてた→別途解放）
+			if(![pi saveFlag]) continue;
+			
 			[GrowlApplicationBridge notifyWithTitle: [pi from]			//長いと適度な所で文字列は切れる
 										description: [pi subject]		//文字列の最後まで出るみたい
 								   notificationName: NOTIFY_NAME		//登録した名前と合わせる

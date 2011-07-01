@@ -83,6 +83,8 @@
 - (void)deleteMailTitle;
 - (void)updateMailTitle;
 
+// tls
+- (void)deleteMailInformation:(PeepedItem *)anObject;
 
 @end
 

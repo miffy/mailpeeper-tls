@@ -244,7 +244,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		}
 		else if(charset == 'I')
 		{
-			// ISO-20220JP用
+			// ISO-20220-JP用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSISO2022JPStringEncoding] autorelease]];		
 		}else {

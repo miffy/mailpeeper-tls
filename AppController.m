@@ -52,6 +52,8 @@ enum {
 - (void)performDeleteButton;
 - (void)timerProc:(NSTimer *)iTimer;
 - (void)dispHeaderWinSub:(PeepedItem *)iPeepItem;
+- (void)makeStatusBar;
+
 @end
 
 @implementation AppController
@@ -70,12 +72,12 @@ enum {
 		mHeaderWinArray = [[NSMutableArray alloc] init];
 		//ワーカースレッドからの情報受信用FIFOの準備
 		mFIFO = [[SimpleSyncFIFO alloc] init];
-                
-                //anne
-                sbItem = [[NSStatusItem alloc] init];
+        // アプリ起動時に読みにいく時に、アイコンが通常になっていたので、事前に作成
+		[self makeStatusBar];
 	}
 	return self;
 }
+
 
 //ヘルプメニュー
 - (IBAction)showHelpMenu:(id)sender
@@ -304,7 +306,9 @@ enum {
 	}
 
 	//ワーカースレッドからの情報受信用タイマーの発生
-	[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerProc:) userInfo:nil repeats:YES];
+	[NSTimer scheduledTimerWithTimeInterval:0.1 target:self 
+		selector:@selector(timerProc:) userInfo:nil repeats:YES];
+	
 }
 
 //ステータス表示をする(dispStatusBlackは黒,dispStatusRedは赤表示)
@@ -510,6 +514,8 @@ enum {
 //anne-ステータスバーを作成する
 - (void) applicationDidFinishLaunching : (NSNotification *) aNote 
 {
+// 前半をmakeStatusBarへ移動。initで発動するようになった
+#if 0
     // ステータスバー作成
     NSStatusBar *bar = [ NSStatusBar systemStatusBar ];
     
@@ -523,16 +529,19 @@ enum {
         
         //[ sbItem setTitle : @"Mail" ]; // タイトルをセット
         [ sbItem setImage: [NSImage imageNamed: @"mail"]];
+#endif
         //anne
         //未受信のメール数を表示
-        NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d",[mPeepedItemArray count]]] autorelease];
-        [attStr addAttribute:NSForegroundColorAttributeName value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
+        NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] 
+			initWithString:[NSString stringWithFormat:@"%d",[mPeepedItemArray count]]] autorelease];
+        [attStr addAttribute:NSForegroundColorAttributeName 
+			value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
         [sbItem setAttributedTitle:attStr];
 
         [ sbItem setToolTip : @"mailpeeper-tls" ]; // ツールチップをセット
         [ sbItem setHighlightMode : YES ]; // クリック時にハイライト表示
         [ sbItem setMenu : sbMenu ]; // メニューをセット
-    }
+//    }
     
     [self accountMenu];
     [self updateMailTitle];
@@ -696,6 +705,12 @@ enum {
 }
 
 
+// tls
+- (void)deleteMailInformation:(PeepedItem *)anObject
+{
+	[mPeepedItemArray removeObject:anObject];
+}
+
 @end
 
 @implementation AppController(Private)
@@ -755,6 +770,7 @@ enum {
 	for(aIndex = [mPeepedItemArray count] - 1; aIndex >= 0; aIndex--){
 		aItem = [mPeepedItemArray objectAtIndex:aIndex];
 		if(![aItem saveFlag]){
+			//[[mPeepedItemArray objectAtIndex:aIndex]release];
 			[mPeepedItemArray removeObjectAtIndex:aIndex];
 		}
 	}
@@ -899,6 +915,20 @@ enum {
 }
 
 
+// tls
+- (void)makeStatusBar
+{
+	//anne
+	sbItem = [[[NSStatusItem alloc] init] autorelease];
+	
+	// ステータスバー作成
+	NSStatusBar *bar = [ NSStatusBar systemStatusBar ];
+	// ステータスアイテム作成
+	sbItem = [ bar statusItemWithLength : NSVariableStatusItemLength ];	
+	[ sbItem retain ];
+	[ sbItem setImage: [NSImage imageNamed: @"mail"]];	
+}
+	
 
 @end
 
