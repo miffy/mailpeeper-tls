@@ -170,8 +170,14 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		if(aFind = strstr_touppered(aSrc, ISO2022_HEAD))
 		{
 			charset = 'I';		// ISO-2022-JP
+			return nil;			// 既存のISO-2022-JP?Bのデコードをする時はすぐに戻る。
 		}else{
-			return buff;		// 見つからなかった。	
+/*			if (buff == nil)
+			{
+				[line setLength:strlen(strData)];
+				return [[[NSString alloc] initWithData:line encoding:NSISO2022JPStringEncoding] autorelease];
+			}
+*/			return buff;		// 見つからなかった。	
 		}		
 		
 		// ここでやっとreturn用のバッファを作る
@@ -246,8 +252,8 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		{
 			// ISO-20220-JP用
 			[buff appendString:[[[NSString alloc] initWithData:line 
-				encoding:NSISO2022JPStringEncoding] autorelease]];		
-		}else {
+				encoding:NSISO2022JPStringEncoding] autorelease]];
+		} else {
 			// ないときはnilを返す。普通は来ないですが。
 			return nil;
 		}

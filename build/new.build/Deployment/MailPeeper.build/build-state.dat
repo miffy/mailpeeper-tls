@@ -1,0 +1,1685 @@
+TMailPeeper
+v7
+r0
+t331314995.875122
+cCheck dependencies
+cProcessInfoPlistFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Info.plist Info-MailPeeper_____________.plist
+cStripNIB /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/MainMenu.nib
+cCopyStringsFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/InfoPlist.strings Japanese.lproj/InfoPlist.strings
+cCopyStringsFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/Localizable.strings Japanese.lproj/Localizable.strings
+cStripNIB /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/HeaderWin.nib
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/delete-b.pict picts/delete-b.pict
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/go-b.pict picts/go-b.pict
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/header-b.pict picts/header-b.pict
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/stop-b.pict picts/stop-b.pict
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/pref-b.pict picts/pref-b.pict
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-icon.icns picts/appl-icon.icns
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/accountpane.png mp-help/accountpane.png
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/help.html mp-help/help.html
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/junkaipane.png mp-help/junkaipane.png
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mainwindow.png mp-help/mainwindow.png
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/newaccpane.png mp-help/newaccpane.png
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/prefwindow.png mp-help/prefwindow.png
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/next.html mp-help/next.html
+cCopyTiffFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-walking.tiff picts/appl-walking.tiff
+cCopyTiffFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-newmail.tiff picts/appl-newmail.tiff
+cCopyTiffFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-error.tiff picts/appl-error.tiff
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/new.applescript appleScript/new.applescript
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-error.icns picts/mail-error.icns
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-new.icns picts/mail-new.icns
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-r.icns picts/mail-r.icns
+cCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail.icns picts/mail.icns
+cProcessPCH /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h.gch mailpeeper-Menu_Prefix.h normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/main.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AppController.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/Misc.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PrefController.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PeepedItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AccountItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/GeneralItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/WorkerThread.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/STCPCReadLine.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleTCPClient.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/UIDLHelpItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderAnalizer.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderWinController.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleFIFO.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleSyncFIFO.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PostedEventProc.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsTCPClient.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsReadLine.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls normal x86_64
+cPhaseScriptExecution スクリプトを実行 /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Script-B550AA9F12B7A5C200857CC8.sh
+cPBXCp build/Deployment/mailpeeper-tls.app/Contents/Frameworks/Growl.framework growl/Growl.framework
+cTouch /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app
+
+N/System/Library/Frameworks/AddressBook.framework/AddressBook
+c000000004D5DF0580000000000955BE0
+t1298002008
+s9788384
+
+N/System/Library/Frameworks/AppKit.framework/AppKit
+c000000004DB8539B0000000002B5C7A0
+t1303925659
+s45467552
+
+N/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+c000000004B448B6700000000000017ED
+t1262783335
+s6125
+
+N/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
+c000000004CC41EA700000000000005FF
+t1287921319
+s1535
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004D53E65D000000000000A5E0
+t1297344093
+s42464
+
+N/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004DDDB0010000000000B38DD0
+t1306374145
+s11767248
+
+N/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B447F4E00000000000013E6
+t1262780238
+s5094
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.h
+c000000004D08ADF300000000000005A6
+t1292414451
+s1446
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m
+c000000004D09D2880000000000000E2A
+t1292489352
+s3626
+i"AccountItem.h"
+i"Misc.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AddressBookController.h
+c000000004CEE1A400000000000000302
+t1290672704
+s770
+i<Cocoa/Cocoa.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.h
+c000000004E0DBF250000000000000B1A
+t1309523749
+s2842
+i<Cocoa/Cocoa.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m
+c000000004E0DBF250000000000006D99
+t1309523749
+s28057
+i"AppController.h"
+i"Misc.h"
+i"PeepedItem.h"
+i"PrefController.h"
+i"WorkerThread.h"
+i"AccountItem.h"
+i"HeaderWinController.h"
+i"SimpleSyncFIFO.h"
+i"PostedEventProc.h"
+i"AddressBookController.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.h
+c000000004DFA0D8D00000000000006E5
+t1308233101
+s1765
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m
+c000000004DFA0D8D00000000000017B7
+t1308233101
+s6071
+i"GeneralItem.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.h
+c000000004DE4D95B0000000000000209
+t1306843483
+s521
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m
+c000000004E0DBF250000000000003854
+t1309523749
+s14420
+i"HeaderAnalizer.h"
+i"Misc.h"
+i<string.h>
+i<stdio.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.h
+c000000004CEE1A400000000000000367
+t1290672704
+s871
+i<Cocoa/Cocoa.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m
+c000000004CEE21C90000000000000719
+t1290674633
+s1817
+i"HeaderWinController.h"
+i"PeepedItem.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/HeaderWin.nib
+c000000003E5268F600000000000000CC
+t1045588214
+s204
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/InfoPlist.strings
+c000000004E0DBF25000000000000022A
+t1309523749
+s554
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/Localizable.strings
+c000000003EFDA4950000000000000DDE
+t1056810133
+s3550
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/MainMenu.nib
+c000000004DFA0D8D00000000000000AA
+t1308233101
+s170
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.h
+c000000004CEE1A400000000000000296
+t1290672704
+s662
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m
+c000000004CEE21C90000000000000CA9
+t1290674633
+s3241
+i"Misc.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.h
+c000000004CEE1A4000000000000004DD
+t1290672704
+s1245
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m
+c000000004CEE21C90000000000000DDD
+t1290674633
+s3549
+i"PeepedItem.h"
+i"HeaderAnalizer.h"
+i"Misc.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.h
+c000000004CEE1A40000000000000059F
+t1290672704
+s1439
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m
+c000000004E0D42CD00000000000006E2
+t1309491917
+s1762
+i"PostedEventProc.h"
+i"PeepedItem.h"
+i"AppController.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.h
+c000000004DFA0D8D0000000000000F46
+t1308233101
+s3910
+i<Cocoa/Cocoa.h>
+i<Growl/Growl.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m
+c000000004E0DBF250000000000005EC9
+t1309523749
+s24265
+i"PrefController.h"
+i"AccountItem.h"
+i"AppController.h"
+i"GeneralItem.h"
+i"Misc.h"
+i"PeepedItem.h"
+i<unistd.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.h
+c000000004CEE1A4100000000000003FB
+t1290672705
+s1019
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m
+c000000004CEE21C900000000000008A0
+t1290674633
+s2208
+i"STCPCReadLine.h"
+i"SimpleTCPClient.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.h
+c000000004DE7CE750000000000000185
+t1307037301
+s389
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m
+c000000004CEE21C9000000000000060A
+t1290674633
+s1546
+i"SimpleFIFO.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.h
+c000000004CEE1A410000000000000129
+t1290672705
+s297
+i"SimpleFIFO.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m
+c000000004CEE21C900000000000004F0
+t1290674633
+s1264
+i"SimpleSyncFIFO.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.h
+c000000004CEE1A410000000000000294
+t1290672705
+s660
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m
+c000000004CEE21C90000000000000941
+t1290674633
+s2369
+i"SimpleTCPClient.h"
+i<unistd.h>
+i<sys/types.h>
+i<sys/socket.h>
+i<netinet/in.h>
+i<arpa/inet.h>
+i<netdb.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.h
+c000000004D0BE489000000000000039F
+t1292625033
+s927
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m
+c000000004D07F97C000000000000084B
+t1292368252
+s2123
+i"TlsReadLine.h"
+i"TlsTCPClient.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.h
+c000000004D08B03D00000000000003AF
+t1292415037
+s943
+i<Foundation/Foundation.h>
+i<openssl/crypto.h>
+i<openssl/ssl.h>
+i<openssl/err.h>
+i<openssl/rand.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m
+c000000004D0C78FF0000000000001344
+t1292663039
+s4932
+i"TlsTCPClient.h"
+i<unistd.h>
+i<sys/types.h>
+i<sys/socket.h>
+i<netinet/in.h>
+i<arpa/inet.h>
+i<netdb.h>
+i<stdio.h>
+i<string.h>
+i<stdlib.h>
+i<sys/types.h>
+i<netdb.h>
+i<sys/socket.h>
+i<netinet/in.h>
+i<sys/types.h>
+i<sys/uio.h>
+i<unistd.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.h
+c000000004CEE1A4100000000000002DE
+t1290672705
+s734
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m
+c000000004CFDF1D30000000000000724
+t1291710931
+s1828
+i"UIDLHelpItem.h"
+i"Misc.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.h
+c000000004D0C072B000000000000057E
+t1292633899
+s1406
+i<Foundation/Foundation.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m
+c000000004E0DA8EE0000000000007122
+t1309518062
+s28962
+i"WorkerThread.h"
+i"AppController.h"
+i"AccountItem.h"
+i"PrefController.h"
+i"STCPCReadLine.h"
+i"SimpleTCPClient.h"
+i"UIDLHelpItem.h"
+i"PeepedItem.h"
+i"Misc.h"
+i"TlsReadLine.h"
+i"TlsTCPClient.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/appleScript/new.applescript
+c000000003EFDA49600000000000007AB
+t1056810134
+s1963
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app
+t1309622195
+s102
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Frameworks/Growl.framework
+t1309523749
+s204
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Info.plist
+t1309622193
+s1500
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls
+t1309622195
+s162464
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/PkgInfo
+t1309622193
+s8
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/HeaderWin.nib
+t1309382022
+s5214
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/InfoPlist.strings
+t1309523749
+s554
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/Localizable.strings
+t1309382022
+s3550
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/MainMenu.nib
+t1309523749
+s60566
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/accountpane.png
+t1309382022
+s24746
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-error.tiff
+t1309382022
+s65788
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-icon.icns
+t1309382022
+s41372
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-newmail.tiff
+t1309382022
+s65788
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-walking.tiff
+t1309382022
+s65810
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/delete-b.pict
+t1309382022
+s1188
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/go-b.pict
+t1309382022
+s1740
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/header-b.pict
+t1309382022
+s1692
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/help.html
+t1309382022
+s1140
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/junkaipane.png
+t1309382022
+s35080
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-error.icns
+t1309382022
+s1237
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-new.icns
+t1309382022
+s1112
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-r.icns
+t1309382022
+s1181
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/mail.icns
+t1309382022
+s1112
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/mainwindow.png
+t1309382022
+s32474
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/new.applescript
+t1309382022
+s1963
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/newaccpane.png
+t1309382022
+s25309
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/next.html
+t1309382022
+s5955
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/pref-b.pict
+t1309382022
+s1708
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/prefwindow.png
+t1309382022
+s22061
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/stop-b.pict
+t1309382022
+s1386
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AccountItem.o
+t1309523750
+s21900
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AppController.o
+t1309523750
+s100496
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/GeneralItem.o
+t1309523750
+s25548
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderAnalizer.o
+t1309523750
+s28856
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderWinController.o
+t1309523750
+s22004
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/Misc.o
+t1309523750
+s19620
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PeepedItem.o
+t1309523750
+s27604
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PostedEventProc.o
+t1309523750
+s34460
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PrefController.o
+t1309523750
+s87712
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/STCPCReadLine.o
+t1309523750
+s12200
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleFIFO.o
+t1309523750
+s10640
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleSyncFIFO.o
+t1309523750
+s13196
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleTCPClient.o
+t1309523750
+s13324
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsReadLine.o
+t1309523750
+s35884
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsTCPClient.o
+t1309523750
+s41452
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/UIDLHelpItem.o
+t1309523750
+s16892
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/WorkerThread.o
+t1309523750
+s104276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/mailpeeper-tls.LinkFileList
+c000000004E0DBF2600000000000008FE
+t1309523750
+s2302
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/main.o
+t1309523750
+s5008
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Script-B550AA9F12B7A5C200857CC8.sh
+c000000004E0DBF2600000000000002A6
+t1309523750
+s678
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/AccountItem.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/AppController.plist
+t1306453043
+s8330
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/GeneralItem.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/HeaderAnalizer.plist
+t1306453065
+s3451
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/HeaderWinController.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/Misc.plist
+t1306453042
+s6307
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/PeepedItem.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/PostedEventProc.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/PrefController.plist
+t1306453043
+s29842
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/STCPCReadLine.plist
+t1306453043
+s15277
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/SimpleFIFO.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/SimpleSyncFIFO.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/SimpleTCPClient.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/TlsReadLine.plist
+t1306453043
+s15275
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/TlsTCPClient.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/UIDLHelpItem.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/WorkerThread.plist
+t1306453043
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/main.plist
+t1306453042
+s276
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework
+c000000004DFA0D8D00000000000000CC
+t1308233101
+s204
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework/Growl
+c000000004DFA0D8D000000000003F4B8
+t1308233101
+s259256
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework/Headers/Growl.h
+c000000004DFA0D8D0000000000000082
+t1308233101
+s130
+i"GrowlDefines.h"
+i"GrowlApplicationBridge.h"
+i"GrowlApplicationBridge-Carbon.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework/Headers/GrowlApplicationBridge-Carbon.h
+c000000004DFA0D8D000000000000867E
+t1308233101
+s34430
+i<sys/cdefs.h>
+i<Carbon/Carbon.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework/Headers/GrowlApplicationBridge.h
+c000000004DFA0D8D0000000000006B1D
+t1308233101
+s27421
+i<Foundation/Foundation.h>
+i<AppKit/AppKit.h>
+i"GrowlDefines.h"
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework/Headers/GrowlDefines.h
+c000000004DFA0D8D0000000000003D75
+t1308233101
+s15733
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/libcrypto.dylib
+c000000004DE7CE7500000000001B7248
+t1307037301
+s1798728
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/libssl.dylib
+c000000004D133FEF0000000000061C98
+t1293107183
+s400536
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/libz.dylib
+c000000004DE7CE750000000000017818
+t1307037301
+s96280
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h
+c000000004CEE1A400000000000000033
+t1290672704
+s51
+i<Cocoa/Cocoa.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m
+c000000004CEE21C900000000000000FE
+t1290674633
+s254
+i<Cocoa/Cocoa.h>
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/accountpane.png
+c000000003EFDA49500000000000060AA
+t1056810133
+s24746
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/help.html
+c000000003EFDA4950000000000000474
+t1056810133
+s1140
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/junkaipane.png
+c000000003EFDA4950000000000008908
+t1056810133
+s35080
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/mainwindow.png
+c000000003EFDA4950000000000007EDA
+t1056810133
+s32474
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/newaccpane.png
+c000000003EFDA49500000000000062DD
+t1056810133
+s25309
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/next.html
+c000000003EFDA4950000000000001743
+t1056810133
+s5955
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/prefwindow.png
+c000000003EFDA495000000000000562D
+t1056810133
+s22061
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-error.tiff
+c000000003EFDA49500000000000100FC
+t1056810133
+s65788
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-icon.icns
+c000000003EFDA495000000000000A19C
+t1056810133
+s41372
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-newmail.tiff
+c000000003EFDA49500000000000100FC
+t1056810133
+s65788
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-walking.tiff
+c000000003EFDA4950000000000010112
+t1056810133
+s65810
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/delete-b.pict
+c000000003EFDA49500000000000004A4
+t1056810133
+s1188
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/go-b.pict
+c000000003EFDA49500000000000006CC
+t1056810133
+s1740
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/header-b.pict
+c000000003EFDA495000000000000069C
+t1056810133
+s1692
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-error.icns
+c000000003EFDA49500000000000004D5
+t1056810133
+s1237
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-new.icns
+c000000003EFDA4950000000000000458
+t1056810133
+s1112
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-r.icns
+c000000003EFDA495000000000000049D
+t1056810133
+s1181
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail.icns
+c000000003EFDA4950000000000000458
+t1056810133
+s1112
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/pref-b.pict
+c000000003EFDA49500000000000006AC
+t1056810133
+s1708
+
+N/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/stop-b.pict
+c000000003EFDA495000000000000056A
+t1056810133
+s1386
+
+N/usr/include/arpa/inet.h
+c000000004AC31EFD0000000000001533
+t1254301437
+s5427
+
+N/usr/include/netdb.h
+c000000004BBD2D1D000000000000307F
+t1270689053
+s12415
+
+N/usr/include/netinet/in.h
+c000000004CC3DE650000000000005414
+t1287904869
+s21524
+
+N/usr/include/openssl/crypto.h
+c000000004B68FBA70000000000005E99
+t1265171367
+s24217
+
+N/usr/include/openssl/err.h
+c000000004B68FBA70000000000003299
+t1265171367
+s12953
+
+N/usr/include/openssl/rand.h
+c000000004B68FBA70000000000001862
+t1265171367
+s6242
+
+N/usr/include/openssl/ssl.h
+c000000004CC3F9AA0000000000014965
+t1287911850
+s84325
+
+N/usr/include/stdio.h
+c000000004AC326060000000000004174
+t1254303238
+s16756
+
+N/usr/include/stdlib.h
+c000000004AC326060000000000002DF5
+t1254303238
+s11765
+
+N/usr/include/string.h
+c000000004AC326060000000000001731
+t1254303238
+s5937
+
+N/usr/include/sys/cdefs.h
+c000000004B56971C0000000000005623
+t1263965980
+s22051
+
+N/usr/include/sys/socket.h
+c000000004B56971E00000000000059BC
+t1263965982
+s22972
+
+N/usr/include/sys/types.h
+c000000004B56971E0000000000002905
+t1263965982
+s10501
+
+N/usr/include/sys/uio.h
+c000000004B56971E0000000000001126
+t1263965982
+s4390
+
+N/usr/include/unistd.h
+c000000004AC32606000000000000563E
+t1254303238
+s22078
+
+N/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-adltevzcaktzggadhouvrqcxugow/mailpeeper-Menu_Prefix.h.gch
+t1303927904
+s52856624
+
+N/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h.gch
+t1309382024
+s52856624
+
+N/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-fldvxfpxcpyvlvckgypynlichnst/mailpeeper-Menu_Prefix.h.gch
+t1306922111
+s52856624
+
+N/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h.pth
+t1306452166
+s10865144
+
+NInfo-MailPeeper_____________.plist
+c000000004E0DBF250000000000000459
+t1309523749
+s1113
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m
+s328145842.930286
+e328145843.085647
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m
+lSLF07#2@68"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m328145842#328145843#0(0"0(0#0#60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m8647950240#1206"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/AccountItem.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m
+s328145842.792443
+e328145843.240889
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:266:10: warning: Potential leak of an object allocated on line 266
+o                 return [aItem newMailMark];
+o                        ^
+o1 warning generated.
+lSLF07#2@70"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m328145842#328145843#0(222"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:266:10: warning: Potential leak of an object allocated on line 266                 return [aItem newMailMark];                        ^1 warning generated.1(0@49"Potential leak of an object allocated on line 266328145843#18446744073709551615#0#7(17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#262#2#262#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#265#2#265#2#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#265#2#265#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#266#3#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#266#3#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#10#266#28#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#10#0#0#0"1(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#10#266#28#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#10#266#28#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#266#8#21@92"Object returned to caller as an owning reference (single retain count transferred to caller)328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#0#0#0"2(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#266#28#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#10#266#28#92"Object returned to caller as an owning reference (single retain count transferred to caller)21@283"Object allocated on line 266 is returned from a method whose name ('tableView:objectValueForTableColumn:row:') does not contain 'copy' or otherwise starts with 'new' or 'alloc'.  This violates the naming convention rules given in the Memory Management Guide for Cocoa (object leaked)328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#0#0#0"1(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#266#8#283"Object allocated on line 266 is returned from a method whose name ('tableView:objectValueForTableColumn:row:') does not contain 'copy' or otherwise starts with 'new' or 'alloc'.  This violates the naming convention rules given in the Memory Management Guide for Cocoa (object leaked)6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m325332804#266#3#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m8659612224#1210"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/AppController.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m
+s328145842.954110
+e328145843.149715
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m
+lSLF07#2@68"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m328145842#328145843#0(0"0(0#0#60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m8647648608#1206"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/GeneralItem.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m
+s328145863.817931
+e328145865.620467
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m:162:9:{162:17-162:50}: warning: Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'
+o                         if(!(aFind = strstr_touppered(aSrc, SJIS_HEAD)))
+o                              ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m:160:8:{160:16-160:49}: warning: Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'
+o                 if(!(aFind = strstr_touppered(aSrc, UTF8_HEAD)))
+o                      ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o2 warnings generated.
+lSLF07#2@71"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145863#328145865#0(730"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m:162:9:{162:17-162:50}: warning: Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'                         if(!(aFind = strstr_touppered(aSrc, SJIS_HEAD)))                              ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m:160:8:{160:16-160:49}: warning: Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'                 if(!(aFind = strstr_touppered(aSrc, UTF8_HEAD)))                      ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~2 warnings generated.2(0@119"Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'328145865#18446744073709551615#0#1(21@119"Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'328145865#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145861#160#8#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145861#160#16#160#48#119"Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145861#160#8#0#0#10"Dead store0(22"Dead nested assignment0@119"Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'328145865#18446744073709551615#0#1(21@119"Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'328145865#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145861#162#9#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145861#162#17#162#49#119"Although the value stored to 'aFind' is used in the enclosing expression, the value is never actually read from 'aFind'6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m328145861#162#9#0#0#10"Dead store0(22"Dead nested assignment0#0#63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m8618167712#1212"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/HeaderAnalizer.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m
+s328145843.149840
+e328145843.303151
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m
+lSLF07#2@76"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m328145843#328145843#0(0"0(0#0#68"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m8647949728#1222"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/HeaderWinController.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m
+s328145842.801419
+e328145842.953834
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m:39:9: warning: Potential leak of an object allocated on line 39
+o         return [[NSMutableString alloc] initWithString:NSLocalizedString(iKey,@"")];
+o                ^
+o1 warning generated.
+lSLF07#2@61"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m328145842#328145842#0(243"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m:39:9: warning: Potential leak of an object allocated on line 39         return [[NSMutableString alloc] initWithString:NSLocalizedString(iKey,@"")];                ^1 warning generated.1(0@48"Potential leak of an object allocated on line 39328145842#18446744073709551615#0#5(17@0"328145842#18446744073709551615#0#0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#0#0#0#0#0"0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#0#0#0#0#1(3@6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#39#2#6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#9#39#76#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145842#18446744073709551615#0#0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#9#0#0#0"1(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#9#39#76#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145842#18446744073709551615#0#0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#0#0#0#0#0"0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#0#0#0#0#1(3@6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#9#39#76#6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#39#7#21@92"Object returned to caller as an owning reference (single retain count transferred to caller)328145842#18446744073709551615#0#0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#0#0#0"2(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#39#76#6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#9#39#76#92"Object returned to caller as an owning reference (single retain count transferred to caller)21@263"Object allocated on line 39 is returned from a method whose name ('defaultMutableString:') does not contain 'copy' or otherwise starts with 'new' or 'alloc'.  This violates the naming convention rules given in the Memory Management Guide for Cocoa (object leaked)328145842#18446744073709551615#0#0(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#0#0#0"1(6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#39#7#263"Object allocated on line 39 is returned from a method whose name ('defaultMutableString:') does not contain 'copy' or otherwise starts with 'new' or 'alloc'.  This violates the naming convention rules given in the Memory Management Guide for Cocoa (object leaked)6@53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m312367433#39#2#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m8652068288#1192"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/Misc.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m
+s328145842.899830
+e328145843.060103
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m
+lSLF07#2@67"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m328145842#328145843#0(0"0(0#0#59"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m8648124128#1204"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/PeepedItem.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m
+s328145843.209908
+e328145843.346908
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m
+lSLF07#2@72"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m328145843#328145843#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m8651934336#1214"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/PostedEventProc.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m
+s328145842.857800
+e328145843.045326
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:360:31: warning: Potential leak of an object allocated on line 360
+o                 [mNewMailVoice_TV setString:[mGeneralItem newMailVoiceText]];
+o                                             ^
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:378:36: warning: Potential leak of an object allocated on line 378
+o                 [mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
+o                                                  ^
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:379:58: warning: Potential leak of an object allocated on line 379
+o                 NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];
+o                                                                        ^
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:379:18: warning: Potential leak of an object allocated on line 379 and stored into 'snd'
+o                 NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];
+o                                ^
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:390:18: warning: Potential leak of an object allocated on line 390 and stored into 'snd'
+o                 NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] byReference:YES];
+o                                ^
+o5 warnings generated.
+lSLF07#2@71"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m328145842#328145843#0(1489"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:360:31: warning: Potential leak of an object allocated on line 360                 [mNewMailVoice_TV setString:[mGeneralItem newMailVoiceText]];                                             ^/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:378:36: warning: Potential leak of an object allocated on line 378                 [mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];                                                  ^/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:379:58: warning: Potential leak of an object allocated on line 379                 NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];                                                                        ^/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:379:18: warning: Potential leak of an object allocated on line 379 and stored into 'snd'                 NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] byReference:YES];                                ^/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m:390:18: warning: Potential leak of an object allocated on line 390 and stored into 'snd'                 NSSound *snd = [[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] byReference:YES];                                ^5 warnings generated.5(0@49"Potential leak of an object allocated on line 360328145843#18446744073709551615#0#5(17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#359#2#359#2#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#360#3#360#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#360#3#360#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#360#31#360#61#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#360#31#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#360#31#360#61#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#360#31#360#61#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#361#3#361#3#21@120"Object allocated on line 360 is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#361#3#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#361#3#361#3#120"Object allocated on line 360 is not referenced later in this execution path and has a retain count of +1 (object leaked)6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#361#3#0#0#36"Memory (Core Foundation/Objective-C)0(4"Leak0@49"Potential leak of an object allocated on line 378328145843#18446744073709551615#0#5(17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#377#2#377#2#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#3#378#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#3#378#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#36#378#66#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#36#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#36#378#66#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#36#378#66#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#379#9#21@120"Object allocated on line 378 is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#379#9#120"Object allocated on line 378 is not referenced later in this execution path and has a retain count of +1 (object leaked)6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#0#0#36"Memory (Core Foundation/Objective-C)0(4"Leak0@49"Potential leak of an object allocated on line 379328145843#18446744073709551615#0#6(17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#377#2#377#2#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#3#378#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#3#378#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#379#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#379#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#58#379#88#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#58#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#58#379#88#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#58#379#88#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#380#3#380#3#21@120"Object allocated on line 379 is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#380#3#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#380#3#380#3#120"Object allocated on line 379 is not referenced later in this execution path and has a retain count of +1 (object leaked)6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#380#3#0#0#36"Memory (Core Foundation/Objective-C)0(4"Leak0@71"Potential leak of an object allocated on line 379 and stored into 'snd'328145843#18446744073709551615#0#6(17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#377#2#377#2#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#3#378#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#378#3#378#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#379#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#3#379#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#18#379#105#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#18#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#18#379#105#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#379#18#379#105#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#383#1#383#1#21@142"Object allocated on line 379 and stored into 'snd' is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#383#1#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#383#1#383#1#142"Object allocated on line 379 and stored into 'snd' is not referenced later in this execution path and has a retain count of +1 (object leaked)6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#383#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0@71"Potential leak of an object allocated on line 390 and stored into 'snd'328145843#18446744073709551615#0#6(17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#388#2#388#2#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#389#3#389#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#389#3#389#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#390#3#390#3#17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#390#3#390#3#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#390#18#390#103#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#390#18#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#390#18#390#103#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#0"0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#0#0#0#0#1(3@6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#390#18#390#103#6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#394#1#394#1#21@142"Object allocated on line 390 and stored into 'snd' is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#394#1#0#0#0"1(6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#394#1#394#1#142"Object allocated on line 390 and stored into 'snd' is not referenced later in this execution path and has a retain count of +1 (object leaked)6@63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m325813094#394#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m8648727904#1212"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/PrefController.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m
+s328145843.001299
+e328145843.232444
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m:28:25: warning: Potential leak of an object allocated on line 28 and stored into 'aData'
+o         NSMutableData *aData = [[NSMutableData alloc] init];
+o                                ^
+o1 warning generated.
+lSLF07#2@70"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m328145843#328145843#0(269"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m:28:25: warning: Potential leak of an object allocated on line 28 and stored into 'aData'         NSMutableData *aData = [[NSMutableData alloc] init];                                ^1 warning generated.1(0@72"Potential leak of an object allocated on line 28 and stored into 'aData'328145843#18446744073709551615#0#15(17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#27#2#27#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#28#2#28#2#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#28#2#28#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#28#25#28#52#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#28#25#0#0#0"1(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#28#25#28#52#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#28#25#28#52#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#34#2#34#2#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#34#2#34#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#36#3#36#3#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#36#3#36#3#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#63#4#63#4#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#63#4#63#4#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#65#4#65#4#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#65#4#65#4#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#66#5#66#5#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#66#5#66#5#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#69#2#69#2#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#69#2#69#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#34#2#34#4#21@36"Looping back to the head of the loop328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#34#2#0#0#0"1(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#34#2#34#4#36"Looping back to the head of the loop17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#34#2#34#4#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#72#2#72#2#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#72#2#72#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#77#2#77#2#17@0"328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#0"0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#0#0#0#0#1(3@6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#77#2#77#2#6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#78#1#78#1#21@143"Object allocated on line 28 and stored into 'aData' is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#78#1#0#0#0"1(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#78#1#78#1#143"Object allocated on line 28 and stored into 'aData' is not referenced later in this execution path and has a retain count of +1 (object leaked)6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m312367433#78#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m8590973248#1210"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/STCPCReadLine.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m
+s328145843.201797
+e328145843.340256
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m
+lSLF07#2@67"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m328145843#328145843#0(0"0(0#0#59"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m8656838880#1204"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/SimpleFIFO.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m
+s328145843.206735
+e328145843.346382
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m
+lSLF07#2@71"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m328145843#328145843#0(0"0(0#0#63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m8653668448#1212"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/SimpleSyncFIFO.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m
+s328145843.045552
+e328145843.201679
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m
+lSLF07#2@72"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m328145843#328145843#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m8650048576#1214"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/SimpleTCPClient.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m
+s328145843.241006
+e328145843.458047
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m:27:25: warning: Potential leak of an object allocated on line 27 and stored into 'aData'
+o         NSMutableData *aData = [[NSMutableData alloc] init];
+o                                ^
+o1 warning generated.
+lSLF07#2@68"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m328145843#328145843#0(267"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m:27:25: warning: Potential leak of an object allocated on line 27 and stored into 'aData'         NSMutableData *aData = [[NSMutableData alloc] init];                                ^1 warning generated.1(0@72"Potential leak of an object allocated on line 27 and stored into 'aData'328145843#18446744073709551615#0#15(17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#26#2#26#2#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#27#2#27#2#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#27#2#27#2#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#27#25#27#52#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#27#25#0#0#0"1(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#27#25#27#52#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#27#25#27#52#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#33#2#33#2#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#33#2#33#2#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#35#3#35#3#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#35#3#35#3#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#62#4#62#4#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#62#4#62#4#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#64#4#64#4#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#64#4#64#4#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#65#5#65#5#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#65#5#65#5#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#68#2#68#2#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#68#2#68#2#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#33#2#33#4#21@36"Looping back to the head of the loop328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#33#2#0#0#0"1(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#33#2#33#4#36"Looping back to the head of the loop17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#33#2#33#4#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#71#2#71#2#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#71#2#71#2#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#76#2#76#2#17@0"328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#0"0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#0#0#0#0#1(3@6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#76#2#76#2#6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#77#1#77#1#21@143"Object allocated on line 27 and stored into 'aData' is not referenced later in this execution path and has a retain count of +1 (object leaked)328145843#18446744073709551615#0#0(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#77#1#0#0#0"1(6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#77#1#77#1#143"Object allocated on line 27 and stored into 'aData' is not referenced later in this execution path and has a retain count of +1 (object leaked)6@60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m314061052#77#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m8647451232#1206"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/TlsReadLine.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m
+s328145843.232726
+e328145843.419838
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m
+lSLF07#2@69"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m328145843#328145843#0(0"0(0#0#61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m8618745920#1208"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/TlsTCPClient.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m
+s328145843.060229
+e328145843.206615
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m
+lSLF07#2@69"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m328145843#328145843#0(0"0(0#0#61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m8648622112#1208"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/UIDLHelpItem.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m
+s328145842.963054
+e328145843.209791
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m
+lSLF07#2@69"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m328145842#328145843#0(0"0(0#0#61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m8646947232#1208"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/WorkerThread.plist0#
+
+CAnalyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m
+s328145842.785266
+e328145842.930163
+r1
+xAnalyze
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m
+lSLF07#2@61"Analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m328145842#328145842#0(0"0(0#0#53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m8632607424#1192"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h --analyze /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/StaticAnalyzer/normal/x86_64/main.plist0#
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies331314993#331314993#0(0"0(0#1#0"19140437500520908#0"0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AccountItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.757816
+e331074825.010372
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AccountItem.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m331074824#331074825#0(0"0(0#0#60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m8629847840#1262"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AccountItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AccountItem.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AppController.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331116851.004717
+e331116851.644394
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AppController.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m: In function '-[AppController(Private) performDeleteButton]':
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:894: warning: 'selectedRowEnumerator' is deprecated (declared at /System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h:663)
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m: At top level:
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:932: warning: incomplete implementation of category 'Private'
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:932: warning: method definition for '-makeStatusBar' not found
+lSLF07#2@70"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m331116851#331116851#0(653"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m: In function '-[AppController(Private) performDeleteButton]':/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:894: warning: 'selectedRowEnumerator' is deprecated (declared at /System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h:663)/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m: At top level:/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:932: warning: incomplete implementation of category 'Private'/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m:932: warning: method definition for '-makeStatusBar' not found4(22@121"'selectedRowEnumerator' is deprecated (declared at /System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h:663)331116851#125#199#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m331116218#894#0#894#0#33"'*' is deprecated (declared at *)0(23@13"At top level:331116851#324#78#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m331116218#0#0#0#0#0"0(22@47"Incomplete implementation of category 'Private'331116851#402#125#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m331116218#932#0#932#0#0"0(22@48"Method definition for '-makeStatusBar' not found331116851#527#126#0(6@62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m331116218#932#0#932#0#35"method definition for '*' not found0(0#0#62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m8623194368#1266"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/AppController.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/AppController.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/GeneralItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.758593
+e331074825.028566
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/GeneralItem.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m331074824#331074825#0(0"0(0#0#60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m8627956352#1262"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/GeneralItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/GeneralItem.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderAnalizer.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.027150
+e331074825.352942
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderAnalizer.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m331074825#331074825#0(0"0(0#0#63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m8640572544#1268"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderAnalizer.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderAnalizer.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderWinController.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.028687
+e331074825.215282
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderWinController.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m331074825#331074825#0(0"0(0#0#68"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m8638811552#1278"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/HeaderWinController.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/HeaderWinController.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/Misc.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.755925
+e331074824.925223
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/Misc.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m331074824#331074824#0(0"0(0#0#53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m8639157248#1248"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Misc.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/Misc.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PeepedItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.757112
+e331074825.027020
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PeepedItem.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m331074824#331074825#0(0"0(0#0#59"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m8637463104#1260"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PeepedItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PeepedItem.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PostedEventProc.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331184725.414695
+e331184725.718151
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PostedEventProc.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m331184725#331184725#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m8637417120#1270"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PostedEventProc.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PostedEventProc.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PrefController.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331184662.621407
+e331184663.251193
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PrefController.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m331184662#331184663#0(0"0(0#0#63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m8627901344#1268"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/PrefController.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/PrefController.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/STCPCReadLine.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.878593
+e331074825.050169
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/STCPCReadLine.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m331074824#331074825#0(0"0(0#0#62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m8622794432#1266"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/STCPCReadLine.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/STCPCReadLine.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleFIFO.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.050290
+e331074825.197939
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleFIFO.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m331074825#331074825#0(0"0(0#0#59"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m8646073280#1260"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleFIFO.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleFIFO.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleSyncFIFO.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.102569
+e331074825.297096
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleSyncFIFO.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m331074825#331074825#0(0"0(0#0#63"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m8618859392#1268"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleSyncFIFO.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleSyncFIFO.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleTCPClient.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.925380
+e331074825.102431
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleTCPClient.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m331074824#331074825#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m8641034560#1270"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/SimpleTCPClient.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/SimpleTCPClient.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsReadLine.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.215402
+e331074825.480636
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsReadLine.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m331074825#331074825#0(0"0(0#0#60"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m8640404928#1262"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsReadLine.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsReadLine.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsTCPClient.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.213553
+e331074825.501434
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsTCPClient.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m331074825#331074825#0(0"0(0#0#61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m8609390880#1264"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/TlsTCPClient.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/TlsTCPClient.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/UIDLHelpItem.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074825.010503
+e331074825.213424
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/UIDLHelpItem.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m331074825#331074825#0(0"0(0#0#61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m8640721248#1264"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/UIDLHelpItem.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/UIDLHelpItem.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/WorkerThread.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331076930.636466
+e331076931.363086
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/WorkerThread.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m: In function '-[WorkerThread(Private) freeDisappearedMail:]':
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:98: warning: assignment makes pointer from integer without a cast
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:102: warning: assignment makes pointer from integer without a cast
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: 'AppController' may not respond to '+deleteMailInfomation:'
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: (Messages without a matching method signature
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: will be assumed to return 'id' and accept
+o/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: '...' as arguments.)
+lSLF07#2@69"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m331076930#331076931#0(854"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m: In function '-[WorkerThread(Private) freeDisappearedMail:]':/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:98: warning: assignment makes pointer from integer without a cast/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:102: warning: assignment makes pointer from integer without a cast/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: 'AppController' may not respond to '+deleteMailInfomation:'/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: (Messages without a matching method signature/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: will be assumed to return 'id' and accept/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m:112: warning: '...' as arguments.)4(22@52"Assignment makes pointer from integer without a cast331076930#124#128#0(6@61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m331076899#98#0#98#0#0"0(22@52"Assignment makes pointer from integer without a cast331076930#252#129#0(6@61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m331076899#102#0#102#0#0"0(22@59"'AppController' may not respond to '+deleteMailInfomation:'331076930#381#136#0(6@61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m331076899#112#0#112#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)331076930#517#122#0(6@61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m331076899#112#0#112#0#0"0(0#0#61"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m8620679904#1264"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/WorkerThread.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/WorkerThread.o0#
+
+CCompileC build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/main.o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074824.754568
+e331074824.878463
+r1
+xCompileC
+xbuild/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/main.o
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m331074824#331074824#0(0"0(0#0#53"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m8622328896#1248"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -include /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/main.m -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/main.o0#
+
+CCopyStringsFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/InfoPlist.strings Japanese.lproj/InfoPlist.strings
+s331074822.498465
+e331074822.535022
+r1
+xCopyStringsFile
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/InfoPlist.strings
+xJapanese.lproj/InfoPlist.strings
+lSLF07#2@37"Copy Japanese.lproj/InfoPlist.strings331074822#331074822#0(0"0(0#0#79"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/InfoPlist.strings8639653792#396"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 Japanese.lproj/InfoPlist.strings --outdir /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj0#
+
+CCopyStringsFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/Localizable.strings Japanese.lproj/Localizable.strings
+s331074822.498938
+e331074822.539120
+r1
+xCopyStringsFile
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/Localizable.strings
+xJapanese.lproj/Localizable.strings
+lSLF07#2@39"Copy Japanese.lproj/Localizable.strings331074822#331074822#0(0"0(0#0#81"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/Localizable.strings8639355488#398"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 Japanese.lproj/Localizable.strings --outdir /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj0#
+
+CCopyTiffFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-error.tiff picts/appl-error.tiff
+s331074822.521078
+e331074822.542548
+r1
+xCopyTiffFile
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-error.tiff
+xpicts/appl-error.tiff
+lSLF07#2@26"Copy picts/appl-error.tiff331074822#331074822#0(0"0(0#0#68"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-error.tiff8637874432#277"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copytiff picts/appl-error.tiff --outdir /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCopyTiffFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-newmail.tiff picts/appl-newmail.tiff
+s331074822.520364
+e331074822.540274
+r1
+xCopyTiffFile
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-newmail.tiff
+xpicts/appl-newmail.tiff
+lSLF07#2@28"Copy picts/appl-newmail.tiff331074822#331074822#0(0"0(0#0#70"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-newmail.tiff8637882848#279"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copytiff picts/appl-newmail.tiff --outdir /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCopyTiffFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-walking.tiff picts/appl-walking.tiff
+s331074822.515576
+e331074822.537323
+r1
+xCopyTiffFile
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-walking.tiff
+xpicts/appl-walking.tiff
+lSLF07#2@28"Copy picts/appl-walking.tiff331074822#331074822#0(0"0(0#0#70"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-walking.tiff8637944960#279"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copytiff picts/appl-walking.tiff --outdir /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/accountpane.png mp-help/accountpane.png
+s331074822.504760
+e331074822.513469
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/accountpane.png
+xmp-help/accountpane.png
+lSLF07#2@28"Copy mp-help/accountpane.png331074822#331074822#0(0"0(0#0#70"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/accountpane.png8638616704#410"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/accountpane.png /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/appl-icon.icns picts/appl-icon.icns
+s331074822.503079
+e331074822.515471
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/appl-icon.icns
+xpicts/appl-icon.icns
+lSLF07#2@25"Copy picts/appl-icon.icns331074822#331074822#0(0"0(0#0#67"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-icon.icns8638671520#407"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/appl-icon.icns /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/delete-b.pict picts/delete-b.pict
+s331074822.499840
+e331074822.504618
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/delete-b.pict
+xpicts/delete-b.pict
+lSLF07#2@24"Copy picts/delete-b.pict331074822#331074822#0(0"0(0#0#66"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/delete-b.pict8639061344#406"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/delete-b.pict /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/go-b.pict picts/go-b.pict
+s331074822.500315
+e331074822.506794
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/go-b.pict
+xpicts/go-b.pict
+lSLF07#2@20"Copy picts/go-b.pict331074822#331074822#0(0"0(0#0#62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/go-b.pict8638945568#402"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/go-b.pict /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/header-b.pict picts/header-b.pict
+s331074822.500993
+e331074822.506968
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/header-b.pict
+xpicts/header-b.pict
+lSLF07#2@24"Copy picts/header-b.pict331074822#331074822#0(0"0(0#0#66"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/header-b.pict8638896704#406"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/header-b.pict /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/help.html mp-help/help.html
+s331074822.507076
+e331074822.513629
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/help.html
+xmp-help/help.html
+lSLF07#2@22"Copy mp-help/help.html331074822#331074822#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/help.html8638455456#404"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/help.html /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/junkaipane.png mp-help/junkaipane.png
+s331074822.507924
+e331074822.516353
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/junkaipane.png
+xmp-help/junkaipane.png
+lSLF07#2@27"Copy mp-help/junkaipane.png331074822#331074822#0(0"0(0#0#69"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/junkaipane.png8638411328#409"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/junkaipane.png /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-error.icns picts/mail-error.icns
+s331074822.522758
+e331074822.529422
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/mail-error.icns
+xpicts/mail-error.icns
+lSLF07#2@26"Copy picts/mail-error.icns331074822#331074822#0(0"0(0#0#68"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-error.icns8637463456#408"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-error.icns /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-new.icns picts/mail-new.icns
+s331074822.523455
+e331074822.529574
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/mail-new.icns
+xpicts/mail-new.icns
+lSLF07#2@24"Copy picts/mail-new.icns331074822#331074822#0(0"0(0#0#66"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-new.icns8637278208#406"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-new.icns /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail-r.icns picts/mail-r.icns
+s331074822.528402
+e331074822.535217
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/mail-r.icns
+xpicts/mail-r.icns
+lSLF07#2@22"Copy picts/mail-r.icns331074822#331074822#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-r.icns8637083136#404"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail-r.icns /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mail.icns picts/mail.icns
+s331074822.529672
+e331074822.536214
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/mail.icns
+xpicts/mail.icns
+lSLF07#2@20"Copy picts/mail.icns331074822#331074822#0(0"0(0#0#62"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail.icns8636788960#402"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/mail.icns /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/mainwindow.png mp-help/mainwindow.png
+s331074822.508873
+e331074822.515314
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/mainwindow.png
+xmp-help/mainwindow.png
+lSLF07#2@27"Copy mp-help/mainwindow.png331074822#331074822#0(0"0(0#0#69"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/mainwindow.png8638317312#409"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/mainwindow.png /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/new.applescript appleScript/new.applescript
+s331074822.522026
+e331074822.528285
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/new.applescript
+xappleScript/new.applescript
+lSLF07#2@32"Copy appleScript/new.applescript331074822#331074822#0(0"0(0#0#74"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/appleScript/new.applescript8637694176#414"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/appleScript/new.applescript /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/newaccpane.png mp-help/newaccpane.png
+s331074822.512161
+e331074822.520259
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/newaccpane.png
+xmp-help/newaccpane.png
+lSLF07#2@27"Copy mp-help/newaccpane.png331074822#331074822#0(0"0(0#0#69"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/newaccpane.png8638283616#409"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/newaccpane.png /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/next.html mp-help/next.html
+s331074822.514501
+e331074822.521924
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/next.html
+xmp-help/next.html
+lSLF07#2@22"Copy mp-help/next.html331074822#331074822#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/next.html8638042176#404"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/next.html /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/pref-b.pict picts/pref-b.pict
+s331074822.502372
+e331074822.508762
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/pref-b.pict
+xpicts/pref-b.pict
+lSLF07#2@22"Copy picts/pref-b.pict331074822#331074822#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/pref-b.pict8638809248#404"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/pref-b.pict /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/prefwindow.png mp-help/prefwindow.png
+s331074822.513729
+e331074822.520092
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/prefwindow.png
+xmp-help/prefwindow.png
+lSLF07#2@27"Copy mp-help/prefwindow.png331074822#331074822#0(0"0(0#0#69"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/prefwindow.png8638153472#409"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mp-help/prefwindow.png /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CCpResource build/Deployment/mailpeeper-tls.app/Contents/Resources/stop-b.pict picts/stop-b.pict
+s331074822.501693
+e331074822.512041
+r1
+xCpResource
+xbuild/Deployment/mailpeeper-tls.app/Contents/Resources/stop-b.pict
+xpicts/stop-b.pict
+lSLF07#2@22"Copy picts/stop-b.pict331074822#331074822#0(0"0(0#0#64"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/stop-b.pict8638821920#404"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/picts/stop-b.pict /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources0#
+
+CLd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls normal x86_64
+s331314993.944648
+e331314995.564894
+r1
+xLd
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls
+xnormal
+xx86_64
+lSLF07#2@117"Link /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls331314993#331314995#0(0"0(0#0#0"8622131488#732"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/usr/bin/gcc-4.2 -arch x86_64 -L/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -filelist /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/mailpeeper-tls.LinkFileList -framework Cocoa -framework AddressBook -lcrypto -lssl -lz -framework Growl -framework Foundation -framework AppKit -prebind -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls0#
+
+CPBXCp build/Deployment/mailpeeper-tls.app/Contents/Frameworks/Growl.framework growl/Growl.framework
+s331074825.699157
+e331074825.741776
+r1
+xPBXCp
+xbuild/Deployment/mailpeeper-tls.app/Contents/Frameworks/Growl.framework
+xgrowl/Growl.framework
+lSLF07#2@26"Copy growl/Growl.framework331074825#331074825#0(0"0(0#0#68"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework8645139936#409"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl/Growl.framework /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Frameworks0#
+
+CPhaseScriptExecution スクリプトを実行 /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Script-B550AA9F12B7A5C200857CC8.sh
+s331314995.565080
+e331314995.844703
+r1
+xPhaseScriptExecution
+xスクリプトを実行
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Script-B550AA9F12B7A5C200857CC8.sh
+lSLF07#2@53"Run custom shell script 'スクリプトを実行'331314995#331314995#0(0"0(0#0#0"8600131168#16982"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv ACTION build    setenv ALTERNATE_GROUP tatuo    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER tatuo    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build    setenv BUILD_ROOT /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build    setenv BUILD_STYLE Deployment    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment    setenv CACHE_ROOT /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/JavaClasses    setenv CLEAN_PRECOMPS NO    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Deployment    setenv CONFIGURATION_BUILD_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment    setenv CONFIGURATION_TEMP_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment    setenv CONTENTS_FOLDER_PATH mailpeeper-tls.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH mailpeeper-tls.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/new.dst    setenv DWARF_DSYM_FILE_NAME mailpeeper-tls.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH mailpeeper-tls.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH mailpeeper-tls.app/Contents/MacOS    setenv EXECUTABLE_NAME mailpeeper-tls    setenv EXECUTABLE_PATH mailpeeper-tls.app/Contents/MacOS/mailpeeper-tls    setenv FILE_LIST /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH mailpeeper-tls.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment\"  \"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl\" \"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME mailpeeper-tls.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_ENABLE_FIX_AND_CONTINUE NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER mailpeeper-Menu_Prefix.h    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 501    setenv GROUP tatuo    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include\" "    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info-MailPeeper_____________.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH mailpeeper-tls.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH mailpeeper-tls.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/new.dst/Users/tatuo/Applications    setenv INSTALL_GROUP tatuo    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER tatuo    setenv INSTALL_PATH /Users/tatuo/Applications    setenv INSTALL_ROOT /tmp/new.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH mailpeeper-tls.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DYLIB_INSTALL_NAME "@executable_path/"    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment\" "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal/x86_64/mailpeeper-tls.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH mailpeeper-tls.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 10K540    setenv MAC_OS_X_VERSION_ACTUAL 1068    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0608    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Objects-normal    setenv OBJROOT /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH mailpeeper-tls.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/PkgInfo    setenv PKGINFO_PATH mailpeeper-tls.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2518    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH mailpeeper-tls.app/Contents/PlugIns    setenv PREBINDING YES    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH mailpeeper-tls.app/Contents/PrivateHeaders    setenv PRODUCT_NAME mailpeeper-tls    setenv PRODUCT_SETTINGS_PATH /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Info-MailPeeper_____________.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT new    setenv PROJECT_DERIVED_FILE_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/DerivedSources    setenv PROJECT_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv PROJECT_FILE_PATH /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/new.xcodeproj    setenv PROJECT_NAME new    setenv PROJECT_TEMP_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build    setenv PUBLIC_HEADERS_FOLDER_PATH mailpeeper-tls.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH mailpeeper-tls.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SDK_PRODUCT_BUILD_VERSION 10K540    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH mailpeeper-tls.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH mailpeeper-tls.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv SRCROOT /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/SymbolRepositories    setenv SYMROOT /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME MailPeeper    setenv TARGET_BUILD_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment    setenv TARGET_NAME MailPeeper    setenv TARGET_TEMP_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build    setenv TEMP_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build    setenv TEMP_FILES_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build    setenv TEMP_FILE_DIR /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build    setenv TEMP_ROOT /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH mailpeeper-tls.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER tatuo    setenv USER_APPS_DIR /Users/tatuo/Applications    setenv USER_LIBRARY_DIR /Users/tatuo/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH mailpeeper-tls.app/Contents/version.plist    setenv VERSION_INFO_BUILDER tatuo    setenv VERSION_INFO_FILE mailpeeper-tls_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:mailpeeper-tls  PROJECT:new-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME mailpeeper-tls.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2518    setenv XCODE_VERSION_ACTUAL 0400    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0400    setenv YACC /Developer/usr/bin/yacc    setenv ZERO_LINK NO    /bin/sh -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Script-B550AA9F12B7A5C200857CC8.sh0#
+
+CPhaseScriptExecution スクリプトを実行 /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/Script-B550AA9F12B7A5C200857CC8.sh
+r0
+
+CProcessInfoPlistFile /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Info.plist Info-MailPeeper_____________.plist
+s331314993.929258
+e331314993.942121
+r1
+xProcessInfoPlistFile
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Info.plist
+xInfo-MailPeeper_____________.plist
+lSLF07#2@42"Process Info-MailPeeper_____________.plist331314993#331314993#0(0"0(0#0#81"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Info-MailPeeper_____________.plist28710920075673648#374"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    builtin-infoPlistUtility Info-MailPeeper_____________.plist -genpkginfo /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-adltevzcaktzggadhouvrqcxugow/mailpeeper-Menu_Prefix.h.gch mailpeeper-Menu_Prefix.h normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s325620698.478689
+e325620704.114054
+r1
+xProcessPCH
+x/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-adltevzcaktzggadhouvrqcxugow/mailpeeper-Menu_Prefix.h.gch
+xmailpeeper-Menu_Prefix.h
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@35"Precompile mailpeeper-Menu_Prefix.h325620698#325620704#0(0"0(0#0#71"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h8603774784#1038"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h -o /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-adltevzcaktzggadhouvrqcxugow/mailpeeper-Menu_Prefix.h.gch0#
+
+CProcessPCH /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h.gch mailpeeper-Menu_Prefix.h normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s331074822.627525
+e331074824.754362
+r1
+xProcessPCH
+x/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h.gch
+xmailpeeper-Menu_Prefix.h
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@35"Precompile mailpeeper-Menu_Prefix.h331074822#331074824#0(0"0(0#0#71"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h8644568480#1148"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h -o /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-dehduhifcafivudwymkhdlvwijpy/mailpeeper-Menu_Prefix.h.gch0#
+
+CProcessPCH /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-fldvxfpxcpyvlvckgypynlichnst/mailpeeper-Menu_Prefix.h.gch mailpeeper-Menu_Prefix.h normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s328614907.144969
+e328614911.338297
+r1
+xProcessPCH
+x/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-fldvxfpxcpyvlvckgypynlichnst/mailpeeper-Menu_Prefix.h.gch
+xmailpeeper-Menu_Prefix.h
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@35"Precompile mailpeeper-Menu_Prefix.h328614907#328614911#0(0"0(0#0#71"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h7236271046757279744#1093"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/growl -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h -o /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-fldvxfpxcpyvlvckgypynlichnst/mailpeeper-Menu_Prefix.h.gch0#
+
+CProcessPCH /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h.pth mailpeeper-Menu_Prefix.h normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
+s328144961.691599
+e328144966.970563
+r1
+xProcessPCH
+x/var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h.pth
+xmailpeeper-Menu_Prefix.h
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.analyzer
+lSLF07#2@35"Precompile mailpeeper-Menu_Prefix.h328144961#328144966#0(0"0(0#0#71"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h8610491840#1074"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -fasm-blocks -gdwarf-2 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/mailpeeper-tls.hmap -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/include -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources/x86_64 -I/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/new.build/Deployment/MailPeeper.build/DerivedSources -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/mailpeeper-Menu_Prefix.h -o /var/folders/HU/HU2jXWbBE2O7nB-KPUjkb++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/mailpeeper-Menu_Prefix-gvpsuuujaahhrveqkkmdxqmqbkmn/mailpeeper-Menu_Prefix.h.pth0#
+
+CStripNIB /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/HeaderWin.nib
+s331074822.499404
+e331074822.627312
+r1
+xStripNIB
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/HeaderWin.nib
+lSLF07#2@37"StripNIB Japanese.lproj/HeaderWin.nib331074822#331074822#0(0"0(0#0#75"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/HeaderWin.nib8639149824#335"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/usr/bin/ibtool --strip /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/HeaderWin.nib --output-format human-readable-text /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/HeaderWin.nib0#
+
+CStripNIB /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/MainMenu.nib
+s331074822.497929
+e331074822.626883
+r1
+xStripNIB
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/MainMenu.nib
+lSLF07#2@36"StripNIB Japanese.lproj/MainMenu.nib331074822#331074822#0(0"0(0#0#74"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/MainMenu.nib8639838464#333"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /Developer/usr/bin/ibtool --strip /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app/Contents/Resources/Japanese.lproj/MainMenu.nib --output-format human-readable-text /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/Japanese.lproj/MainMenu.nib0#
+
+CTouch /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app
+s331314995.844842
+e331314995.875080
+r1
+xTouch
+x/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app
+lSLF07#2@88"Touch /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app331314995#331314995#0(0"0(0#0#0"8622660576#159"    cd /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls    /usr/bin/touch -c /Users/tatuo/Desktop/mailpeeper/mailpeeper-tls/build/Deployment/mailpeeper-tls.app0#
+
