@@ -153,8 +153,8 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 	
 	while (1)
 	{
-		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-P'B'がBase64
-		char charset;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS
+		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-Printable、'B'がBase64
+		char charset;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS、ISO2022JPが'I'
 		int length;				// デコードする文字列の長さ
 		char* startPosition;	// デコード始めの位置
 		
@@ -170,14 +170,15 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		if(aFind = strstr_touppered(aSrc, ISO2022_HEAD))
 		{
 			charset = 'I';		// ISO-2022-JP
-			return nil;			// 既存のISO-2022-JP?Bのデコードをする時はすぐに戻る。
+//			return nil;			// 既存のISO-2022-JP?Bのデコードをする時はすぐに戻る。
 		}else{
-/*			if (buff == nil)
+			// 全部通して特定文字列がなかった場合
+			if (buff == nil)
 			{
 				[line setLength:strlen(strData)];
 				return [[[NSString alloc] initWithData:line encoding:NSISO2022JPStringEncoding] autorelease];
 			}
-*/			return buff;		// 見つからなかった。	
+			return buff;		// 次のエンコード文字列が見つからなかった。	
 		}		
 		
 		// ここでやっとreturn用のバッファを作る
@@ -203,7 +204,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		encodeType = *aSrc;				// QかBが入るはず。
 		encodeType = toupper(encodeType);	// 大抵、大文字だけど、小文字も対応。RFC2047 2.
 		if (!(encodeType == 'Q' || encodeType == 'B'))
-			return nil;					// 知らないエンコーディングならお帰り頂く
+			return buff;					// 知らないエンコーディングならお帰り頂く
 		
 		// QでもBでも、"?="までなので、デコードしたい文字列と長さを得る
 		aSrc += 2;						// Q?やB?より先に移動
@@ -226,6 +227,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 			tmp[i] = *startPosition++;	
 		}
 		tmp[length] = '\0';				//ヌル文字で止めないとダメ。
+//		*(aDst + length) = '\0';
 		
 		// エンコード形式ごとにデコード
 		if (encodeType == 'B') {
@@ -233,6 +235,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		}else if (encodeType == 'Q') {
 			[self decode_QuotedPrintable:aDst size:length conv:tmp];
 		}
+		
 		// 
 		aSrc++;							// そのままだと、後ろの"?="の'='の位置なので進める。
 		length = prefix + strlen(aDst);
@@ -242,6 +245,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		{	// UTF-8用
 			[buff appendString:[[[NSString alloc] initWithData:line 
 				encoding:NSUTF8StringEncoding] autorelease]];
+//			[buff appendString:[[[NSString alloc] initWithCString:aDst encoding:NSUTF8StringEncoding] autorelease]];
 		}
 		else if(charset == 'S')
 		{	// Shift_JIS用
@@ -250,9 +254,19 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		}
 		else if(charset == 'I')
 		{
-			// ISO-20220-JP用
-			[buff appendString:[[[NSString alloc] initWithData:line 
-				encoding:NSISO2022JPStringEncoding] autorelease]];
+			// ISO-2022-JP用
+			// なぜかエラー(例外)が出るが、続行してしまう。Base64に問題がありそう。
+			@try {
+				[buff appendString:[[[NSString alloc] initWithData:line
+					encoding:NSISO2022JPStringEncoding]autorelease]];
+//		[buff appendString:[[[NSString alloc] initWithCString:tmp encoding:NSISO2022JPStringEncoding] autorelease]];
+//		[buff appendString:[NSString stringWithCString:aDst encoding:NSISO2022JPStringEncoding]];
+			}
+			@catch (NSException * e) {
+				NSLog(@"ISO-2022-JPを読んでいる時に、例外が出てます。%@",e);		// とりあえずここで止めてログ表示
+//				NSRunAlertPanel(@"Error", @"%@", @"OK", nil, nil, e);
+			}
+			
 		} else {
 			// ないときはnilを返す。普通は来ないですが。
 			return nil;
@@ -292,6 +306,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 // Base64 http://www.ietf.org/rfc/rfc3548.txt
 // 名前が紛らわしいが、_を付けた方が新しい方
 // http://d.hatena.ne.jp/ryousanngata/20101203/1291380670 からもらってきた
+#if 1
 - (int)decode_Base64:(const char*)src src_size:(int)srclen dst:(char*)dst dst_size:(int)dstlen
 {
 		const unsigned char Base64num[256] = {
@@ -330,13 +345,15 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		
 		if(j<dstlen) dst[j] = '\0';
 		return j;	
-	
-#if 0
-	//他のところからパクリ。読み取りにくいコードはなるべく入れたくない。
-	// http://d.hatena.ne.jp/htz/20080808/1218185920 からもらってきた
+}	
+#else
+//他のところからパクリ。読み取りにくいコードはなるべく入れたくない。
+// http://d.hatena.ne.jp/htz/20080808/1218185920 からもらってきた
+- (int)decode_Base64:(const char*)p src_size:(int)srclen dst:(char*)buff dst_size:(int)dstlen
+{	
 	char b64[128];
 	const char *w = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-	char *p = baseStr, c[4], *buff = p;
+	char c[4];
 	int i = 0, j;
 	
 	
@@ -352,8 +369,9 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 			buff[i++] = c[j] << (j * 2 + 2) | c[j + 1] >> ((2 - j) * 2);
 	}
 	buff[i] = '\0';
-#endif
+	return strlen(buff);
 }
+#endif
 
 // ------------ tls adding end ------------
 

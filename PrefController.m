@@ -730,7 +730,7 @@ enum {
 							 defNotesArray, GROWL_NOTIFICATIONS_DEFAULT,
 							 nil];
 	
-	NSLog(@"Registering with %@",regDict);
+//	NSLog(@"Registering with %@",regDict);
 	return regDict;
 }
 

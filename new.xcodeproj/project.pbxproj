@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,6 @@
 		B503F82C129BD1B600A54AFF /* SimpleFIFO.h in Headers */ = {isa = PBXBuildFile; fileRef = F5B2C4ED0350595F01237D66 /* SimpleFIFO.h */; };
 		B503F82D129BD1B600A54AFF /* SimpleSyncFIFO.h in Headers */ = {isa = PBXBuildFile; fileRef = F5B2C4EE0350595F01237D66 /* SimpleSyncFIFO.h */; };
 		B503F82E129BD1B600A54AFF /* PostedEventProc.h in Headers */ = {isa = PBXBuildFile; fileRef = F5B2C502035077BB01237D66 /* PostedEventProc.h */; };
-		B503F82F129BD1B600A54AFF /* mailpeeper-Menu_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = D6CBB56804ADDA650025594E /* mailpeeper-Menu_Prefix.h */; };
 		B503F831129BD1B600A54AFF /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		B503F832129BD1B600A54AFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B503F833129BD1B600A54AFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F54436090330A06F01A80102 /* Localizable.strings */; };
@@ -263,7 +262,6 @@
 		D6360B430402A355009CA739 /* AddressBookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookController.m; sourceTree = "<group>"; };
 		D6360B4E0402A629009CA739 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
 		D6615AB303B6D7FC00E1D998 /* new.applescript */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.applescript; path = new.applescript; sourceTree = "<group>"; };
-		D6CBB56804ADDA650025594E /* mailpeeper-Menu_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = "mailpeeper-Menu_Prefix.h"; sourceTree = "<group>"; };
 		D6D8D08C03CC4FD40053CC21 /* mail-error.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "mail-error.icns"; sourceTree = "<group>"; };
 		D6D8D08D03CC4FD40053CC21 /* mail-new.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "mail-new.icns"; sourceTree = "<group>"; };
 		D6D8D08E03CC4FD40053CC21 /* mail-r.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "mail-r.icns"; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 			children = (
 				B5E90E0B13990D9600FFA619 /* growl */,
 				B537543A12B81B3400C6473C /* openssl */,
-				D6CBB56804ADDA650025594E /* mailpeeper-Menu_Prefix.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -635,7 +632,6 @@
 				B503F82C129BD1B600A54AFF /* SimpleFIFO.h in Headers */,
 				B503F82D129BD1B600A54AFF /* SimpleSyncFIFO.h in Headers */,
 				B503F82E129BD1B600A54AFF /* PostedEventProc.h in Headers */,
-				B503F82F129BD1B600A54AFF /* mailpeeper-Menu_Prefix.h in Headers */,
 				B589CF9B12AE47A40067618A /* TlsTCPClient.h in Headers */,
 				B55F224A12B4C84100E0E856 /* TlsReadLine.h in Headers */,
 				B537548712B81B3400C6473C /* aes.h in Headers */,
@@ -742,8 +738,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = B503F800129BCD7F00A54AFF /* Build configuration list for PBXProject "new" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -879,8 +878,8 @@
 		B503F7FA129BCD7F00A54AFF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
@@ -891,8 +890,8 @@
 		B503F7FB129BCD7F00A54AFF /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
@@ -903,8 +902,8 @@
 		B503F7FC129BCD7F00A54AFF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
@@ -924,12 +923,12 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/growl\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/growl\"";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mailpeeper-Menu_Prefix.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MailPeeper_____________.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -960,10 +959,10 @@
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/growl\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/growl\"";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mailpeeper-Menu_Prefix.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MailPeeper_____________.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -996,6 +995,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mailpeeper-Menu_Prefix.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MailPeeper_____________.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
