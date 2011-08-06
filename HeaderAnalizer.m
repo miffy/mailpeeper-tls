@@ -141,6 +141,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 
 // BはBASE64(RFC 3548)。QはQuoted-Printable(RFC 1521)
 // =?utf-8?Q? と =?Shift_JIS?B? のほぼ二択だが、分けて実装。あとで分けて実装するの面倒なんで。
+#if 0
 // strDataで変換する文字列と、返す文字列を両方扱うので、デコードした文字列は、読み終わったところに書き込み
 - (NSString*)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line
 {	
@@ -150,7 +151,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 	int prefix;					// エンコーディングされてない、前後の文字数
 	NSMutableString* buff = nil;	// 
 	int lineLength = [line length];	// 
-	
+	    
 	while (1)
 	{
 		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-Printable、'B'がBase64
@@ -231,12 +232,13 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		
 		// エンコード形式ごとにデコード
 		if (encodeType == 'B') {
-			[self decode_Base64:tmp src_size:length dst:aDst dst_size:strlen(aDst)];
+			i = [self decode_Base64:tmp src_size:length dst:aDst dst_size:strlen(aDst)];
 		}else if (encodeType == 'Q') {
-			[self decode_QuotedPrintable:aDst size:length conv:tmp];
+			i = [self decode_QuotedPrintable:aDst size:length conv:tmp];
 		}
-		
-		// 
+//		NSLog(@"デコード状況が%dです aDst: %s", i, aDst);
+		printf("デコード状況が%dです\n", i);
+        
 		aSrc++;							// そのままだと、後ろの"?="の'='の位置なので進める。
 		length = prefix + strlen(aDst);
 		[line setLength: length];
@@ -257,13 +259,15 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 			// ISO-2022-JP用
 			// なぜかエラー(例外)が出るが、続行してしまう。Base64に問題がありそう。
 			@try {
+                printf("strData:%s\n", strData);							// 問題になっているデータを出力
 				[buff appendString:[[[NSString alloc] initWithData:line
 					encoding:NSISO2022JPStringEncoding]autorelease]];
 //		[buff appendString:[[[NSString alloc] initWithCString:tmp encoding:NSISO2022JPStringEncoding] autorelease]];
 //		[buff appendString:[NSString stringWithCString:aDst encoding:NSISO2022JPStringEncoding]];
 			}
 			@catch (NSException * e) {
-				NSLog(@"ISO-2022-JPを読んでいる時に、例外が出てます。%@",e);		// とりあえずここで止めてログ表示
+				NSLog(@"ISO-2022-JPを読んでいる時に、例外が出てます。%@",e);	// とりあえずここで止めてログ表示
+				NSLog(@"tmp:%s", tmp);									// 問題になっているデータを出力
 //				NSRunAlertPanel(@"Error", @"%@", @"OK", nil, nil, e);
 			}
 			
@@ -280,6 +284,174 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 		}
 	}
 }
+#else
+// strDataで変換する文字列と、返す文字列を両方扱うので、デコードした文字列は、読み終わったところに書き込み ← やめました
+- (NSString*)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line
+{	
+	char *aFind;				// ヘッダを見つけた位置
+	char *aSrc;					// 読み取り元となる文字列の位置
+	char *decEnd;				// デコードした最後を覚えておく
+	int prefix;					// エンコーディングされてない、前後の文字数
+	NSMutableString* buff = nil;	// 
+	
+	
+//	NSLog(@"ヘッダデータ：%s\n",strData);
+	// もらったデータをコピーする
+	char cpyStr[strlen(strData)];
+	char decodedStr[strlen(strData)];// 変換後文字列入れ
+	char *p_cpyStr;				// 
+	int i;
+	
+	for(i=0; strData[i]!='\0'; i++){
+		cpyStr[i] = strData[i];	
+	}
+	cpyStr[i++] = '\0';
+	p_cpyStr = cpyStr;
+printf("\nコピーデータ：%s\n",cpyStr);	
+	
+	
+	while (1)
+	{
+		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-Printable、'B'がBase64
+		char charset;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS、ISO2022JPが'I'
+		int length;				// デコードする文字列の長さ
+		char* startPosition;	// デコード始めの位置
+		
+printf("p_cpyStr:whileはじめ：%s\n" ,p_cpyStr);		
+		aSrc = p_cpyStr;
+		if((aFind = strstr_touppered(aSrc, UTF8_HEAD)))
+		{
+			charset = 'U';		// UTF-8
+		}else if((aFind = strstr_touppered(aSrc, SJIS_HEAD)))
+		{
+			charset = 'S';		// ShiftJIS			
+		}else if((aFind = strstr_touppered(aSrc, ISO2022_HEAD)))
+		{
+			charset = 'I';		// ISO-2022-JP
+		}else
+		{
+			// 全部通して特定文字列がなかった場合
+			if (buff == nil)
+			{
+				//[line setLength:strlen(p_cpyStr)];
+				//return [[[NSString alloc] initWithData:line encoding:NSISO2022JPStringEncoding] autorelease];
+				return [[[NSString alloc] initWithCString:p_cpyStr] autorelease];						
+			}
+			// 残っているアスキー文字列は出すべきかどうか
+			//[buff appendString:[[[NSString alloc] initWithCString:p_cpyStr] autorelease]];
+			return buff;		// 次のエンコード文字列が見つからなかった。	
+		}		
+		
+		// ここでやっとreturn用のバッファを作る
+		if(buff == nil)
+			buff = [[[NSMutableString string] autorelease] retain];
+		
+		// 見つけた地点までの情報をコピーする（エンコーディングされているもの以外はみなASCIIコードと考える）
+		// UTF-8(RFC 2279)は、ASCIIコードは同じコードで1バイトで、それ以外を2～6バイトの可変長
+		// ShiftJISは、エスケープシーケンスなしで1バイト文字と2バイト文字を共存させ、ASCII文字はそのまま
+		while(aSrc < aFind){
+			/**aDst++ = */aSrc++;
+		}
+		prefix = aSrc - p_cpyStr;		// ヘッダとかの長さは入れない。エンコードされてない素のASCII文字のみ。
+        
+        //ヘッダの長さごとにずらす
+		if (charset == 'S') {
+			aSrc += strlen(SJIS_HEAD);			
+		}else if (charset == 'U') {
+			aSrc += strlen(UTF8_HEAD);			
+		}else if (charset == 'I') {
+			aSrc += strlen(ISO2022_HEAD);			
+		}
+		
+		encodeType = *aSrc;				// QかBが入るはず。
+		encodeType = toupper(encodeType);	// 大抵、大文字だけど、小文字も対応。RFC2047 2.
+		if (!(encodeType == 'Q' || encodeType == 'B'))
+			continue;					// 知らないエンコーディングなら無視
+		
+		// QでもBでも、"?="までなので、デコードしたい文字列と長さを得る
+		aSrc += 2;						// Q?やB?より先に移動
+		startPosition = aSrc;			// 始めの位置を設定(B?かQ?以降)
+		length = 0;
+		// "?="で終わり
+		while (*aSrc) {
+			if (*aSrc++ == '?') 
+			{
+				if (*aSrc == '=')
+					break;
+			}else{
+				length++;				// デコードする文字列の長さ
+			}
+		}
+		// デコードすべき文字列を別途コピーして作成
+		char tmp[length];
+		int i;
+		for(i=0; i<length; i++){
+			tmp[i] = *startPosition++;	
+		}
+		tmp[length] = '\0';				//ヌル文字で止めないとダメ。
+		
+printf("tmp: %s\n",tmp);
+		// エンコード形式ごとにデコード
+		if (encodeType == 'B') {
+			i = [self decode_Base64:tmp src_size:length dst:decodedStr dst_size:sizeof(decodedStr)];
+		}else if (encodeType == 'Q') {
+			i = [self decode_QuotedPrintable:decodedStr size:length conv:tmp];
+		}
+        
+		aSrc++;							// そのままだと、後ろの"?="の'='の位置なので進める。
+		decEnd = aSrc;
+		length = prefix + strlen(decodedStr);	// 
+//		[line setLength: length];
+		
+printf("decodedStr: %s\n",decodedStr);
+		// 追加しました
+		NSMutableData *aLine = [NSMutableData dataWithBytes:decodedStr length:strlen(decodedStr)+1]; //(keyはNSString,valueはNSMutableDataの辞書)
+		[aLine setLength:([aLine length] + 1)];	//1バイトだけ0コードを追加する
+		
+//NSLog(@"%@",[[[NSString alloc] initWithData:aLine encoding:NSISO2022JPStringEncoding]autorelease]);
+		
+		if (charset == 'U')
+		{	// UTF-8用
+printf("\nUTF-8 ");
+			[buff appendString:[[[NSString alloc] initWithData:aLine 
+                                                      encoding:NSUTF8StringEncoding] autorelease]];
+            //			[buff appendString:[[[NSString alloc] initWithCString:aDst encoding:NSUTF8StringEncoding] autorelease]];
+		}
+		else if(charset == 'S')
+		{	// Shift_JIS用
+printf("\nShift-JIS ");
+			[buff appendString:[[[NSString alloc] initWithData:aLine 
+                                                      encoding:NSShiftJISStringEncoding] autorelease]];		
+		}
+		else if(charset == 'I')
+		{
+printf("\nISO-2022-JP ");
+			// ISO-2022-JP用
+			// なぜかエラー(例外)が出るが、続行してしまう。Base64に問題がありそう。
+			@try {
+                printf("cpyStr:%s\n", cpyStr);							// 問題になっているデータを出力
+				[buff appendString:[[[NSString alloc] initWithData:aLine
+                                                          encoding:NSISO2022JPStringEncoding]autorelease]];
+                //		[buff appendString:[[[NSString alloc] initWithCString:tmp encoding:NSISO2022JPStringEncoding] autorelease]];
+                //		[buff appendString:[NSString stringWithCString:aDst encoding:NSISO2022JPStringEncoding]];
+			}
+			@catch (NSException * e) {
+				NSLog(@"ISO-2022-JPを読んでいる時に、例外が出てます。%@",e);	// とりあえずここで止めてログ表示
+				NSLog(@"tmp:%s", tmp);									// 問題になっているデータを出力
+                //				NSRunAlertPanel(@"Error", @"%@", @"OK", nil, nil, e);
+			}
+			
+		} else {
+			// ないときはnilを返す。普通は来ないですが。
+			return nil;
+		}
+NSLog(@"appendString:%@",buff);
+        		
+		p_cpyStr = decEnd;
+	}
+}
+#endif
+
 			 
 #include <stdio.h>
 
@@ -309,42 +481,46 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 #if 1
 - (int)decode_Base64:(const char*)src src_size:(int)srclen dst:(char*)dst dst_size:(int)dstlen
 {
-		const unsigned char Base64num[256] = {
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x3E,0xFF,0xFF,0xFF,0x3F,
-			0x34,0x35,0x36,0x37,0x38,0x39,0x3A,0x3B,0x3C,0x3D,0xFF,0xFF,0xFF,0x00,0xFF,0xFF,
-			0xFF,0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,
-			0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,
-			0x29,0x2A,0x2B,0x2C,0x2D,0x2E,0x2F,0x30,0x31,0x32,0x33,0xFF,0xFF,0xFF,0xFF,0xFF,
-			
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-			0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
-		};
-		int calclength = (srclen/4*3);
-		int i,j;
-		if(calclength > dstlen || srclen % 4 != 0) return 0;
-		
-		// 本来なら(int)のキャストはいらないけど、warningを止めるために入れた
-		j=0;
-		for(i=0; i+3<srclen; i+=4){
-			if((Base64num[(int)src[i+0]]|Base64num[(int)src[i+1]]|Base64num[(int)src[i+2]]|Base64num[(int)src[i+3]]) > 0x3F){
-				return -1;
-			}
-			dst[j++] = Base64num[(int)src[i+0]]<<2 | Base64num[(int)src[i+1]] >> 4;
-			dst[j++] = Base64num[(int)src[i+1]]<<4 | Base64num[(int)src[i+2]] >> 2;
-			dst[j++] = Base64num[(int)src[i+2]]<<6 | Base64num[(int)src[i+3]];
-		}
-		
-		if(j<dstlen) dst[j] = '\0';
-		return j;	
+    const unsigned char Base64num[256] = {
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x3E,0xFF,0xFF,0xFF,0x3F,
+        0x34,0x35,0x36,0x37,0x38,0x39,0x3A,0x3B,0x3C,0x3D,0xFF,0xFF,0xFF,0x00,0xFF,0xFF,
+        0xFF,0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,
+        0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,
+        0x29,0x2A,0x2B,0x2C,0x2D,0x2E,0x2F,0x30,0x31,0x32,0x33,0xFF,0xFF,0xFF,0xFF,0xFF,
+        
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+        0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+    };
+    int i,j;
+    
+    int calclength = (srclen/4*3);
+//printf("\n%d %d\n",calclength, dstlen);
+    if(calclength > dstlen || srclen % 4 != 0)	return -2;
+    
+    // 本来なら(int)のキャストはいらないけど、warningを止めるために入れた
+    j=0;
+    for(i=0; i+3<srclen; i+=4){
+        if((Base64num[(int)src[i+0]]|Base64num[(int)src[i+1]]|Base64num[(int)src[i+2]]|Base64num[(int)src[i+3]]) > 0x3F){
+            return -1;
+        }
+        dst[j++] = Base64num[(int)src[i+0]]<<2 | Base64num[(int)src[i+1]] >> 4;
+        dst[j++] = Base64num[(int)src[i+1]]<<4 | Base64num[(int)src[i+2]] >> 2;
+        dst[j++] = Base64num[(int)src[i+2]]<<6 | Base64num[(int)src[i+3]];
+    }
+
+//printf("dst is %s\n", dst);
+//printf("j: %d, dstlen:%d\n", j,dstlen);
+    if(j<dstlen) dst[j] = '\0';
+    return j;	
 }	
 #else
 //他のところからパクリ。読み取りにくいコードはなるべく入れたくない。

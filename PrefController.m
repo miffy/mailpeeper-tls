@@ -434,7 +434,7 @@ enum {
 // ウィジェットクリックでメーラーが立ち上がる。
 - (void) growlNotificationWasClicked:(id)clickContext
 {
-	NSLog(@"growlNotificationWasClicked called %@",clickContext);
+//	NSLog(@"growlNotificationWasClicked called %@",clickContext);
 	// 入れるかどうか迷う所。WindowsのShellExecute()的な動作？
 //	[[NSWorkspace sharedWorkspace] openFile:@"/Applications/network/Thunderbird.app/"];
 	
