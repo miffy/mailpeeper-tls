@@ -141,150 +141,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 
 // BはBASE64(RFC 3548)。QはQuoted-Printable(RFC 1521)
 // =?utf-8?Q? と =?Shift_JIS?B? のほぼ二択だが、分けて実装。あとで分けて実装するの面倒なんで。
-#if 0
-// strDataで変換する文字列と、返す文字列を両方扱うので、デコードした文字列は、読み終わったところに書き込み
-- (NSString*)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line
-{	
-	char *aFind;				// ヘッダを見つけた位置
-	char *aSrc;					// 読み取り元となる文字列の位置
-	char *aDst;					// 入れ込み用ポインタ
-	int prefix;					// エンコーディングされてない、前後の文字数
-	NSMutableString* buff = nil;	// 
-	int lineLength = [line length];	// 
-	    
-	while (1)
-	{
-		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-Printable、'B'がBase64
-		char charset;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS、ISO2022JPが'I'
-		int length;				// デコードする文字列の長さ
-		char* startPosition;	// デコード始めの位置
-		
-		aDst = aSrc = strData;
-		if(aFind = strstr_touppered(aSrc, UTF8_HEAD))
-		{
-			charset = 'U';		// UTF-8
-		}else
-		if(aFind = strstr_touppered(aSrc, SJIS_HEAD))
-		{
-			charset = 'S';		// ShiftJIS			
-		}else 
-		if(aFind = strstr_touppered(aSrc, ISO2022_HEAD))
-		{
-			charset = 'I';		// ISO-2022-JP
-//			return nil;			// 既存のISO-2022-JP?Bのデコードをする時はすぐに戻る。
-		}else{
-			// 全部通して特定文字列がなかった場合
-			if (buff == nil)
-			{
-				[line setLength:strlen(strData)];
-				return [[[NSString alloc] initWithData:line encoding:NSISO2022JPStringEncoding] autorelease];
-			}
-			return buff;		// 次のエンコード文字列が見つからなかった。	
-		}		
-		
-		// ここでやっとreturn用のバッファを作る
-		if(buff == nil)
-			buff = [NSMutableString string];
-		
-		// 見つけた地点までの情報をコピーする（エンコーディングされているもの以外はみなASCIIコードと考える）
-		// UTF-8(RFC 2279)は、ASCIIコードは同じコードで1バイトで、それ以外を2～6バイトの可変長
-		// ShiftJISは、エスケープシーケンスなしで1バイト文字と2バイト文字を共存させ、ASCII文字はそのまま
-		while(aSrc < aFind){
-			*aDst++ = *aSrc++;
-		}
-		prefix = aSrc - strData;		// ヘッダとかの長さは入れない。エンコードされてない素のASCII文字のみ。
 
-		if (charset == 'S') {
-			aSrc += strlen(SJIS_HEAD);			
-		}else if (charset == 'U') {
-			aSrc += strlen(UTF8_HEAD);			
-		}else if (charset == 'I') {
-			aSrc += strlen(ISO2022_HEAD);			
-		}
-		
-		encodeType = *aSrc;				// QかBが入るはず。
-		encodeType = toupper(encodeType);	// 大抵、大文字だけど、小文字も対応。RFC2047 2.
-		if (!(encodeType == 'Q' || encodeType == 'B'))
-			return buff;					// 知らないエンコーディングならお帰り頂く
-		
-		// QでもBでも、"?="までなので、デコードしたい文字列と長さを得る
-		aSrc += 2;						// Q?やB?より先に移動
-		startPosition = aSrc;			// 始めの位置を設定(B?かQ?以降)
-		length = 0;
-		// "?="で終わり
-		while (*aSrc) {
-			if (*aSrc++ == '?') 
-			{
-				if (*aSrc == '=')
-					break;
-			}else{
-				length++;				// デコードする文字列の長さ
-			}
-		}
-		// デコードすべき文字列を別途コピーして作成
-		char tmp[strlen(aDst)];
-		int i;
-		for(i=0; i<length; i++){
-			tmp[i] = *startPosition++;	
-		}
-		tmp[length] = '\0';				//ヌル文字で止めないとダメ。
-//		*(aDst + length) = '\0';
-		
-		// エンコード形式ごとにデコード
-		if (encodeType == 'B') {
-			i = [self decode_Base64:tmp src_size:length dst:aDst dst_size:strlen(aDst)];
-		}else if (encodeType == 'Q') {
-			i = [self decode_QuotedPrintable:aDst size:length conv:tmp];
-		}
-//		NSLog(@"デコード状況が%dです aDst: %s", i, aDst);
-		printf("デコード状況が%dです\n", i);
-        
-		aSrc++;							// そのままだと、後ろの"?="の'='の位置なので進める。
-		length = prefix + strlen(aDst);
-		[line setLength: length];
-		
-		if (charset == 'U')
-		{	// UTF-8用
-			[buff appendString:[[[NSString alloc] initWithData:line 
-				encoding:NSUTF8StringEncoding] autorelease]];
-//			[buff appendString:[[[NSString alloc] initWithCString:aDst encoding:NSUTF8StringEncoding] autorelease]];
-		}
-		else if(charset == 'S')
-		{	// Shift_JIS用
-			[buff appendString:[[[NSString alloc] initWithData:line 
-				encoding:NSShiftJISStringEncoding] autorelease]];		
-		}
-		else if(charset == 'I')
-		{
-			// ISO-2022-JP用
-			// なぜかエラー(例外)が出るが、続行してしまう。Base64に問題がありそう。
-			@try {
-                printf("strData:%s\n", strData);							// 問題になっているデータを出力
-				[buff appendString:[[[NSString alloc] initWithData:line
-					encoding:NSISO2022JPStringEncoding]autorelease]];
-//		[buff appendString:[[[NSString alloc] initWithCString:tmp encoding:NSISO2022JPStringEncoding] autorelease]];
-//		[buff appendString:[NSString stringWithCString:aDst encoding:NSISO2022JPStringEncoding]];
-			}
-			@catch (NSException * e) {
-				NSLog(@"ISO-2022-JPを読んでいる時に、例外が出てます。%@",e);	// とりあえずここで止めてログ表示
-				NSLog(@"tmp:%s", tmp);									// 問題になっているデータを出力
-//				NSRunAlertPanel(@"Error", @"%@", @"OK", nil, nil, e);
-			}
-			
-		} else {
-			// ないときはnilを返す。普通は来ないですが。
-			return nil;
-		}
-
-		// がっつり元ネタを前の方にズラして改変。
-		aDst = strData;
-		for (i=0; i < lineLength - length; i++)
-		{
-			*aDst++ = *aSrc++;
-		}
-	}
-}
-#else
 // strDataで変換する文字列と、返す文字列を両方扱うので、デコードした文字列は、読み終わったところに書き込み ← やめました
 - (NSString*)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line
 {	
@@ -333,8 +190,6 @@ printf("p_cpyStr:whileはじめ：%s\n" ,p_cpyStr);
 			// 全部通して特定文字列がなかった場合
 			if (buff == nil)
 			{
-				//[line setLength:strlen(p_cpyStr)];
-				//return [[[NSString alloc] initWithData:line encoding:NSISO2022JPStringEncoding] autorelease];
 				return [[[NSString alloc] initWithCString:p_cpyStr] autorelease];						
 			}
 			// 残っているアスキー文字列は出すべきかどうか
@@ -450,7 +305,6 @@ NSLog(@"appendString:%@",buff);
 		p_cpyStr = decEnd;
 	}
 }
-#endif
 
 			 
 #include <stdio.h>

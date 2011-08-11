@@ -7,15 +7,6 @@
 
 #import "TlsTCPClient.h"
 
-#if 0
-	#include <unistd.h>
-	#include <sys/types.h>
-	#include <sys/socket.h>
-	#include <netinet/in.h>
-	#include <arpa/inet.h>
-	#include <netdb.h>
-#endif
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -26,7 +17,6 @@
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
-
 
 
 #define BUF_LEN 256
@@ -210,43 +200,6 @@
 		mSocket = -1;
 	}
 }
-
-
-#if 0
-
-//メッセージを送る
-//iMessage=送るメッセージ(ASCIZ文字列)
-//戻り値.size=送ったサイズ(sendの戻り値),戻り値.err=エラー値(errno)
-- (SimpleTCPClient_send_recv_result)send:(const char *)iMessage
-{
-	SimpleTCPClient_send_recv_result aRes = { -1,0 };
-	if(mSocket >= 0){
-		aRes.size = send(mSocket,iMessage,strlen(iMessage),0);
-		if(aRes.size < 0){
-			aRes.err = errno;
-		}
-	}
-	return aRes;
-}
-
-//データを受信する
-//iBuff=受信バッファ,iSize=バッファのサイズ
-//戻り値.size=受信サイズ(recvの戻り値),戻り値.err=エラー値(errno)
-- (SimpleTCPClient_send_recv_result)recv:(void *)iBuff size:(int)iSize
-{
-	SimpleTCPClient_send_recv_result aRes = { -1,0 };
-	if(mSocket >= 0){
-		aRes.size = recv(mSocket,iBuff,iSize,MSG_DONTWAIT);
-		if(aRes.size < 0){
-			aRes.err = errno;
-		}
-	}
-	return aRes;
-}
-
-
-
-#endif
 
 
 @end
