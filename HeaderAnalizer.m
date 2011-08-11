@@ -251,6 +251,7 @@ printf("tmp: %s\n",tmp);
 			i = [self decode_Base64:tmp src_size:length dst:decodedStr dst_size:sizeof(decodedStr)];
 		}else if (encodeType == 'Q') {
 			i = [self decode_QuotedPrintable:decodedStr size:length conv:tmp];
+//			i = [self decode_QuotedPrintable:decodedStr size:sizeof(decodedStr) conv:tmp];
 		}
         
 		aSrc++;							// そのままだと、後ろの"?="の'='の位置なので進める。

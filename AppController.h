@@ -65,6 +65,7 @@
 - (void)dispStatusRed:(NSString *)iMsg;
 - (PrefController *)prefController;
 - (NSEnumerator *)peepedItemIterator;
+- (NSMutableArray *)peepedItemArray;
 - (void)performGoButton;
 - (void)reportErr:(BOOL)iErr newMail:(BOOL)iNewMail;
 - (void)appendNewMail:(PeepedItem *)iItem pos:(int)iPos;

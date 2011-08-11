@@ -385,7 +385,7 @@ enum {
 	if([mGeneralItem newMailSoundEnable]){
 		[mNewMailSound_TF setStringValue:[mGeneralItem newMailSoundPath]];
 		NSSound *snd = [[[NSSound alloc] initWithContentsOfFile:[mGeneralItem newMailSoundPath] 
-							byReference:YES] autorelease];
+							byReference:YES]autorelease];
 		[snd play];
 //		[snd release];	// 明示して開放すべきモノ？
 	}
@@ -399,7 +399,7 @@ enum {
 		NSSound *snd = [[[NSSound alloc] initWithContentsOfFile:[mGeneralItem errorSoundPath] 
 							byReference:YES] autorelease];
 		[snd play];
-//		[snd release];	// deallocだとEXC_BAD_ACCESSになっちゃう
+//		[snd release];	//
 	}
 }
 

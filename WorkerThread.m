@@ -30,6 +30,8 @@
 - (void)tlsProcAccount;
 - (void)tlsProcMail;
 
+- (void)removePeepedItem: (NSMutableArray*) aUIDLHelpItemArray;
+
 @end
 
 @implementation WorkerThread
@@ -222,7 +224,7 @@
 	NSEnumerator *aUIDLHelpItemItr;
 	PeepedItem *aPeepedItem;
 
-	//NSLog(@"WorkerThread.procMail");
+	NSLog(@"WorkerThread.procMail");
 
 	//UIDLコマンドの発行
 	[mSocket send:"UIDL\r\n"];
@@ -263,6 +265,7 @@
 		}
 		[self checkKill];
 	}
+	
 
 	if(mRemoveItemArray == nil){ //メール受信の場合
 		int aTotal = [aUIDLHelpItemArray count]; //このアカウントでの新規メールの総数
@@ -324,7 +327,55 @@
 			}
 		}
 	}
+	
+	[self removePeepedItem: aUIDLHelpItemArray];
+	
+/*	// ここいらへんで、以前あったけど消えているメールの情報を解放	
+	NSEnumerator *aItr = [mAppController peepedItemIterator];	
+	while((aPeepedItem = [aItr nextObject]) != nil)
+	{
+		PeepedItem *aUIDLItem;
+		aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
+		while((aUIDLItem = [aUIDLHelpItemItr nextObject]) != nil)
+		{
+			if((![[aPeepedItem uid] isEqualToString:[aUIDLItem uid]] && 
+			   ([aPeepedItem accountID] == [aUIDLItem accountID])))
+			{
+				// peepedItemにあって、helpItemにないときは、peepedItemの方を解放
+				[[mAppController peepedItemArray] removeObject:aPeepedItem];
+			}
+		}
+	}
+*/
 }
+
+
+
+
+// ここいらへんで、以前あったけど消えているメールの情報を解放
+- (void)removePeepedItem: (NSMutableArray*) aUIDLHelpItemArray
+{
+	NSEnumerator *aItr = [mAppController peepedItemIterator];	
+	PeepedItem* aPeepedItem;
+	while((aPeepedItem = [aItr nextObject]) != nil)
+	{
+		PeepedItem *aUIDLItem;
+		NSEnumerator* aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
+		while((aUIDLItem = [aUIDLHelpItemItr nextObject]) != nil)
+		{
+			if(!([[aPeepedItem uid] isEqualToString:[aUIDLItem uid]] && 
+				 ([aPeepedItem accountID] == [aUIDLItem accountID])))
+			{
+				// peepedItemにあって、helpItemにないときは、peepedItemの方を解放
+				[[mAppController peepedItemArray] removeObject:aPeepedItem];
+			}
+		}
+	}
+}
+
+
+
+
 
 //受信メールの確認 または メールの削除(TLS用)
 - (void)tlsProcMail
@@ -438,7 +489,8 @@
 				}
 			}
 		}
-	}	
+	}
+	[self removePeepedItem: aUIDLHelpItemArray];
 }
 
 
@@ -620,6 +672,18 @@
 				//受信しているメールがあるなら、その確認へ
 				[self procMail];
 			}
+			// STATで何もなかったら、そのアカウントの元々あったメールデータを削除する - tls
+			else
+			{
+				NSEnumerator *aItr = [mAppController peepedItemIterator];	
+				PeepedItem* aPeepedItem;
+				while((aPeepedItem = [aItr nextObject]) != nil)
+				{
+					if([aPeepedItem accountID] == [mAccountItem accountID])
+						[[mAppController peepedItemArray] removeObject:aPeepedItem];
+						//[aPeepedItem release];	//これで消すとtlsの方でエラーが出てた。
+				}
+			}
 		}else{ //メール削除の場合
 			//削除処理へ
 			[self procMail];
@@ -713,7 +777,18 @@
 		if([self tlsCheckSTATresult]){
 			//受信しているメールがあるなら、その確認へ
 			[self tlsProcMail];
+		}	// STATで何もなかったら、そのアカウントの元々あったメールデータを削除する - tls
+		else
+		{
+			NSEnumerator *aItr = [mAppController peepedItemIterator];	
+			PeepedItem* aPeepedItem;
+			while((aPeepedItem = [aItr nextObject]) != nil)
+			{
+				if([aPeepedItem accountID] == [mAccountItem accountID])
+					[[mAppController peepedItemArray] removeObject:aPeepedItem];
+			}
 		}
+
 	}else{ //メール削除の場合
 		//削除処理へ
 		[self tlsProcMail];

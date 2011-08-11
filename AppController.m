@@ -96,6 +96,13 @@ enum {
 	return [mPeepedItemArray objectEnumerator];
 }
 
+
+- (NSMutableArray *)peepedItemArray
+{
+	return mPeepedItemArray;
+}
+
+
 //(メインウィンドウからのデリゲート)
 //メインウィンドウがキーウィンドウになった時に呼ばれる
 - (void)windowDidBecomeKey:(NSNotification *)aNotification
