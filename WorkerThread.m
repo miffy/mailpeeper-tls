@@ -330,23 +330,6 @@
 	
 	[self removePeepedItem: aUIDLHelpItemArray];
 	
-/*	// ここいらへんで、以前あったけど消えているメールの情報を解放	
-	NSEnumerator *aItr = [mAppController peepedItemIterator];	
-	while((aPeepedItem = [aItr nextObject]) != nil)
-	{
-		PeepedItem *aUIDLItem;
-		aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
-		while((aUIDLItem = [aUIDLHelpItemItr nextObject]) != nil)
-		{
-			if((![[aPeepedItem uid] isEqualToString:[aUIDLItem uid]] && 
-			   ([aPeepedItem accountID] == [aUIDLItem accountID])))
-			{
-				// peepedItemにあって、helpItemにないときは、peepedItemの方を解放
-				[[mAppController peepedItemArray] removeObject:aPeepedItem];
-			}
-		}
-	}
-*/
 }
 
 
