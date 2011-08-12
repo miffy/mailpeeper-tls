@@ -363,7 +363,7 @@
 		NSEnumerator* aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
 		while((aUIDLItem = [aUIDLHelpItemItr nextObject]) != nil)
 		{
-			if(!([[aPeepedItem uid] isEqualToString:[aUIDLItem uid]] && 
+			if((![[aPeepedItem uid] isEqualToString:[aUIDLItem uid]] && 
 				 ([aPeepedItem accountID] == [aUIDLItem accountID])))
 			{
 				// peepedItemにあって、helpItemにないときは、peepedItemの方を解放
@@ -490,7 +490,7 @@
 			}
 		}
 	}
-	[self removePeepedItem: aUIDLHelpItemArray];
+	//[self removePeepedItem: aUIDLHelpItemArray];
 }
 
 
@@ -822,7 +822,10 @@
 		{
 			// ------- for TLS -------
 			if ([mAccountItem tls] == YES)
+			{
+				//NSLog(@"into tls\n");
 				[self tlsProcAccount];
+			}
 			else
 				[self procAccount];
 		}

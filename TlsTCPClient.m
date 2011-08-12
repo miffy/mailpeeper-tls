@@ -189,6 +189,9 @@
 	SSL_free(ssl);						//SSL_new()で確保した領域解放
 	SSL_CTX_free(ctx);					//SSL_CTX_new()で確保した領域解放
 	ERR_free_strings();					//SSL_load_error_strings()で確保した領域解放	
+//	EVP_cleanup();						// メモリリーク対策
+//	CRYPTO_cleanup_all_ex_data();		// メモリリーク対策
+//	ERR_remove_state(0);				// メモリリーク対策
 }
 
 
