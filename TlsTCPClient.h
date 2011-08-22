@@ -7,11 +7,19 @@
 
 #import <Foundation/Foundation.h>
 
+#if 0
 #include <openssl/crypto.h>
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 #include <openssl/rand.h>
+#else
 
+#define OPENSSL_NO_LHASH
+#include "openssl/crypto.h"
+#include "openssl/ssl.h"
+#include "openssl/err.h"
+#include "openssl/rand.h"
+#endif
 
 typedef struct {
 	int size; //読み書きできたサイズ

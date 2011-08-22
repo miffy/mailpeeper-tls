@@ -145,7 +145,7 @@
 		B58950DE13965BEE004E056C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5B478741396435000829F1E /* Growl.framework */; };
 		B589CF9912AE47520067618A /* TlsTCPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B589CF9812AE47520067618A /* TlsTCPClient.m */; };
 		B589CF9B12AE47A40067618A /* TlsTCPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B589CF9A12AE47A40067618A /* TlsTCPClient.h */; };
-		B5A9714712C3868500A05133 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714412C3868500A05133 /* libcrypto.dylib */; };
+		B5A9714712C3868500A05133 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714412C3868500A05133 /* libcrypto.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		B5A9714812C3868500A05133 /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714512C3868500A05133 /* libssl.dylib */; };
 		B5A9714912C3868500A05133 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9714612C3868500A05133 /* libz.dylib */; };
 		B5E90E1013990DC400FFA619 /* Growl.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E90E0C13990DC400FFA619 /* Growl.h */; };
@@ -880,9 +880,9 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "@executable_path/";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/libssl.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
+				LIBRARY_SEARCH_PATHS = "@loader_path/.";
 				VERSIONING_SYSTEM = "";
 			};
 			name = Development;
@@ -892,9 +892,9 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "@executable_path/";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/libssl.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
+				LIBRARY_SEARCH_PATHS = "@loader_path/.";
 				VERSIONING_SYSTEM = "";
 			};
 			name = Deployment;
@@ -904,9 +904,9 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "@executable_path/";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/libssl.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
+				LIBRARY_SEARCH_PATHS = "@loader_path/.";
 				VERSIONING_SYSTEM = "";
 			};
 			name = Default;
@@ -928,12 +928,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mailpeeper-Menu_Prefix.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MailPeeper_____________.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/.";
+				LIBRARY_SEARCH_PATHS = "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "mailpeeper-tls";
@@ -962,12 +962,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mailpeeper-Menu_Prefix.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MailPeeper_____________.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/.";
+				LIBRARY_SEARCH_PATHS = "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "mailpeeper-tls";
@@ -985,6 +985,7 @@
 		B503F862129BD1B600A54AFF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -995,12 +996,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mailpeeper-Menu_Prefix.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-MailPeeper_____________.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/.";
+				LIBRARY_SEARCH_PATHS = "\"/Users/tatuo/Desktop/mailpeeper/mailpeeper-tls\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "mailpeeper-tls";

@@ -328,7 +328,7 @@
 		}
 	}
 	
-	[self removePeepedItem: aUIDLHelpItemArray];
+	//[self removePeepedItem: aUIDLHelpItemArray];
 	
 }
 
@@ -761,7 +761,7 @@
 			//受信しているメールがあるなら、その確認へ
 			[self tlsProcMail];
 		}	// STATで何もなかったら、そのアカウントの元々あったメールデータを削除する - tls
-		else
+/*		else
 		{
 			NSEnumerator *aItr = [mAppController peepedItemIterator];	
 			PeepedItem* aPeepedItem;
@@ -771,7 +771,7 @@
 					[[mAppController peepedItemArray] removeObject:aPeepedItem];
 			}
 		}
-
+*/
 	}else{ //メール削除の場合
 		//削除処理へ
 		[self tlsProcMail];

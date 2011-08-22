@@ -156,7 +156,8 @@
 #include <openssl/x509.h>
 #endif
 #include <openssl/crypto.h>
-#include <openssl/lhash.h>
+//#include <openssl/lhash.h>
+#include "lhash.h"
 #include <openssl/buffer.h>
 #endif
 #include <openssl/pem.h>
@@ -679,7 +680,7 @@ typedef struct ssl_comp_st
 #endif
 	} SSL_COMP;
 
-DECLARE_STACK_OF(SSL_COMP)
+DECLARE_STACK_OF(SSL_COMP);
 DECLARE_LHASH_OF(SSL_SESSION);
 
 struct ssl_ctx_st

@@ -126,11 +126,15 @@
 */	
 	/* SSL で接続 */
 	ret = SSL_connect(ssl);						//サーバとハンドシェイク
+	
+	ERR_remove_state(0);
+	
 	if ( ret != 1 )
 	{
 		ERR_print_errors_fp(stderr);			
 		return NO;
 	}
+	
 	
 	return YES;
 }
@@ -146,6 +150,7 @@
 	if ( aRes.size < 1 )
 		ERR_print_errors_fp(stderr);
 	
+//	ERR_remove_state(0);	// メモリリーク対策
 	return aRes;
 }
 
@@ -160,6 +165,7 @@
 		aRes.err = errno;
 	if ( aRes.size < 1 )
 		ERR_print_errors_fp(stderr);
+//	ERR_remove_state(0);	// メモリリーク対策
 	return aRes;
 }
 
@@ -183,7 +189,7 @@
 		return;
 
 	SSL_free(ssl);						//SSL_new()で確保した領域解放
-	
+//	ERR_remove_state(0);				// メモリリーク対策
 	if(mSocket >= 0)
 	{
 		close(mSocket);
@@ -200,7 +206,7 @@
 }
 
 
-//ソケットを閉じる
+//ソケットを閉じる(tlsを使う前用)
 - (void)close
 {
 	if(mSocket >= 0){
