@@ -1,0 +1,58 @@
+﻿/*
+	Localizable.strings
+	MailPeeper
+
+	Created by Dentom on 2002/09/12-09/20.
+	Copyright (c) 2002 by Dentom. All rights reserved.
+*/
+
+"VERSION_WARNING" = "OSのヴァージョンが 10.2 より以前のため、うまく動作しない恐れがあります。申し訳ありませんが終了します。";
+"NOW_WAITING" = "待機中";
+"GENERAL_SHEET_NG" = "設定に間違いがあります。修正をお願いします。";
+"STOP_WALKING" = "× %@";
+"EMPTY_ITEM" = "（なし）";
+"NEW_MAIL_MARK" = "○";
+"SEL_TV_ITEMS" = "%d 項目を選択中";
+
+/* デフォールトのアカウント設定 */
+"DEFAULT_ACCOUNT" = "（新規アカウント）";
+"DEFAULT_POP3" = "pop3server.default.com";
+"DEFAULT_USER" = "default-user";
+"DEFAULT_PASS" = "PAS";
+
+/* アカウント検証時のNG */
+"ACNG_REGISTERD" = "すでに %@ と同じ名前のアカウント名があります。別のアカウント名でお願いします。";
+"ACNG_ACCOUNT" = "アカウント名の設定が良くありません。";
+"ACNG_POP3" = "POP3サーバー名の設定が良くありません。";
+"ACNG_PORTNO" = "ポート番号の設定が良くありません。";
+"ACNG_USERNAME" = "ユーザー名の設定が良くありません。";
+"ACNG_PASSWORD" = "パスワードの設定が良くありません。";
+"ACNG_UNKNOWN" = "設定に間違いがあります。修正をお願いします。";
+
+/* アカウント削除のアラート */
+"DEL_ACCOUNT_TITLE" = "アカウントの削除";
+"DEL_ACCOUNT_QUESTION" = "このアカウント( %@ )を削除しますか？";
+"DEL_ACCOUNT_YES" = "削除します";
+"DEL_ACCOUNT_NO" = "しません";
+
+/* メールチェック(or 削除)スレッドのステータスメッセージ */
+"THSTAT_ACCOUNT" = "アカウント( %@ )の処理を開始";
+"THSTAT_CONNECT" = "アカウント( %@ )に接続しました";
+"THSTAT_CONNECT_NG" = "アカウント( %@ )に接続できません";
+"THSTAT_USER_NG" = "アカウント( %@ )でユーザー名が承認されませんでした";
+"THSTAT_PASS_NG" = "アカウント( %@ )でパスワードが承認されませんでした";
+"THSTAT_USER_KILL" = "巡回を中止しました";
+"THSTAT_PROC_NG" = "アカウント( %@ )で処理中にエラーが発生しました";
+"THSTAT_NO_MAIL" = "受信しているメールはありません";
+"THSTAT_SOME_MAIL" = "受信しているメールは %d 通あります (新規メールは %d 通)";
+"THSTAT_NO_REMOVE" = "削除したメールはありません";
+"THSTAT_SOME_REMOVE" = "%d 通のメールを削除しました";
+"THSTAT_REPORT_COUNT" = "アカウント( %@ )でメール確認中( %d 件中の %d 件目を確認しています)";
+
+/* メール削除のアラート */
+"DEL_MAIL_TITLE" = "メールの削除";
+"DEL_MAIL_QUESTION" = "選択された %d 通のメールを削除しますか？";
+"DEL_MAIL_YES" = "削除します";
+"DEL_MAIL_NO" = "しません";
+
+/* End Of File */
