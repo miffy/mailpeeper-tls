@@ -177,11 +177,11 @@
 	
 	SSL_CTX_free(ctx);					//SSL_CTX_new()で確保した領域解放
 	ERR_free_strings();					//SSL_load_error_strings()で確保した領域解放	
-	EVP_cleanup();						// メモリリーク対策
+//	EVP_cleanup();						// メモリリーク対策
 	CRYPTO_cleanup_all_ex_data();		// メモリリーク対策
 	ERR_remove_state(0);				// メモリリーク対策
-	ENGINE_cleanup();					// メモリリーク対策
-	CONF_modules_unload(1);				// メモリリーク対策
+//	ENGINE_cleanup();					// メモリリーク対策
+//	CONF_modules_unload(1);				// メモリリーク対策
 	
 	if (ssl != NULL) 
 		ret = SSL_shutdown(ssl);		//TLSのコネクションを切る
