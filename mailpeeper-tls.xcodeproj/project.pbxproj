@@ -298,7 +298,7 @@
 		F58AF43C03319DC101A80102 /* GeneralItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralItem.h; sourceTree = "<group>"; };
 		F58AF43D03319DC101A80102 /* GeneralItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralItem.m; sourceTree = "<group>"; };
 		F59B46F8033B626401A80102 /* accountpane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accountpane.png; sourceTree = "<group>"; };
-		F59B46F9033B626401A80102 /* help.html */ = {isa = PBXFileReference; fileEncoding = 2147486209; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
+		F59B46F9033B626401A80102 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		F59B46FA033B626401A80102 /* junkaipane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junkaipane.png; sourceTree = "<group>"; };
 		F59B46FB033B626401A80102 /* mainwindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainwindow.png; sourceTree = "<group>"; };
 		F59B46FC033B626401A80102 /* newaccpane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newaccpane.png; sourceTree = "<group>"; };
