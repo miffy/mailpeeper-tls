@@ -12,7 +12,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="MailPeeper_OME" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="MAIN_WINDOW" animationBehavior="default" id="21" userLabel="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -156,7 +156,7 @@
                         <rect key="frame" x="15" y="20" width="573" height="207"/>
                         <clipView key="contentView" id="pQ5-YH-G3g">
                             <rect key="frame" x="1" y="0.0" width="571" height="206"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" autosaveColumns="NO" headerView="542" id="232">
                                     <rect key="frame" x="0.0" y="0.0" width="571" height="183"/>
@@ -765,9 +765,7 @@
                 <outlet property="mErrorVoice_CB" destination="409" id="418"/>
                 <outlet property="mErrorVoice_TV" destination="411" id="419"/>
                 <outlet property="mGeneralSheet" destination="277" id="289"/>
-                <outlet property="mGoAtResume_CB" destination="573" id="575"/>
                 <outlet property="mGoAtStart_CB" destination="292" id="298"/>
-                <outlet property="mNewMailGrowl_CB" destination="604" id="606"/>
                 <outlet property="mNewMailSound_CB" destination="576" id="590"/>
                 <outlet property="mNewMailSound_TF" destination="580" id="594"/>
                 <outlet property="mNewMailVoice_CB" destination="377" id="380"/>
@@ -786,11 +784,11 @@
         <window title="PrefSheet-General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="277" userLabel="PrefSheet-G">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="33" y="285" width="279" height="420"/>
+            <rect key="contentRect" x="33" y="285" width="279" height="485"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="278">
-                <rect key="frame" x="0.0" y="0.0" width="279" height="420"/>
+                <rect key="frame" x="0.0" y="0.0" width="279" height="485"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button toolTip="設定の変更を決定します" verticalHuggingPriority="750" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="283">
@@ -823,7 +821,7 @@ DQ
                         </connections>
                     </button>
                     <button toolTip="プログラム起動と同時に巡回するかの設定です" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
-                        <rect key="frame" x="18" y="384" width="230" height="18"/>
+                        <rect key="frame" x="18" y="449" width="230" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="226" id="703"/>
                         </constraints>
@@ -833,14 +831,14 @@ DQ
                         </buttonCell>
                     </button>
                     <button toolTip="巡回を一定時間ごとに繰り返すかを設定します" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="293">
-                        <rect key="frame" x="18" y="362" width="230" height="18"/>
+                        <rect key="frame" x="18" y="427" width="230" height="18"/>
                         <buttonCell key="cell" type="check" title="定期的に巡回する" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="523">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <textField toolTip="巡回を繰り返す間隔を設定します" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="294">
-                        <rect key="frame" x="77" y="334" width="71" height="22"/>
+                        <rect key="frame" x="77" y="399" width="71" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="756"/>
                         </constraints>
@@ -854,7 +852,7 @@ DQ
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="119" translatesAutoresizingMaskIntoConstraints="NO" id="295">
-                        <rect key="frame" x="153" y="337" width="121" height="17"/>
+                        <rect key="frame" x="153" y="402" width="121" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="117" id="706"/>
                         </constraints>
@@ -865,24 +863,25 @@ DQ
                         </textFieldCell>
                     </textField>
                     <button toolTip="新規メールを確認したら下の文章をしゃべるかを決めます" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="377">
-                        <rect key="frame" x="18" y="310" width="227" height="18"/>
+                        <rect key="frame" x="18" y="375" width="227" height="18"/>
                         <buttonCell key="cell" type="check" title="新規メールを確認時に音声で知らせる" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="526">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <scrollView toolTip="新規メールを確認のとき、ここにある文章をしゃべります" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="375">
-                        <rect key="frame" x="40" y="248" width="219" height="56"/>
-                        <clipView key="contentView" id="xDa-Ye-TcU">
+                    <scrollView toolTip="新規メールを確認のとき、ここにある文章をしゃべります" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="375">
+                        <rect key="frame" x="40" y="313" width="219" height="56"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" ambiguous="YES" id="xDa-Ye-TcU">
                             <rect key="frame" x="1" y="1" width="217" height="54"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView importsGraphics="NO" richText="NO" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="376">
+                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="376">
                                     <rect key="frame" x="0.0" y="0.0" width="217" height="54"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="217" height="54"/>
-                                    <size key="maxSize" width="217" height="10000000"/>
+                                    <size key="maxSize" width="219" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </textView>
                             </subviews>
@@ -900,25 +899,26 @@ DQ
                             <outlet property="nextKeyView" destination="411" id="414"/>
                         </connections>
                     </scrollView>
-                    <button toolTip="エラーが発生したら下の文章をしゃべるかを決めます" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
-                        <rect key="frame" x="18" y="224" width="243" height="18"/>
+                    <button toolTip="エラーが発生したら下の文章をしゃべるかを決めます" ambiguous="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
+                        <rect key="frame" x="18" y="289" width="243" height="18"/>
                         <buttonCell key="cell" type="check" title="エラー発生時に音声で知らせる" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="527">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <scrollView toolTip="エラーが発生したとき、ここにある文章をしゃべります" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="410">
-                        <rect key="frame" x="40" y="162" width="219" height="56"/>
-                        <clipView key="contentView" id="f4X-ZM-set">
-                            <rect key="frame" x="1" y="1" width="217" height="54"/>
+                    <scrollView toolTip="エラーが発生したとき、ここにある文章をしゃべります" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="410">
+                        <rect key="frame" x="40" y="220" width="219" height="63"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" ambiguous="YES" id="f4X-ZM-set">
+                            <rect key="frame" x="1" y="1" width="217" height="61"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView importsGraphics="NO" richText="NO" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="411">
-                                    <rect key="frame" x="0.0" y="0.0" width="217" height="54"/>
+                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="411">
+                                    <rect key="frame" x="0.0" y="0.0" width="217" height="61"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="217" height="54"/>
-                                    <size key="maxSize" width="217" height="10000000"/>
+                                    <size key="minSize" width="217" height="61"/>
+                                    <size key="maxSize" width="231" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </textView>
                             </subviews>
@@ -929,69 +929,50 @@ DQ
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="547">
-                            <rect key="frame" x="202" y="1" width="16" height="54"/>
+                            <rect key="frame" x="202" y="1" width="16" height="61"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <connections>
                             <outlet property="nextKeyView" destination="294" id="415"/>
                         </connections>
                     </scrollView>
-                    <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="573">
-                        <rect key="frame" x="18" y="84" width="207" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="203" id="754"/>
-                        </constraints>
-                        <buttonCell key="cell" type="check" title="スリープ復帰時に巡回開始" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="574">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" size="13" name="HiraKakuProN-W3"/>
-                        </buttonCell>
-                    </button>
-                    <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="576">
-                        <rect key="frame" x="18" y="138" width="63" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14" id="704"/>
-                            <constraint firstAttribute="width" constant="59" id="705"/>
-                        </constraints>
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="576">
+                        <rect key="frame" x="18" y="192" width="63" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="着信音" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="577">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" size="13" name="HiraKakuProN-W3"/>
                         </buttonCell>
                     </button>
-                    <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="578">
-                        <rect key="frame" x="18" y="118" width="74" height="18"/>
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="578">
+                        <rect key="frame" x="18" y="159" width="74" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="エラー音" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="579">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" size="13" name="HiraKakuProN-W3"/>
                         </buttonCell>
                     </button>
-                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="580">
-                        <rect key="frame" x="101" y="139" width="76" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="72" id="700"/>
-                            <constraint firstAttribute="height" constant="16" id="701"/>
-                        </constraints>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="580">
+                        <rect key="frame" x="101" y="192" width="76" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingHead" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="right" title="Label" bezelStyle="round" id="581">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="582">
-                        <rect key="frame" x="101" y="119" width="76" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="699"/>
-                        </constraints>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="582">
+                        <rect key="frame" x="101" y="167" width="76" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="right" title="Label" id="583">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="586">
-                        <rect key="frame" x="193" y="138" width="66" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="66" id="707"/>
-                        </constraints>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="586">
+                        <rect key="frame" x="193" y="190" width="66" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="選択" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="587">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name="HiraKakuProN-W3"/>
@@ -1000,11 +981,9 @@ DQ
                             <action selector="chooseFile:" target="264" id="599"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" tag="2" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="588">
-                        <rect key="frame" x="193" y="119" width="66" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14" id="753"/>
-                        </constraints>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="2" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="588">
+                        <rect key="frame" x="193" y="165" width="66" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="選択" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="589">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name="HiraKakuProN-W3"/>
@@ -1013,65 +992,70 @@ DQ
                             <action selector="chooseFile:" target="264" id="598"/>
                         </connections>
                     </button>
-                    <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="604">
-                        <rect key="frame" x="18" y="59" width="165" height="18"/>
-                        <buttonCell key="cell" type="check" title="Growlで新規メールを通知" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="605">
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iUJ-jR-qoL">
+                        <rect key="frame" x="18" y="112" width="227" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Growlで新規メールを通知" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NVv-GS-qB3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" size="13" name="HiraKakuProN-W3"/>
                         </buttonCell>
                     </button>
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHl-LQ-f5L">
+                        <rect key="frame" x="18" y="139" width="207" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="スリープ復帰時に巡回開始" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="UL2-2X-bc7">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" size="13" name="HiraKakuProN-W3"/>
+                        </buttonCell>
+                    </button>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxv-Mg-57q">
+                        <rect key="frame" x="21" y="57" width="241" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="9tw-SW-mba">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <objectValues>
+                                <string>通知しない</string>
+                                <string>Growlで通知</string>
+                                <string>Notification Centerで通知</string>
+                            </objectValues>
+                        </comboBoxCell>
+                    </comboBox>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1D-Zh-VUI">
+                        <rect key="frame" x="18" y="89" width="130" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ポップアップ通知" id="u1h-je-lN8">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="604" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="708"/>
-                    <constraint firstAttribute="trailing" secondItem="586" secondAttribute="trailing" constant="20" symbolic="YES" id="709"/>
                     <constraint firstItem="377" firstAttribute="top" secondItem="294" secondAttribute="bottom" constant="8" symbolic="YES" id="710"/>
                     <constraint firstItem="294" firstAttribute="top" secondItem="293" secondAttribute="bottom" constant="8" symbolic="YES" id="711"/>
                     <constraint firstItem="294" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="77" id="712"/>
                     <constraint firstItem="293" firstAttribute="trailing" secondItem="292" secondAttribute="trailing" id="713"/>
-                    <constraint firstItem="582" firstAttribute="trailing" secondItem="580" secondAttribute="trailing" id="714"/>
                     <constraint firstAttribute="bottom" secondItem="284" secondAttribute="bottom" constant="20" symbolic="YES" id="715"/>
-                    <constraint firstItem="375" firstAttribute="leading" secondItem="410" secondAttribute="leading" id="716"/>
-                    <constraint firstItem="588" firstAttribute="top" secondItem="582" secondAttribute="top" id="717"/>
-                    <constraint firstItem="578" firstAttribute="top" secondItem="576" secondAttribute="bottom" constant="6" symbolic="YES" id="718"/>
                     <constraint firstItem="284" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="719"/>
                     <constraint firstItem="292" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="720"/>
-                    <constraint firstItem="409" firstAttribute="top" secondItem="375" secondAttribute="bottom" constant="8" symbolic="YES" id="721"/>
                     <constraint firstItem="295" firstAttribute="centerY" secondItem="294" secondAttribute="centerY" id="722"/>
                     <constraint firstItem="293" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="723"/>
                     <constraint firstAttribute="trailing" secondItem="295" secondAttribute="trailing" constant="7" id="724"/>
                     <constraint firstAttribute="bottom" secondItem="283" secondAttribute="bottom" constant="20" symbolic="YES" id="725"/>
-                    <constraint firstAttribute="bottom" secondItem="582" secondAttribute="bottom" constant="119" id="726"/>
-                    <constraint firstItem="410" firstAttribute="top" secondItem="409" secondAttribute="bottom" constant="8" symbolic="YES" id="727"/>
                     <constraint firstItem="409" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="728"/>
-                    <constraint firstItem="375" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="40" id="729"/>
-                    <constraint firstAttribute="trailing" secondItem="410" secondAttribute="trailing" constant="20" symbolic="YES" id="730"/>
-                    <constraint firstItem="582" firstAttribute="centerY" secondItem="578" secondAttribute="centerY" id="731"/>
-                    <constraint firstItem="586" firstAttribute="top" secondItem="410" secondAttribute="bottom" constant="8" symbolic="YES" id="732"/>
-                    <constraint firstItem="284" firstAttribute="top" secondItem="604" secondAttribute="bottom" constant="20" symbolic="YES" id="733"/>
-                    <constraint firstAttribute="trailing" secondItem="588" secondAttribute="trailing" constant="20" symbolic="YES" id="734"/>
                     <constraint firstItem="293" firstAttribute="top" secondItem="278" secondAttribute="top" constant="42" id="735"/>
-                    <constraint firstItem="578" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="736"/>
-                    <constraint firstItem="586" firstAttribute="bottom" secondItem="576" secondAttribute="bottom" id="737"/>
-                    <constraint firstItem="573" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="738"/>
                     <constraint firstItem="377" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="739"/>
-                    <constraint firstItem="375" firstAttribute="top" secondItem="377" secondAttribute="bottom" constant="8" symbolic="YES" id="740"/>
                     <constraint firstAttribute="trailing" secondItem="409" secondAttribute="trailing" constant="20" symbolic="YES" id="741"/>
-                    <constraint firstAttribute="trailing" secondItem="375" secondAttribute="trailing" constant="20" symbolic="YES" id="742"/>
                     <constraint firstItem="292" firstAttribute="top" secondItem="278" secondAttribute="top" constant="20" symbolic="YES" id="743"/>
-                    <constraint firstAttribute="bottom" secondItem="573" secondAttribute="bottom" constant="86" id="744"/>
-                    <constraint firstItem="586" firstAttribute="leading" secondItem="588" secondAttribute="leading" id="745"/>
-                    <constraint firstItem="580" firstAttribute="centerY" secondItem="576" secondAttribute="centerY" id="746"/>
-                    <constraint firstItem="409" firstAttribute="top" secondItem="278" secondAttribute="top" constant="180" id="747"/>
-                    <constraint firstItem="580" firstAttribute="centerX" secondItem="409" secondAttribute="centerX" id="748"/>
-                    <constraint firstItem="576" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="749"/>
                     <constraint firstAttribute="trailing" secondItem="283" secondAttribute="trailing" constant="21" id="750"/>
-                    <constraint firstItem="580" firstAttribute="leading" secondItem="582" secondAttribute="leading" id="751"/>
-                    <constraint firstItem="576" firstAttribute="top" secondItem="410" secondAttribute="bottom" constant="8" symbolic="YES" id="752"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="376" id="383"/>
             </connections>
+            <point key="canvasLocation" x="138.5" y="194.5"/>
         </window>
         <window title="PrefSheet-Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="279" userLabel="PrefSheet-A">
             <windowStyleMask key="styleMask" titled="YES"/>
