@@ -765,7 +765,9 @@
                 <outlet property="mErrorVoice_CB" destination="409" id="418"/>
                 <outlet property="mErrorVoice_TV" destination="411" id="419"/>
                 <outlet property="mGeneralSheet" destination="277" id="289"/>
+                <outlet property="mGoAtResume_CB" destination="lHl-LQ-f5L" id="1rZ-iC-Otk"/>
                 <outlet property="mGoAtStart_CB" destination="292" id="298"/>
+                <outlet property="mNewMailGrowl_CB" destination="iUJ-jR-qoL" id="sPJ-8Q-Us7"/>
                 <outlet property="mNewMailSound_CB" destination="576" id="590"/>
                 <outlet property="mNewMailSound_TF" destination="580" id="594"/>
                 <outlet property="mNewMailVoice_CB" destination="377" id="380"/>
@@ -899,8 +901,9 @@ DQ
                             <outlet property="nextKeyView" destination="411" id="414"/>
                         </connections>
                     </scrollView>
-                    <button toolTip="エラーが発生したら下の文章をしゃべるかを決めます" ambiguous="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
+                    <button toolTip="エラーが発生したら下の文章をしゃべるかを決めます" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
                         <rect key="frame" x="18" y="289" width="243" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="エラー発生時に音声で知らせる" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="527">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -1044,10 +1047,8 @@ DQ
                     <constraint firstItem="293" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="723"/>
                     <constraint firstAttribute="trailing" secondItem="295" secondAttribute="trailing" constant="7" id="724"/>
                     <constraint firstAttribute="bottom" secondItem="283" secondAttribute="bottom" constant="20" symbolic="YES" id="725"/>
-                    <constraint firstItem="409" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="728"/>
                     <constraint firstItem="293" firstAttribute="top" secondItem="278" secondAttribute="top" constant="42" id="735"/>
                     <constraint firstItem="377" firstAttribute="leading" secondItem="278" secondAttribute="leading" constant="20" symbolic="YES" id="739"/>
-                    <constraint firstAttribute="trailing" secondItem="409" secondAttribute="trailing" constant="20" symbolic="YES" id="741"/>
                     <constraint firstItem="292" firstAttribute="top" secondItem="278" secondAttribute="top" constant="20" symbolic="YES" id="743"/>
                     <constraint firstAttribute="trailing" secondItem="283" secondAttribute="trailing" constant="21" id="750"/>
                 </constraints>

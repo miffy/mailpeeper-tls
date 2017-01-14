@@ -29,7 +29,7 @@ typedef enum {
 @interface AccountItem : NSObject <NSCoding> {	//アカウント情報
 	//(記録対象フィールド)
 	AccountItem_record_t mR;		//編集対象フィールド
-	int mAccountID;					//アカウントID
+	long mAccountID;					//アカウントID
 
 	//(記録対象外フィールド)
 	BOOL mNotUse;					//YESなら巡回しない,NOで巡回する
@@ -42,8 +42,8 @@ typedef enum {
 - (AccountItem_change_t)change:(AccountItem_record_t *)iData;
 - (BOOL)notUse;
 - (void)setNotUse:(BOOL)iNotUse;
-- (void)setAccountID:(int)iID;
-- (int)accountID;
+- (void)setAccountID:(long)iID;
+- (long)accountID;
 - (int)tls;
 @end
 

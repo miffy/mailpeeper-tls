@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>mailpeeper-tls</string>
 	<key>CFBundleGetInfoString</key>
-	<string>MailPeeper (C)2002 by Dentom. , MailPeeper_Menu (C)2003 by Anne, mailpeeper-tls (C)2010,2011,2012 by miff</string>
+	<string>MailPeeper (C)2002 by Dentom. , MailPeeper_Menu (C)2003 by Anne, mailpeeper-tls (C)2010-2012,2017 by miff</string>
 	<key>CFBundleIconFile</key>
 	<string>appl-icon</string>
 	<key>CFBundleIdentifier</key>
@@ -15,11 +15,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>mailpeeper-tls Ver.1.0.7</string>
+	<string>mailpeeper-tls Ver.1.0.8</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>Ver.1.0.7</string>
+	<string>Ver.1.0.8</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>

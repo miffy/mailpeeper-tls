@@ -268,7 +268,7 @@
 	
 
 	if(mRemoveItemArray == nil){ //メール受信の場合
-		int aTotal = [aUIDLHelpItemArray count]; //このアカウントでの新規メールの総数
+		long aTotal = [aUIDLHelpItemArray count]; //このアカウントでの新規メールの総数
 		int aRecv = 0; //このアカウントでの処理メール数カウント
 		//新規メールの情報をサーバーから取得する
 		aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
@@ -300,7 +300,7 @@
 			[mAppController postNewMail:aPeepedItem no:[aUIDLHelpItem newMailNo]];
 		}
 	}else{ //メール削除の場合
-		int aIndex;
+		long aIndex;
 		for(aIndex = [mRemoveItemArray count] - 1; aIndex >= 0; aIndex--){
 			aPeepedItem = [mRemoveItemArray objectAtIndex:aIndex];
 			aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
@@ -414,7 +414,7 @@
 	}
 	
 	if(mRemoveItemArray == nil){ //メール受信の場合
-		int aTotal = [aUIDLHelpItemArray count]; //このアカウントでの新規メールの総数
+		long aTotal = [aUIDLHelpItemArray count]; //このアカウントでの新規メールの総数
 		int aRecv = 0; //このアカウントでの処理メール数カウント
 		//新規メールの情報をサーバーから取得する
 		aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
@@ -446,7 +446,7 @@
 			[mAppController postNewMail:aPeepedItem no:[aUIDLHelpItem newMailNo]];
 		}
 	}else{ //メール削除の場合
-		int aIndex;
+		unsigned long aIndex;
 		for(aIndex = [mRemoveItemArray count] - 1; aIndex >= 0; aIndex--){
 			aPeepedItem = [mRemoveItemArray objectAtIndex:aIndex];
 			aUIDLHelpItemItr = [aUIDLHelpItemArray objectEnumerator];
@@ -833,7 +833,7 @@
 {
 	PeepedItem *aItem;
 	NSEnumerator *aItr = [mRemoveItemArray objectEnumerator];
-	int aAccountID = [mAccountItem accountID];
+	long aAccountID = [mAccountItem accountID];
 
 	while((aItem = [aItr nextObject]) != nil){
 		if([aItem accountID] == aAccountID){

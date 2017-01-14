@@ -27,7 +27,7 @@ typedef struct {
 @interface STCPCReadLine : NSObject {
 	STCPCReadLineSetup_t mS; 		  		//準備した情報
 	char mReadBuff[STCPCReadLine_BuffSize]; //リードバッファ
-	int mMaxIndex;							//recv1回で読み込んだサイズ
+	long mMaxIndex;							//recv1回で読み込んだサイズ
 	int mPopIndex;							//バッファから削り取ったサイズ
 }
 

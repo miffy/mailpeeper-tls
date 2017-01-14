@@ -22,6 +22,7 @@
 #define ErrorSoundEnable_Key	@"ErrorSoundEnable"
 #define ErrorSoundPath_Key		@"ErrorSoundPath"
 #define NewMailGrowlEnable_Key	@"NewMailGrowlEnable"
+#define NewMailNCEnable_Key		@"NewMailNCEnable"
 
 @implementation GeneralItem
 
@@ -96,7 +97,11 @@
 {
 	return mR.mNewMailGrowlEnable;
 }
-
+// Notification Centerでお知らせが有効ならYES
+- (BOOL)newMailNCEnable
+{
+	return mR.mNewMailNCEnable;
+}
 
 //記録対象フィールドを変更する
 //戻り値=YESなら変更した,NOなら変更できない
@@ -175,6 +180,7 @@
 		mR.mErrorSoundPath = [aObj retain];
 	}	
 	mR.mNewMailGrowlEnable = [[aDict objectForKey:NewMailGrowlEnable_Key] boolValue];
+	mR.mNewMailNCEnable = [[aDict objectForKey:NewMailNCEnable_Key] boolValue];
 }
 
 //Pref書類に記録したい情報を返す
@@ -196,6 +202,7 @@
 	[aDict setObject:[NSNumber numberWithBool:mR.mErrorSoundEnable] forKey:ErrorSoundEnable_Key];
 	[aDict setObject:mR.mErrorSoundPath forKey:ErrorSoundPath_Key];
 	[aDict setObject:[NSNumber numberWithBool:mR.mNewMailGrowlEnable] forKey:NewMailGrowlEnable_Key];
+	[aDict setObject:[NSNumber numberWithBool:mR.mNewMailNCEnable] forKey:NewMailNCEnable_Key];
 	
 	return aDict;
 }

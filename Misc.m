@@ -20,10 +20,10 @@
 }
 
 //アカウントIDを発行する
-+ (int)newAccountID
++ (long)newAccountID
 {
 	NSUserDefaults *aUD = [NSUserDefaults standardUserDefaults];
-	int aNewID = [aUD integerForKey:ACCOUNT_ID_NOW] + 1;
+	long aNewID = [aUD integerForKey:ACCOUNT_ID_NOW] + 1;
 
 	[aUD setInteger:aNewID forKey:ACCOUNT_ID_NOW];
 	[aUD synchronize];

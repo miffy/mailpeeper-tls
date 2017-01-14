@@ -14,17 +14,17 @@
 	
 	int mNo;		//番号
 	NSString *mUID;	//UID文字列
-	int mAccountID;	//アカウントID
+	long mAccountID;	//アカウントID
 
 	int mNewMailNo; //新規メールだった場合、何通目(1〜)だったか
 }
-+ (id)createItem:(NSData *)iData accountID:(int)iID;
-- (id)initWithUIDLData:(NSData *)iData accountID:(int)iID;
++ (id)createItem:(NSData *)iData accountID:(long)iID;
+- (id)initWithUIDLData:(NSData *)iData accountID:(long)iID;
 - (BOOL)error;
 - (BOOL)finish;
 - (int)number;
 - (NSString *)uid;
-- (int)accountID;
+- (long)accountID;
 - (void)setNewMailNo:(int)iNo;
 - (int)newMailNo;
 @end

@@ -61,7 +61,7 @@ enum {
 - (void)setupAccountSheet;
 - (NSFormCell *)accountFormCell:(int)iIndex;
 - (BOOL)checkAccountNameRegist:(NSString *)iName except:(AccountItem *)iExcept;
-- (AccountItem *)accountItem:(int)iIndex;
+- (AccountItem *)accountItem:(long)iIndex;
 - (void)deleteAccountProc;
 - (void)toTopAccountProc;
 - (void)walkAccountProc:(BOOL)iStop;
@@ -71,6 +71,9 @@ enum {
 @end
 
 @implementation PrefController	
+
+NSUserNotificationCenter *notifier;
+NSUserNotification *newUserNotification;
 
 //初期化メソッド
 - (id)init
@@ -113,7 +116,7 @@ enum {
 - (void)updateUI
 {
 	BOOL aBool;
-	int aSelectedRow = [mTableView selectedRow]; //テーブルビューの選択されている行
+	long aSelectedRow = [mTableView selectedRow]; //テーブルビューの選択されている行
 	AccountItem *aItem = [self accountItem:aSelectedRow]; //選択されているアカウント情報
 
 	//NSLog(@"PrefController.updateUI");
@@ -196,7 +199,7 @@ enum {
 - (IBAction)chooseFile:(id)sender
 {
 	NSString *path = NULL;					//音のファイルパス
-	int result;
+	long result;
 	NSArray *filesToOpen;
 	NSOpenPanel *oPanel = [NSOpenPanel openPanel];
 	NSArray *fileTypes = [NSSound soundUnfilteredTypes];
@@ -229,7 +232,7 @@ enum {
 
 //(テーブルビューからのデリゲート)
 //テーブルビューの行数を教える
-- (int)numberOfRowsInTableView:(NSTableView *)tableView
+- (long)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [mAccountItemArray count];
 }
@@ -291,6 +294,10 @@ enum {
 	NSDictionary *note = [self registrationDictionaryForGrowl];
 	[GrowlApplicationBridge registerWithDictionary:note];
 	[GrowlApplicationBridge registerWithDictionary:note];	// 何故か二回叩かないとGrowlに登録されない。	
+	//Notification Center利用のため
+	notifier = [NSUserNotificationCenter defaultUserNotificationCenter]/*.delegate = self*/;
+	/*NSUserNotification */newUserNotification = [[NSUserNotification alloc] init];
+
 }
 
 //操作ボタンが押されたときに呼ばれる
@@ -440,6 +447,36 @@ enum {
 	
 }
 
+//Growl代替OS機能　まだデバッグで止めないと動作しない。
+- (void)notifyNewMailByNotificationCenter : (NSMutableArray *)mPeepedItemArray
+{
+	//Don't Repeat Youselfは無視ｗ
+	int cnt;
+	for(cnt=0; cnt < [mPeepedItemArray count]; cnt++)
+	{
+		PeepedItem* pi = [mPeepedItemArray objectAtIndex:cnt];
+		if(![pi saveFlag]) continue;
+		
+		/*NSUserNotification */newUserNotification = [[NSUserNotification alloc] init];
+		//NSUserNotification * newUserNotification = [NSUserNotification new];
+		newUserNotification.title = [pi from];
+		newUserNotification.subtitle = [pi subject];
+		[notifier deliverNotification:newUserNotification];
+		[newUserNotification release];
+		//sleep(1);
+	}
+}
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center
+		didDeliverNotification:(NSUserNotification *)notification
+{
+}
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
+{
+		return true;
+}
+
 @end
 
 @implementation PrefController(Private)
@@ -500,7 +537,7 @@ enum {
 	//アカウント名がすでに存在しているものかを確認する。存在しているならNG
 	if([self checkAccountNameRegist:aAccName except:mEditAccount]){
 		aMsg = [NSString stringWithFormat:NSLocalizedString(@"ACNG_REGISTERD",@""),aAccName];
-		NSRunCriticalAlertPanel(nil,aMsg,nil,nil,nil);
+		NSRunCriticalAlertPanel(nil,@"%@", aMsg,nil,nil,nil);
 		return NO;
 	}
 
@@ -539,7 +576,11 @@ enum {
 			aMsg = NSLocalizedString(@"ACNG_UNKNOWN",@"");
 			break;
 		}
-		NSRunCriticalAlertPanel(nil,aMsg,nil,nil,nil);
+//		NSRunCriticalAlertPanel(nil,aMsg,nil,nil,nil);
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setMessageText:aMsg];
+		[alert release];
+		
 		return NO;
 	}
 
@@ -617,7 +658,7 @@ enum {
 
 //指定インデックスのアカウントオブジェクトをえる
 //インデックスが範囲外ならnilを返す
-- (AccountItem *)accountItem:(int)iIndex
+- (AccountItem *)accountItem:(long)iIndex
 {
 	return (iIndex < 0 || iIndex >= [mAccountItemArray count]) ? nil : [mAccountItemArray objectAtIndex:iIndex];
 }
@@ -625,15 +666,14 @@ enum {
 //選択されたアカウントの削除処理
 - (void)deleteAccountProc
 {
-	int aSelectedRow = [mTableView selectedRow]; //テーブルビューの選択されている行
+	long aSelectedRow = [mTableView selectedRow]; //テーブルビューの選択されている行
 
 	if(aSelectedRow >= 0){
-		int aRes;
+		long aRes;
 		AccountItem *aItem = [self accountItem:aSelectedRow]; //選択されているアカウント情報
 		
 		//削除していいかを尋ねる
-		aRes = NSRunAlertPanel(NSLocalizedString(@"DEL_ACCOUNT_TITLE",@"タイトル"),
-							   [NSString stringWithFormat:NSLocalizedString(@"DEL_ACCOUNT_QUESTION",@""),
+		aRes = NSRunAlertPanel(NSLocalizedString(@"DEL_ACCOUNT_TITLE",@"タイトル"), @"%@", [NSString stringWithFormat:NSLocalizedString(@"DEL_ACCOUNT_QUESTION",@""),
 														  [aItem accountName]],
 							   NSLocalizedString(@"DEL_ACCOUNT_NO",@"中止します(default)"),
 							   NSLocalizedString(@"DEL_ACCOUNT_YES",@"削除します(alt.)"),
@@ -654,7 +694,7 @@ enum {
 //選択されたアカウントを先頭に移動する
 - (void)toTopAccountProc
 {
-	int aSelectedRow = [mTableView selectedRow]; //テーブルビューの選択されている行
+	long aSelectedRow = [mTableView selectedRow]; //テーブルビューの選択されている行
 
 	if(aSelectedRow > 0){
 		AccountItem *aItem = [self accountItem:aSelectedRow]; //選択されているアカウント情報

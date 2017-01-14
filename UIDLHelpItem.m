@@ -13,14 +13,14 @@
 
 //一時的なインスタンスの作成
 //iData=UIDL情報,iID=アカウントID
-+ (id)createItem:(NSData *)iData accountID:(int)iID
++ (id)createItem:(NSData *)iData accountID:(long)iID
 {
 	return [[[UIDLHelpItem alloc] initWithUIDLData:iData accountID:iID] autorelease];
 }
 
 //初期化メソッド
 //iData=UIDL情報,iID=アカウントID
-- (id)initWithUIDLData:(NSData *)iData accountID:(int)iID
+- (id)initWithUIDLData:(NSData *)iData accountID:(long)iID
 {
 	if((self = [super init]) != nil){
 		NSString *aString = [Misc dataToString:iData];
@@ -78,7 +78,7 @@
 }
 
 //アカウントIDをえる
-- (int)accountID
+- (long)accountID
 {
 	return mAccountID;
 }

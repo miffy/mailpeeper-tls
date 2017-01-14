@@ -110,13 +110,13 @@
 }
 
 //アカウントIDを変更する
-- (void)setAccountID:(int)iID
+- (void)setAccountID:(long)iID
 {
 	mAccountID = iID;
 }
 
 //アカウントIDをえる
-- (int)accountID
+- (long)accountID
 {
 	return mAccountID;
 }

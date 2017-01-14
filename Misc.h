@@ -19,7 +19,7 @@
 + (NSDictionary *)readDictPrefKey:(NSString *)iKey;
 
 + (NSMutableString *)defaultMutableString:(NSString *)iKey;
-+ (int)newAccountID;
++ (long)newAccountID;
 + (NSString *)dataToString:(NSData *)iData;
 
 @end

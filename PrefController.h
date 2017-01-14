@@ -13,7 +13,8 @@
 @class AccountItem;
 @class AppController;
 
-@interface PrefController : NSObject<GrowlApplicationBridgeDelegate>
+//Notification Centerのためデリゲートをつける
+@interface PrefController : NSObject<GrowlApplicationBridgeDelegate, NSApplicationDelegate, NSUserNotificationCenterDelegate>
 {
 	//(アウトレット)
 	IBOutlet NSWindow *mGeneralSheet;		//巡回の設定シート
@@ -77,6 +78,10 @@
 - (void)notifyErrorBySound;
 - (void)notifyNewMailByGrowl:(NSMutableArray *)mPeepedItemArray;
 - (void)growlNotificationWasClicked:(id)clickContext;
+- (void)notifyNewMailByNotificationCenter : (NSMutableArray *)mPeepedItemArray;
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification;
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification;
+
 @end
 
 // End Of File

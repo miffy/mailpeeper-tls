@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef struct {
-	int size; //読み書きできたサイズ
+	long size; //読み書きできたサイズ
 	int err; //エラー値(errno)
 } SimpleTCPClient_send_recv_result;
 

@@ -10,7 +10,7 @@
 
 @interface PeepedItem : NSObject <NSCoding> {	//メール受信結果を保持するクラス
 	//(記録対象フィールド)
-	int mAccountID;					//アカウントID
+	long mAccountID;					//アカウントID
 	NSString *mUID;					//UID(UIDLでえた情報)
 	int mMailSize;					//メールのサイズ
 	NSMutableArray *mHeadArray;		//ヘッダー情報 (NSDataオブジェクト配列)
@@ -23,8 +23,8 @@
 	BOOL mNewMailFlag;				//新規メールならYES
 }
 
-- (void)setAccountID:(int)iID;
-- (int)accountID;
+- (void)setAccountID:(long)iID;
+- (long)accountID;
 - (void)setMailSize:(int)iSize;
 - (int)mailSize;
 - (void)appendTOPdata:(NSData *)iData;
@@ -39,7 +39,7 @@
 - (void)setSaveFlag:(BOOL)iFlag;
 - (BOOL)saveFlag;
 - (void)setNewMailFlag:(BOOL)iFlag;
-- (NSString *)newMailMark;
+//- (NSString *)newMailMark;
 
 @end
 

@@ -144,7 +144,7 @@
 - (TlsTCPClient_send_recv_result)send:(const char *)iMessage
 {
 	TlsTCPClient_send_recv_result aRes = { -1,0 };
-	aRes.size = SSL_write(ssl, iMessage, strlen(iMessage));   //リクエスト送信 
+	aRes.size = SSL_write(ssl, iMessage, (int)strlen(iMessage));   //リクエスト送信
 	if(aRes.size < 0)
 		aRes.err = errno;	
 	if ( aRes.size < 1 )

@@ -13,8 +13,8 @@ static void decodeBase64(char *iTextTop);
 
 @interface HeaderAnalizer(Private)
 - (NSString *)decodeExceptISO_2022_JP:(char*)strData key:(NSMutableData *)line;
-- (int)decode_QuotedPrintable:(char *)t size:(int)t_size conv:(char*)s;
-- (int)decode_Base64:(const char*)src src_size:(int)srclen dst:(char*)dst dst_size:(int)dstlen;
+- (unsigned long)decode_QuotedPrintable:(char *)t size:(long)t_size conv:(char*)s;
+- (int)decode_Base64:(const char*)src src_size:(long)srclen dst:(char*)dst dst_size:(long)dstlen;
 @end
 
 
@@ -42,7 +42,7 @@ static void decodeBase64(char *iTextTop);
 //ヘッダー情報の1行を持ち込む
 - (void)push:(NSData *)iData
 {
-	int aDataLength = [iData length];
+	long aDataLength = [iData length];
 	//持ち込まれたデータの最初のバイトが20hまたは09hなら前のデータの続きと解釈する
 	if(aDataLength > 1){
 		const char *aDataTop = (const char *)[iData bytes];
@@ -50,7 +50,7 @@ static void decodeBase64(char *iTextTop);
 		if((aCh == 0x20 || aCh == 0x09) && (mLastData != nil)){
 			//その場合、データの先頭1バイトを除去したものを前のデータに連結する
 			//また前のデータの末尾(CR+LF)を除去しておく
-			int aNewLength = [mLastData length];
+			long aNewLength = [mLastData length];
 			if(aNewLength > 2){
 				aNewLength -= 2;
 			}
@@ -71,7 +71,7 @@ static void decodeBase64(char *iTextTop);
 	NSMutableData *aItem; //一行データ
 	
 	while((aItem = [aItr nextObject]) != nil){
-		int aLen = [aItem length]; //一行の長さ
+		long aLen = [aItem length]; //一行の長さ
 		char *aTopP = [aItem mutableBytes]; //一行の先頭
 		char *aSep1 = memchr(aTopP,':',aLen); //":"の位置を探す
 		if(aSep1 != NULL){
@@ -148,7 +148,7 @@ static const char* ISO2022_HEAD = "=?ISO-2022-JP?";	// QPとの組み合わせ�
 	char *aFind;				// ヘッダを見つけた位置
 	char *aSrc;					// 読み取り元となる文字列の位置
 	char *decEnd;				// デコードした最後を覚えておく
-	int prefix;					// エンコーディングされてない、前後の文字数
+	long prefix;					// エンコーディングされてない、前後の文字数
 	NSMutableString* buff = nil;	// 
 	
 	
@@ -171,7 +171,7 @@ printf("\nコピーデータ：%s\n",cpyStr);
 	{
 		char encodeType;		// MIMEエンコーディング形式 'Q'がQuoted-Printable、'B'がBase64
 		char charset;			// 文字コード 'U'がUTF-8で、'S'がShiftJIS、ISO2022JPが'I'
-		int length;				// デコードする文字列の長さ
+		long length;				// デコードする文字列の長さ
 		char* startPosition;	// デコード始めの位置
 		
 printf("p_cpyStr:whileはじめ：%s\n" ,p_cpyStr);		
@@ -190,7 +190,7 @@ printf("p_cpyStr:whileはじめ：%s\n" ,p_cpyStr);
 			// 全部通して特定文字列がなかった場合
 			if (buff == nil)
 			{
-				return [[[NSString alloc] initWithCString:p_cpyStr] autorelease];						
+				return [[[NSString alloc] initWithUTF8String:p_cpyStr] autorelease];
 			}
 			// 残っているアスキー文字列は出すべきかどうか
 			//[buff appendString:[[[NSString alloc] initWithCString:p_cpyStr] autorelease]];
@@ -239,7 +239,7 @@ printf("p_cpyStr:whileはじめ：%s\n" ,p_cpyStr);
 		}
 		// デコードすべき文字列を別途コピーして作成
 		char tmp[length];
-		int i;
+		unsigned long i;
 		for(i=0; i<length; i++){
 			tmp[i] = *startPosition++;	
 		}
@@ -312,7 +312,7 @@ NSLog(@"appendString:%@",buff);
 
 // QuotedPrintable パクって持ってきた
 // http://f4.aaa.livedoor.jp/~pointc/202/No.5092.html
-- (int)decode_QuotedPrintable:(char *)t size:(int)t_size conv:(char*)s
+- (unsigned long)decode_QuotedPrintable:(char *)t size:(long)t_size conv:(char*)s
 {
 	char *end = &t[t_size-1];
 	for ( ; *s && t < end; s++,t++) {
@@ -334,7 +334,7 @@ NSLog(@"appendString:%@",buff);
 // 名前が紛らわしいが、_を付けた方が新しい方
 // http://d.hatena.ne.jp/ryousanngata/20101203/1291380670 からもらってきた
 #if 1
-- (int)decode_Base64:(const char*)src src_size:(int)srclen dst:(char*)dst dst_size:(int)dstlen
+- (int)decode_Base64:(const char*)src src_size:(long)srclen dst:(char*)dst dst_size:(long)dstlen
 {
     const unsigned char Base64num[256] = {
         0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
@@ -357,7 +357,7 @@ NSLog(@"appendString:%@",buff);
     };
     int i,j;
     
-    int calclength = (srclen/4*3);
+    long calclength = (srclen/4*3);
 //printf("\n%d %d\n",calclength, dstlen);
     if(calclength > dstlen || srclen % 4 != 0)	return -2;
     
@@ -380,7 +380,7 @@ NSLog(@"appendString:%@",buff);
 #else
 //他のところからパクリ。読み取りにくいコードはなるべく入れたくない。
 // http://d.hatena.ne.jp/htz/20080808/1218185920 からもらってきた
-- (int)decode_Base64:(const char*)p src_size:(int)srclen dst:(char*)buff dst_size:(int)dstlen
+- (int)decode_Base64:(const char*)p src_size:(long)srclen dst:(char*)buff dst_size:(long)dstlen
 {	
 	char b64[128];
 	const char *w = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -436,9 +436,9 @@ static const char *gISO2022Head = "=?ISO-2022-JP?B?";
 
 #define find2022head(X) strstr_touppered(X,gISO2022Head)
 
-static int length2022head()
+static long length2022head()
 {
-	static int aAns = 0;
+	static long aAns = 0;
 	if(aAns == 0){
 		aAns = strlen(gISO2022Head);
 	}

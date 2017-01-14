@@ -18,7 +18,7 @@
 
 	//(アウトレット以外)
 	AppController *mAppController;	//アプリケーションコントローラー
-	int mAccountID;					//アカウントID
+	long mAccountID;					//アカウントID
 	NSString *mUID;					//UID(UIDLでえた情報)
 	BOOL mDeleted;					//削除フラグ,これがYESならゴミになっている
 }

@@ -72,7 +72,7 @@ static BOOL isStringLengthBad(NSString *iString)
 }
 
 //アカウントIDをえる
-- (int)accountID
+- (long)accountID
 {
 	return mAccountID;
 }
@@ -139,7 +139,7 @@ static BOOL isStringLengthBad(NSString *iString)
 }
 
 //アカウントIDを変更する
-- (void)setAccountID:(int)iID
+- (void)setAccountID:(long)iID
 {
 	mAccountID = iID;
 }

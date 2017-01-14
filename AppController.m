@@ -47,7 +47,7 @@ enum {
 - (BOOL)canGoing;
 - (void)changePeepedItemArrayFlagsSave:(BOOL)iSave clearNewMail:(BOOL)iClearNewMail;
 - (void)updateMailLogAfterThreadEnd;
-- (NSString *)accountIDtoName:(int)iAccountID;
+- (NSString *)accountIDtoName:(long)iAccountID;
 - (void)dispHeaderWin;
 - (void)performDeleteButton;
 - (void)timerProc:(NSTimer *)iTimer;
@@ -57,6 +57,7 @@ enum {
 @end
 
 @implementation AppController
+
 
 //初期化メソッド
 - (id)init
@@ -241,7 +242,7 @@ enum {
 //選択状況が変化したときに呼ばれる
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	int aSelectedRows; //選択項目数
+	long aSelectedRows; //選択項目数
 	NSString *aMsg;
 
 	//選択項目数を表示する
@@ -259,7 +260,7 @@ enum {
 
 //(テーブルビューからのデリゲート)
 //テーブルビューの行数を教える
-- (int)numberOfRowsInTableView:(NSTableView *)tableView
+- (long)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [mPeepedItemArray count];
 }
@@ -454,6 +455,8 @@ enum {
 		[mPrefController speakNewMail];			
 		[mPrefController notifyNewMailBySound];	//tls
 		[mPrefController notifyNewMailByGrowl: mPeepedItemArray];	//tls
+		//うまく動いてない。
+		//[mPrefController notifyNewMailByNotificationCenter: mPeepedItemArray];	//tls
 	}else{
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"NSApplicationIcon"]];
                 
@@ -540,7 +543,7 @@ enum {
         //anne
         //未受信のメール数を表示
         NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] 
-			initWithString:[NSString stringWithFormat:@"%d",[mPeepedItemArray count]]] autorelease];
+			initWithString:[NSString stringWithFormat:@"%ld",[mPeepedItemArray count]]] autorelease];
         [attStr addAttribute:NSForegroundColorAttributeName 
 			value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
         [sbItem setAttributedTitle:attStr];
@@ -571,7 +574,7 @@ enum {
 {
     //account Menuを取り除く
     id item;
-    int deleteIndex = 0;
+    long deleteIndex = 0;
     NSEnumerator *enumerator = [[sbMenu itemArray] objectEnumerator];
     while (item = [enumerator nextObject]) {
         if ([item tag] == ACCOUNT_MENU) {
@@ -768,7 +771,7 @@ enum {
 - (void)updateMailLogAfterThreadEnd
 {
 	PeepedItem *aItem;
-	int aIndex;
+	long aIndex;
 
 	//テーブルビューの選択を解除する
 	[mTableView deselectAll:self];
@@ -787,7 +790,7 @@ enum {
         
         //anne
         //未受信のメール数を表示
-        NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d",[mPeepedItemArray count]]] autorelease];
+        NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%ld",(long)[mPeepedItemArray count]]] autorelease];
         [attStr addAttribute:NSForegroundColorAttributeName value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
         [sbItem setAttributedTitle:attStr];
         
@@ -799,7 +802,7 @@ enum {
 }
 
 //アカウントIDからアカウント名をえる
-- (NSString *)accountIDtoName:(int)iAccountID
+- (NSString *)accountIDtoName:(long)iAccountID
 {
 	NSEnumerator *aItr = [mPrefController accountItemIterator];
 	AccountItem *aItem;
@@ -818,7 +821,7 @@ enum {
 - (void)dispHeaderWinSub:(PeepedItem *)iPeepItem
 {
 	HeaderWinController *aHWC;
-	int aIndex;
+	long aIndex;
 	BOOL aNotOpened = YES;
 
 	//配列を巡回する
@@ -869,7 +872,8 @@ enum {
 //削除ボタンが押されたときの処理
 - (void)performDeleteButton
 {
-	int aRes;
+	long aRes;
+//	NSIndexSet *aItr;
 	NSEnumerator *aItr;
 	NSNumber *aNum;
 	NSMutableArray *aRemoveItemArray; //削除すべきメール情報
@@ -887,6 +891,7 @@ enum {
 	aRemoveItemArray = [NSMutableArray array];
 	aItr = [mTableView selectedRowEnumerator];	//TODO: selectedRowIndexesで置換すべき
 //	aItr = [mTableView selectedRowIndexes];		// 削除については自分が使わないので触らないかも。
+//	while((aNum = [aItr indexGreaterThanIndex]) != nil){
 	while((aNum = [aItr nextObject]) != nil){
 		PeepedItem *aPeepItem = [mPeepedItemArray objectAtIndex:[aNum intValue]];
 		[aRemoveItemArray addObject:aPeepItem];
