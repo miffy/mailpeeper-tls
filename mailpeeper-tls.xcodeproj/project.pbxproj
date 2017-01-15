@@ -183,6 +183,7 @@
 		B504DD751E207820004488D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B504DD761E207820004488D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B504DD771E207820004488D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		B504DD791E2B7426004488D4 /* mailpeeper-tls.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mailpeeper-tls.profdata"; sourceTree = "<group>"; };
 		B537543B12B81B3400C6473C /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		B537543C12B81B3400C6473C /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		B537543D12B81B3400C6473C /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -391,6 +392,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				F5BF8349035017040138D120 /* Dev-memo.txt */,
 				B503F863129BD1B600A54AFF /* Info-MailPeeper.plist */,
+				B504DD781E2B7426004488D4 /* OptimizationProfiles */,
 			);
 			name = MailPeeper;
 			sourceTree = "<group>";
@@ -430,6 +432,14 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B504DD781E2B7426004488D4 /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				B504DD791E2B7426004488D4 /* mailpeeper-tls.profdata */,
+			);
+			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
 		B537543A12B81B3400C6473C /* openssl */ = {
@@ -1008,6 +1018,7 @@
 		B503F860129BD1B600A54AFF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1048,6 +1059,7 @@
 		B503F861129BD1B600A54AFF /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1085,6 +1097,7 @@
 		B503F862129BD1B600A54AFF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

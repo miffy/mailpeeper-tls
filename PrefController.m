@@ -474,7 +474,7 @@ NSUserNotification *newUserNotification;
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
 {
-		return true;
+		return YES;
 }
 
 @end

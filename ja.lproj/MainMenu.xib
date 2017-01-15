@@ -786,11 +786,11 @@
         <window title="PrefSheet-General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="277" userLabel="PrefSheet-G">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="33" y="285" width="279" height="485"/>
+            <rect key="contentRect" x="33" y="285" width="279" height="435"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="278">
-                <rect key="frame" x="0.0" y="0.0" width="279" height="485"/>
+                <rect key="frame" x="0.0" y="0.0" width="279" height="435"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button toolTip="設定の変更を決定します" verticalHuggingPriority="750" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="283">
@@ -823,7 +823,7 @@ DQ
                         </connections>
                     </button>
                     <button toolTip="プログラム起動と同時に巡回するかの設定です" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
-                        <rect key="frame" x="18" y="449" width="230" height="18"/>
+                        <rect key="frame" x="18" y="399" width="230" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="226" id="703"/>
                         </constraints>
@@ -833,14 +833,14 @@ DQ
                         </buttonCell>
                     </button>
                     <button toolTip="巡回を一定時間ごとに繰り返すかを設定します" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="293">
-                        <rect key="frame" x="18" y="427" width="230" height="18"/>
+                        <rect key="frame" x="18" y="377" width="230" height="18"/>
                         <buttonCell key="cell" type="check" title="定期的に巡回する" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="523">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <textField toolTip="巡回を繰り返す間隔を設定します" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="294">
-                        <rect key="frame" x="77" y="399" width="71" height="22"/>
+                        <rect key="frame" x="77" y="349" width="71" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="756"/>
                         </constraints>
@@ -854,7 +854,7 @@ DQ
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="119" translatesAutoresizingMaskIntoConstraints="NO" id="295">
-                        <rect key="frame" x="153" y="402" width="121" height="17"/>
+                        <rect key="frame" x="153" y="352" width="121" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="117" id="706"/>
                         </constraints>
@@ -865,14 +865,14 @@ DQ
                         </textFieldCell>
                     </textField>
                     <button toolTip="新規メールを確認したら下の文章をしゃべるかを決めます" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="377">
-                        <rect key="frame" x="18" y="375" width="227" height="18"/>
+                        <rect key="frame" x="18" y="325" width="227" height="18"/>
                         <buttonCell key="cell" type="check" title="新規メールを確認時に音声で知らせる" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="526">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <scrollView toolTip="新規メールを確認のとき、ここにある文章をしゃべります" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="375">
-                        <rect key="frame" x="40" y="313" width="219" height="56"/>
+                        <rect key="frame" x="40" y="263" width="219" height="56"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" ambiguous="YES" id="xDa-Ye-TcU">
                             <rect key="frame" x="1" y="1" width="217" height="54"/>
@@ -902,7 +902,7 @@ DQ
                         </connections>
                     </scrollView>
                     <button toolTip="エラーが発生したら下の文章をしゃべるかを決めます" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
-                        <rect key="frame" x="18" y="289" width="243" height="18"/>
+                        <rect key="frame" x="18" y="239" width="243" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="エラー発生時に音声で知らせる" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="527">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -910,7 +910,7 @@ DQ
                         </buttonCell>
                     </button>
                     <scrollView toolTip="エラーが発生したとき、ここにある文章をしゃべります" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="410">
-                        <rect key="frame" x="40" y="220" width="219" height="63"/>
+                        <rect key="frame" x="40" y="170" width="219" height="63"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" ambiguous="YES" id="f4X-ZM-set">
                             <rect key="frame" x="1" y="1" width="217" height="61"/>
@@ -940,7 +940,7 @@ DQ
                         </connections>
                     </scrollView>
                     <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="576">
-                        <rect key="frame" x="18" y="192" width="63" height="18"/>
+                        <rect key="frame" x="18" y="142" width="63" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="着信音" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="577">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -948,7 +948,7 @@ DQ
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="578">
-                        <rect key="frame" x="18" y="159" width="74" height="32"/>
+                        <rect key="frame" x="18" y="109" width="74" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="エラー音" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="579">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -956,7 +956,7 @@ DQ
                         </buttonCell>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="580">
-                        <rect key="frame" x="101" y="192" width="76" height="16"/>
+                        <rect key="frame" x="101" y="142" width="76" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingHead" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="right" title="Label" bezelStyle="round" id="581">
                             <font key="font" metaFont="system"/>
@@ -965,7 +965,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="582">
-                        <rect key="frame" x="101" y="167" width="76" height="16"/>
+                        <rect key="frame" x="101" y="117" width="76" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="right" title="Label" id="583">
                             <font key="font" metaFont="system"/>
@@ -974,7 +974,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="586">
-                        <rect key="frame" x="193" y="190" width="66" height="18"/>
+                        <rect key="frame" x="193" y="140" width="66" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="選択" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="587">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -985,7 +985,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" tag="2" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="588">
-                        <rect key="frame" x="193" y="165" width="66" height="19"/>
+                        <rect key="frame" x="193" y="115" width="66" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="選択" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="589">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -996,7 +996,7 @@ DQ
                         </connections>
                     </button>
                     <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iUJ-jR-qoL">
-                        <rect key="frame" x="18" y="112" width="227" height="18"/>
+                        <rect key="frame" x="18" y="62" width="227" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Growlで新規メールを通知" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NVv-GS-qB3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1004,36 +1004,13 @@ DQ
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHl-LQ-f5L">
-                        <rect key="frame" x="18" y="139" width="207" height="18"/>
+                        <rect key="frame" x="18" y="89" width="207" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="スリープ復帰時に巡回開始" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="UL2-2X-bc7">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" size="13" name="HiraKakuProN-W3"/>
                         </buttonCell>
                     </button>
-                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxv-Mg-57q">
-                        <rect key="frame" x="21" y="57" width="241" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="9tw-SW-mba">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <objectValues>
-                                <string>通知しない</string>
-                                <string>Growlで通知</string>
-                                <string>Notification Centerで通知</string>
-                            </objectValues>
-                        </comboBoxCell>
-                    </comboBox>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1D-Zh-VUI">
-                        <rect key="frame" x="18" y="89" width="130" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ポップアップ通知" id="u1h-je-lN8">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="377" firstAttribute="top" secondItem="294" secondAttribute="bottom" constant="8" symbolic="YES" id="710"/>
@@ -1056,7 +1033,7 @@ DQ
             <connections>
                 <outlet property="initialFirstResponder" destination="376" id="383"/>
             </connections>
-            <point key="canvasLocation" x="138.5" y="194.5"/>
+            <point key="canvasLocation" x="138.5" y="169.5"/>
         </window>
         <window title="PrefSheet-Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="279" userLabel="PrefSheet-A">
             <windowStyleMask key="styleMask" titled="YES"/>

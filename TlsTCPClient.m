@@ -81,7 +81,14 @@
 		close(aSocket);
 		return NO;
 	}
-	return [self tlsConnect];
+	//OpenSSLが例外を吐くっぽいので一応止めとく。
+	@try{
+		return [self tlsConnect];
+	}
+	@catch(NSException *e){
+		//何もしない（勝手にアプリごと落ちない対策）
+	}
+	
 
 //	return YES;
 }
