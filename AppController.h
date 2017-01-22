@@ -44,7 +44,7 @@
 	SimpleSyncFIFO *mFIFO;					//ワーカースレッドからの情報受信用
         //anne
         NSStatusItem *sbItem;
-        
+
 }
 
 //(アクションメソッド)

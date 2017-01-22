@@ -65,6 +65,7 @@
 		B504DD711E2077FE004488D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B504DD6A1E2077FE004488D4 /* InfoPlist.strings */; };
 		B504DD721E2077FE004488D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B504DD6C1E2077FE004488D4 /* Localizable.strings */; };
 		B504DD731E2077FE004488D4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = B504DD6E1E2077FE004488D4 /* MainMenu.nib */; };
+		B504DD7B1E2EBD29004488D4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B504DD7A1E2EBD29004488D4 /* Media.xcassets */; };
 		B537548712B81B3400C6473C /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = B537543B12B81B3400C6473C /* aes.h */; };
 		B537548812B81B3400C6473C /* asn1.h in Headers */ = {isa = PBXBuildFile; fileRef = B537543C12B81B3400C6473C /* asn1.h */; };
 		B537548912B81B3400C6473C /* asn1_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = B537543D12B81B3400C6473C /* asn1_mac.h */; };
@@ -184,6 +185,7 @@
 		B504DD761E207820004488D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B504DD771E207820004488D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		B504DD791E2B7426004488D4 /* mailpeeper-tls.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mailpeeper-tls.profdata"; sourceTree = "<group>"; };
+		B504DD7A1E2EBD29004488D4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		B537543B12B81B3400C6473C /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		B537543C12B81B3400C6473C /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		B537543D12B81B3400C6473C /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 				F55A9EA703372ACE01A80102 /* header-b.pict */,
 				F55A9EA903372ACE01A80102 /* pref-b.pict */,
 				F55A9EA803372ACE01A80102 /* stop-b.pict */,
+				B504DD7A1E2EBD29004488D4 /* Media.xcassets */,
 			);
 			path = picts;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				B504DD731E2077FE004488D4 /* MainMenu.nib in Resources */,
 				B503F840129BD1B600A54AFF /* prefwindow.png in Resources */,
 				B504DD701E2077FE004488D4 /* HeaderWin.nib in Resources */,
+				B504DD7B1E2EBD29004488D4 /* Media.xcassets in Resources */,
 				B503F841129BD1B600A54AFF /* next.html in Resources */,
 				B503F842129BD1B600A54AFF /* appl-walking.tiff in Resources */,
 				B503F843129BD1B600A54AFF /* appl-newmail.tiff in Resources */,

@@ -418,8 +418,12 @@ enum {
                 
                 //anne
                 //アイコンをかえる
-                [sbItem setImage: [NSImage imageNamed: @"mail-r"]];
-
+//                [sbItem setImage: [NSImage imageNamed: @"mail-r"]];
+		NSImage *icon = [NSImage imageNamed: @"darkR"];
+		icon.template = YES;
+		sbItem.image = icon;
+		sbItem.highlightMode = YES;
+		[sbItem setImage: icon];
 		//保存フラグ,新規メール印をオールクリアする
 		[self changePeepedItemArrayFlagsSave:NO clearNewMail:YES];
 
@@ -435,6 +439,8 @@ enum {
 //iErr=エラーありならYES,iNewMail=新規メールありならYES
 - (void)reportErr:(BOOL)iErr newMail:(BOOL)iNewMail
 {
+	NSImage *icon;
+	
 	if(iErr){
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"appl-error"]];
 		[NSApp requestUserAttention:NSCriticalRequest];
@@ -442,16 +448,26 @@ enum {
 		[mPrefController notifyErrorBySound];	//tls
                 //anne
                 //エラーアイコンに
-                [sbItem setImage: [NSImage imageNamed: @"mail-error"]];
-                
+//                [sbItem setImage: [NSImage imageNamed: @"mail-error"]];
+		icon = [NSImage imageNamed: @"darkError"];
+		icon.template = YES;
+		sbItem.image = icon;
+		sbItem.highlightMode = YES;
+		[sbItem setImage: icon];
+		
 	}else if(iNewMail){
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"appl-newmail"]];
                 //anne-新規メール受信時にドックアイコンがはねないように以下をコメントアウト
 		//[NSApp requestUserAttention:NSCriticalRequest];
                 
                 //anneNewアイコンに
-                [sbItem setImage: [NSImage imageNamed: @"mail-new"]];
-                
+//        	        [sbItem setImage: [NSImage imageNamed: @"mail-new"]];
+		icon = [NSImage imageNamed: @"darkNew"];
+		icon.template = YES;
+		sbItem.image = icon;
+		sbItem.highlightMode = YES;
+		[sbItem setImage: icon];
+		
 		[mPrefController speakNewMail];			
 		[mPrefController notifyNewMailBySound];	//tls
 		[mPrefController notifyNewMailByGrowl: mPeepedItemArray];	//tls
@@ -461,8 +477,12 @@ enum {
 		//[NSApp setApplicationIconImage:[NSImage imageNamed:@"NSApplicationIcon"]];
                 
                 //anne-アイコンを元に戻す
-                [sbItem setImage: [NSImage imageNamed: @"mail"]];
-                
+//      	        [sbItem setImage: [NSImage imageNamed: @"mail"]];
+		icon = [NSImage imageNamed: @"darkMail"];
+		icon.template = YES;
+		sbItem.image = icon;
+		sbItem.highlightMode = YES;
+		[sbItem setImage: icon];
 	}
 }
 
@@ -545,12 +565,13 @@ enum {
         NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] 
 			initWithString:[NSString stringWithFormat:@"%ld",[mPeepedItemArray count]]] autorelease];
         [attStr addAttribute:NSForegroundColorAttributeName 
-			value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
+			value:[NSColor textColor] range:NSMakeRange(0,[attStr length])];
+		sbItem.highlightMode = YES;
         [sbItem setAttributedTitle:attStr];
 
-        [ sbItem setToolTip : @"mailpeeper-tls" ]; // ツールチップをセット
-        [ sbItem setHighlightMode : YES ]; // クリック時にハイライト表示
-        [ sbItem setMenu : sbMenu ]; // メニューをセット
+        [sbItem setToolTip : @"mailpeeper-tls" ]; // ツールチップをセット
+        [sbItem setHighlightMode : YES ]; // クリック時にハイライト表示
+        [sbItem setMenu : sbMenu ]; // メニューをセット
 //    }
     
     [self accountMenu];
@@ -791,7 +812,7 @@ enum {
         //anne
         //未受信のメール数を表示
         NSMutableAttributedString *attStr = [[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%ld",(long)[mPeepedItemArray count]]] autorelease];
-        [attStr addAttribute:NSForegroundColorAttributeName value:[NSColor blackColor] range:NSMakeRange(0,[attStr length])]; 
+        [attStr addAttribute:NSForegroundColorAttributeName value:[NSColor textColor] range:NSMakeRange(0,[attStr length])];
         [sbItem setAttributedTitle:attStr];
         
         //[sbItem setTitle:[NSString stringWithFormat:@"%d",[mPeepedItemArray count]]];
@@ -927,7 +948,6 @@ enum {
 }
 
 
-// tls
 - (void)makeStatusBar
 {
 	//anne
@@ -938,7 +958,13 @@ enum {
 	// ステータスアイテム作成
 	sbItem = [ bar statusItemWithLength : NSVariableStatusItemLength ];	
 	[ sbItem retain ];
-	[ sbItem setImage: [NSImage imageNamed: @"mail"]];	
+	
+//	[sbItem setImage: [NSImage imageNamed: @"mail"]];
+	NSImage *icon = [NSImage imageNamed: @"darkMail"];
+	icon.template = YES;
+	sbItem.image = icon;
+	sbItem.highlightMode = YES;
+	[sbItem setImage: icon];
 }
 	
 
